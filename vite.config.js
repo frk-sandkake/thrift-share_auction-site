@@ -5,11 +5,12 @@ export default {
     build: {
         rollupOptions: {
             input: {
-                home: resolve(__dirname, 'src/index.html')
+                home: resolve(__dirname, 'src/index.html'),
             },
         },
+        outDir: '../dist',
+        emptyOutDir: true,
     },
-    outDir: '../dist',
     resolve: {
         alias: {},
     },

@@ -4,5 +4,7 @@ node_modules
 .idea
 .gitignore
 .prettierrc
-package.json
+.prettierignore
+.babelrc
 package-lock.json
+README.md

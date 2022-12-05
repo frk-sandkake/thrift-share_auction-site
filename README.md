@@ -69,7 +69,9 @@ For more info go to [npm Uninstall - by Kolade Chris, FreeCodeCamp](https://www.
 <div style="text-align: end"><p>(<a href="#top" style="color: powderblue">back to top</a>)</p></div>
 
 ## References
-
 <p><a href="https://docs.github.com/en" style="color: powderblue; font-family: 'Lucida Console',serif; font-size: medium">GitHub Docs</a></p>
+<p><a href="https://github.com/babel/babel/tree/main/eslint/babel-eslint-plugin" style="color: powderblue; font-family: 'Lucida Console',serif; font-size: medium">@babel/eslint-plugin</a></p>
+<p><a href="https://stackoverflow.com/questions/65097114/eslint-error-in-html-file-parsing-error-unexpected-token" style="color: powderblue; font-family: 'Lucida Console',serif; font-size: medium">ESlint: Parsing Error Unexpected Token</a></p>
+<p><a href="" style="color: powderblue; font-family: 'Lucida Console',serif; font-size: medium">Links</a></p>
 <p><a href="" style="color: powderblue; font-family: 'Lucida Console',serif; font-size: medium">Links</a></p>
 <p><a href="" style="color: powderblue; font-family: 'Lucida Console',serif; font-size: medium">Links</a></p>

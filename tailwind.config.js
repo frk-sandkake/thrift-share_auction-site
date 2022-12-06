@@ -49,8 +49,8 @@ module.exports = {
             video: '16 / 9',
         },
         fontFamily: {
-            'Inter': 'Inter',
-            "Inria Serif": "'Inria Serif'",
+            'inter': 'Inter',
+            "inria-serif": "'Inria Serif'",
             'mono': ['ui-monospace', 'SFMono-Regular',],
         },
         fontSize: {

@@ -16,14 +16,14 @@
         <script type="module" src="./js/index.js" defer></script>
     </head>
     <body class="bg-amber-50">
-        <button id="toTopBtn" title="Go back to top" class="w-auto h-auto bg-zinc-700 text-cyan-300 rounded-full border-0 outline-0 fixed bottom-[20px] right-[30px] z-50 hover:bg-zinc-800">
+        <button id="toTopBtn" title="Go back to top" class="w-auto h-auto bg-zinc-700 text-cyan-300 rounded-full border-0 outline-0 fixed bottom-[20px] right-[30px] z-10 hover:bg-zinc-800">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-[48px] h-[48px]">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l7.5-7.5 7.5 7.5m-15 6l7.5-7.5 7.5 7.5" />
             </svg>
             <span class="sr-only">Back to top</span>
         </button>
-        <header id="mobileHeader" class="relative w-full h-auto bg-zinc-800 drop-shadow-sm prose-a:text-zinc-50 prose-a:font-light">
-            <div role="none" aria-labelledby="container" class="container mx-auto w-full relative flex flex-col justify-between items-start md:flex-row md:justify-between md:items-center">
+        <header id="mobileHeader" class="relative z-50 w-full h-auto bg-zinc-800 drop-shadow-sm prose-a:text-zinc-50 prose-a:font-light">
+            <div role="none" aria-labelledby="container" class="w-full relative flex flex-col justify-between items-start md:flex-row md:justify-between md:items-center">
                 <a href="/" class="w-1/3 min-w-[132px] max-w-[180px]">
                   <img src="./uploads/logo-thrift-share.svg" alt="Thrift & Share logo" width="594" height="208" class="w-full h-auto">
                 </a>
@@ -46,38 +46,38 @@
                     </li>
                   </ul>
                 </nav>
-                <nav id="navMobile" class="fixed z-10 h-screen w-0 top-11 left-0 bottom-0 overflow-x-hidden transition-all flex flex-col items-center bg-zinc-800 bg-opacity-60 md:hidden">
-                    <ul id="menuMobile" role="list" class="z-20 overflow-auto transition-all mx-auto w-2/3 h-2/3 text-center py-6 bg-zinc-800">
-                        <li class="py-4"><a href="#" class="hover:text-cyan-300" aria-current=true>Thrifts</a></li>
-                        <li class="py-4"><a href="#" class="hover:text-cyan-300">Sellers</a></li>
-                        <li class="py-4"><a href="#" class="hover:text-cyan-300">Shares</a></li>
-                        <li class="py-4"><a href="#" class="hover:text-cyan-300">About Us</a></li>
-                    </ul>
-                    <ul id="userMenuMobile" role="group" class="z-20 overflow-auto transition-all mx-auto w-2/3 h-1/3 text-center py-6 bg-zinc-800">
-                        <li class="py-4"><button type="button" data-button="link" class="text-zinc-50 hover:text-cyan-300">Log In</button></li>
-                        <li class="pb-4">
-                          <button type="button" data-button="primary"
-                                  class="inline-flex justify-center items-center overflow-hidden gap-2 p-[6px_16px_6px] rounded-full transition ease-in duration-75 text-pink-50 bg-gradient-to-r from-pink-500 via-pink-700 to-pink-800 dropshadow-sm hover:bg-gradient-to-br focus:ring-2 focus:outline-none focus:ring-pink-300"
-                          >
-                            <svg aria-hidden="true" class="-ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path></svg>
-                            <span class="text-base font-semibold pb-1">Sign Up</span>
-                          </button>
-                        </li>
-                    </ul>
-                  <button id="closeNavBtn" type="button" class="absolute top-4 right-4 text-zinc-50 hover:text-cyan-300 z-20">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8 m-2 sm:m-4">
-                      <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-1.72 6.97a.75.75 0 10-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 101.06 1.06L12 13.06l1.72 1.72a.75.75 0 101.06-1.06L13.06 12l1.72-1.72a.75.75 0 10-1.06-1.06L12 10.94l-1.72-1.72z" clip-rule="evenodd" />
-                    </svg>
-                  </button>
-                </nav>
                 <button type="button" id="hamburger" aria-haspopup="true" aria-controls="navMobile" class="absolute top-0 right-0 md:hidden text-zinc-50 hover:text-cyan-300">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8 m-2 sm:m-4">
                     <path fill-rule="evenodd" d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75H12a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm0 5.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75z" clip-rule="evenodd" />
                   </svg>
                 </button>
             </div>
+          <nav id="navMobile" class="fixed z-40 h-screen w-0 top-11 left-0 overflow-x-hidden transition-all flex flex-col justify-around items-center bg-zinc-800 bg-opacity-60 md:hidden">
+            <ul id="menuMobile" role="list" class="overflow-hidden transition-all w-10/12 h-3/6 text-center py-8 bg-zinc-800">
+              <li class="py-4"><a href="#" class="hover:text-cyan-300" aria-current=true>Thrifts</a></li>
+              <li class="py-4"><a href="#" class="hover:text-cyan-300">Sellers</a></li>
+              <li class="py-4"><a href="#" class="hover:text-cyan-300">Shares</a></li>
+              <li class="py-4"><a href="#" class="hover:text-cyan-300">About Us</a></li>
+            </ul>
+            <ul id="userMenuMobile" role="group" class="overflow-hidden transition-all w-10/12 h-3/6 text-center py-8 bg-zinc-800">
+              <li class="py-4"><button type="button" data-button="link" class="text-zinc-50 hover:text-cyan-300">Log In</button></li>
+              <li class="pb-4">
+                <button type="button" data-button="primary"
+                        class="inline-flex justify-center items-center overflow-hidden gap-2 p-[6px_16px_6px] rounded-full transition ease-in duration-75 text-pink-50 bg-gradient-to-r from-pink-500 via-pink-700 to-pink-800 dropshadow-sm hover:bg-gradient-to-br focus:ring-2 focus:outline-none focus:ring-pink-300"
+                >
+                  <svg aria-hidden="true" class="-ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path></svg>
+                  <span class="text-base font-semibold pb-1">Sign Up</span>
+                </button>
+              </li>
+            </ul>
+            <button id="closeNavBtn" type="button" aria-controls="navMobile" class="absolute z-50 top-4 right-4 text-zinc-50 hover:text-cyan-300">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8 m-2 sm:m-4">
+                <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-1.72 6.97a.75.75 0 10-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 101.06 1.06L12 13.06l1.72 1.72a.75.75 0 101.06-1.06L13.06 12l1.72-1.72a.75.75 0 10-1.06-1.06L12 10.94l-1.72-1.72z" clip-rule="evenodd" />
+              </svg>
+            </button>
+          </nav>
         </header>
-        <nav class="flex" aria-label="Breadcrumb">
+        <nav class="" aria-label="Breadcrumb">
             <ol class="inline-flex items-center space-x-1 md:space-x-3">
                 <li class="inline-flex items-center">
                     <a href="#" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
@@ -99,9 +99,964 @@
                 </li>
             </ol>
         </nav>
+
+
+        <main class="container py-8 prose-h3:font-bold">
+            <h1 class="text-center font-bold text-4xl text-zinc-600">All Thrifts</h1>
+          <ul class="grid grid-cols-1 gap-4 py-8 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3 lg:gap-12">
+            <li class="col-span-1">
+              <article id="thriftCard" aria-label="Product card" class="p-2 rounded-lg shadow-lg bg-zinc-800 text-amber-50 min-w-[16rem] max-w-[22rem] lg:p-4">
+              <div role="none" aria-label="Product card">
+                <a href="#">
+                  <img class="rounded-lg" src="https://res.cloudinary.com/dmurhab0f/image/upload/v1669892589/milivoj-kuhar-radio-unsplash.jpg" alt=""/>
+                </a>
+                <div role="none" aria-label="Info about thrift and auction" class="w-12/12 mx-auto px-3">
+                  <a href="#" class="pt-2 text-xs font-semibold hover:text-cyan-200">
+                    #Tag
+                  </a>
+                  <h3 class="text-amber-200 text-xl font-semibold mb-2">
+                    Card title
+                  </h3>
+                  <section id="sellerProfile" data-profile="mini" class="w-6/12 mx-auto">
+                    <img
+                      src="https://mdbcdn.b-cdn.net/img/new/avatars/1.webp"
+                      class="rounded-full w-[32px] shadow-lg float-left mb-1 mr-1"
+                      alt="Avatar"
+                    />
+                    <p class="text-sm text-amber-100">
+                      User_Name
+                    </p>
+                    <p class="text-xs font-thin">
+                      <em>Info about user</em>
+                    </p>
+                  </section>
+                  <p class="font-inria-serif text-end text-sm font-light bg-gradient-to-r from-cyan-400 to-amber-300 text-transparent bg-clip-text hover:bg-gradient-to-t">
+                    <a href="#" class="pr-1">
+                      NameOfCharity
+                    </a>
+                    40%
+                  </p>
+                  <ul role="group" aria-label="Current bid and auction end time" class="p-2">
+                    <li class="text-center">
+                      <p class="inline-block">
+                        Currant Bid:
+                      </p>
+                      <p class="inline-block text-lg font-semibold">
+                        £146
+                      </p>
+                    </li>
+                    <li class="text-center">
+                      <p class="inline-block text-sm">
+                        Auction end:
+                      </p>
+                      <p class="inline-block text-base font-semibold">
+                        2 days
+                      </p>
+                    </li>
+                  </ul>
+                  <div role="group" aria-label="View bids and/or add a bid" class="flex flex-row justify-between items-start py-2">
+                    <details id="viewBids" class="text-amber-50">
+                      <summary class="inline-flex justify-center items-center gap-2 pt-2 pb-2 px-3.5 rounded-full bg-gradient-to-r from-cyan-600 via-cyan-700 to-cyan-800 hover:bg-gradient-to-br drop-shadow-sm focus:ring-2 focus:outline-none focus:ring-cyan-300">
+                        <span class="text-sm inline-block font-semibold pb-0.5 sm:text-base">
+                          View Bids
+                        </span>
+                        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="-mr-1 w-6 h-6">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75l3 3m0 0l3-3m-3 3v-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                      </summary>
+                      <ul class="flex flex-col rounded-sm  bg-transparent mx-2 p-2">
+                        <li class="flex">
+                          <p class="flex-1">
+                            $15
+                          </p>
+                          <p class="flex-1">
+                            12h
+                          </p>
+                        </li>
+                        <li class="flex">
+                          <p class="flex-1">
+                            $15
+                          </p>
+                          <p class="flex-1">
+                            12h
+                          </p>
+                        </li>
+                        <li class="flex">
+                          <p class="flex-1">
+                            $15
+                          </p>
+                          <p class="flex-1">
+                            12h
+                          </p>
+                        </li>
+                      </ul>
+                    </details>
+                    <button id="addBid" type="button" data-button="primary-outline"
+                            class="rounded-full p-0.5 text-pink-400 drop-shadow-sm group bg-gradient-to-r from-pink-400 via-pink-600 to-pink-700 group-hover:bg-gradient-to-br hover:text-pink-50 focus:ring-2 focus:outline-none focus:ring-pink-300"
+                    >
+                              <span class="inline-flex items-center gap-2 overflow-hidden py-1.5 px-3.5 transition ease-in duration-75 bg-zinc-800 rounded-full group-hover:bg-opacity-0">
+                                  <span class="inline-block text-sm font-semibold pb-0.5 sm:text-base">
+                                    Add Bid
+                                  </span>
+                                  <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="-mr-1 w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                  </svg>
+                              </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </article>
+            </li>
+            <li class="col-span-1">
+              <article aria-label="Product card" class="rounded-lg shadow-lg bg-zinc-800 text-amber-50 min-w-[16rem] max-w-[22rem] ">
+              <div role="none" aria-label="Product card">
+                <a href="#">
+                  <img class="rounded-lg" src="https://res.cloudinary.com/dmurhab0f/image/upload/v1669892589/milivoj-kuhar-radio-unsplash.jpg" alt=""/>
+                </a>
+                <div role="none" aria-label="Info about thrift and auction" class="w-12/12 mx-auto px-3">
+                  <a href="#" class="pt-2 text-xs font-semibold hover:text-cyan-200">
+                    #Tag
+                  </a>
+                  <h3 class="text-amber-200 text-xl font-semibold mb-2">
+                    Card title
+                  </h3>
+                  <section  data-profile="mini" class="w-6/12 mx-auto">
+                    <img
+                      src="https://mdbcdn.b-cdn.net/img/new/avatars/1.webp"
+                      class="rounded-full w-[32px] shadow-lg float-left mb-1 mr-1"
+                      alt="Avatar"
+                    />
+                    <p class="text-sm text-amber-100">
+                      User_Name
+                    </p>
+                    <p class="text-xs font-thin">
+                      <em>Info about user</em>
+                    </p>
+                  </section>
+                  <p class="font-inria-serif text-end text-sm font-light bg-gradient-to-r from-cyan-400 to-amber-300 text-transparent bg-clip-text hover:bg-gradient-to-t">
+                    <a href="#" class="pr-1">
+                      NameOfCharity
+                    </a>
+                    40%
+                  </p>
+                  <ul role="group" aria-label="Current bid and auction end time" class="p-2">
+                    <li class="text-center">
+                      <p class="inline-block">
+                        Currant Bid:
+                      </p>
+                      <p class="inline-block text-lg font-semibold">
+                        £146
+                      </p>
+                    </li>
+                    <li class="text-center">
+                      <p class="inline-block text-sm">
+                        Auction end:
+                      </p>
+                      <p class="inline-block text-base font-semibold">
+                        2 days
+                      </p>
+                    </li>
+                  </ul>
+                  <div role="group" aria-label="View bids and/or add a bid" class="flex flex-row justify-between items-start py-2">
+                    <details  class="text-amber-50">
+                      <summary class="inline-flex justify-center items-center gap-2 pt-2 pb-2 px-3.5 rounded-full bg-gradient-to-r from-cyan-600 via-cyan-700 to-cyan-800 hover:bg-gradient-to-br drop-shadow-sm focus:ring-2 focus:outline-none focus:ring-cyan-300">
+                        <span class="inline-block text-base font-semibold pb-0.5">
+                          View Bids
+                        </span>
+                        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="-mr-1 w-6 h-6">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75l3 3m0 0l3-3m-3 3v-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                      </summary>
+                      <ul class="flex flex-col rounded-sm  bg-transparent mx-2 p-2">
+                        <li class="flex">
+                          <p class="flex-1">
+                            $15
+                          </p>
+                          <p class="flex-1">
+                            12h
+                          </p>
+                        </li>
+                        <li class="flex">
+                          <p class="flex-1">
+                            $15
+                          </p>
+                          <p class="flex-1">
+                            12h
+                          </p>
+                        </li>
+                        <li class="flex">
+                          <p class="flex-1">
+                            $15
+                          </p>
+                          <p class="flex-1">
+                            12h
+                          </p>
+                        </li>
+                      </ul>
+                    </details>
+                    <button  type="button" data-button="primary-outline"
+                            class="rounded-full p-0.5 text-pink-400 drop-shadow-sm group bg-gradient-to-r from-pink-400 via-pink-600 to-pink-700 group-hover:bg-gradient-to-br hover:text-pink-50 focus:ring-2 focus:outline-none focus:ring-pink-300"
+                    >
+                              <span class="inline-flex items-center gap-2 overflow-hidden py-1.5 px-3.5 transition ease-in duration-75 bg-zinc-800 rounded-full group-hover:bg-opacity-0">
+                                  <span class="inline-block text-base font-semibold pb-0.5">
+                                    Add Bid
+                                  </span>
+                                  <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="-mr-1 w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                  </svg>
+                              </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </article>
+            </li>
+            <li class="col-span-1">
+              <article aria-label="Product card" class="p-4 rounded-lg shadow-lg bg-zinc-800 text-amber-50 min-w-[18rem] max-w-[22rem]">
+                <div role="none" aria-label="Product card">
+                  <a href="#">
+                    <img class="rounded-lg" src="https://res.cloudinary.com/dmurhab0f/image/upload/v1669892589/milivoj-kuhar-radio-unsplash.jpg" alt=""/>
+                  </a>
+                  <div role="none" aria-label="Info about thrift and auction" class="w-12/12 mx-auto px-3">
+                    <a href="#" class="pt-2 text-xs font-semibold hover:text-cyan-200">
+                      #Tag
+                    </a>
+                    <h3 class="text-amber-200 text-xl font-semibold mb-2">
+                      Card title
+                    </h3>
+                    <section  data-profile="mini" class="w-6/12 mx-auto">
+                      <img
+                        src="https://mdbcdn.b-cdn.net/img/new/avatars/1.webp"
+                        class="rounded-full w-[32px] shadow-lg float-left mb-1 mr-1"
+                        alt="Avatar"
+                      />
+                      <p class="text-sm text-amber-100">
+                        User_Name
+                      </p>
+                      <p class="text-xs font-thin">
+                        <em>Info about user</em>
+                      </p>
+                    </section>
+                    <p class="font-inria-serif text-end text-sm font-light bg-gradient-to-r from-cyan-400 to-amber-300 text-transparent bg-clip-text hover:bg-gradient-to-t">
+                      <a href="#" class="pr-1">
+                        NameOfCharity
+                      </a>
+                      40%
+                    </p>
+                    <ul role="group" aria-label="Current bid and auction end time" class="p-2">
+                      <li class="text-center">
+                        <p class="inline-block">
+                          Currant Bid:
+                        </p>
+                        <p class="inline-block text-lg font-semibold">
+                          £146
+                        </p>
+                      </li>
+                      <li class="text-center">
+                        <p class="inline-block text-sm">
+                          Auction end:
+                        </p>
+                        <p class="inline-block text-base font-semibold">
+                          2 days
+                        </p>
+                      </li>
+                    </ul>
+                    <div role="group" aria-label="View bids and/or add a bid" class="flex flex-row justify-between items-start py-2">
+                      <details  class="text-amber-50">
+                        <summary class="inline-flex justify-center items-center gap-2 pt-2 pb-2 px-3.5 rounded-full bg-gradient-to-r from-cyan-600 via-cyan-700 to-cyan-800 hover:bg-gradient-to-br drop-shadow-sm focus:ring-2 focus:outline-none focus:ring-cyan-300">
+                        <span class="inline-block text-base font-semibold pb-0.5">
+                          View Bids
+                        </span>
+                          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="-mr-1 w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75l3 3m0 0l3-3m-3 3v-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                        </summary>
+                        <ul class="flex flex-col rounded-sm  bg-transparent mx-2 p-2">
+                          <li class="flex">
+                            <p class="flex-1">
+                              $15
+                            </p>
+                            <p class="flex-1">
+                              12h
+                            </p>
+                          </li>
+                          <li class="flex">
+                            <p class="flex-1">
+                              $15
+                            </p>
+                            <p class="flex-1">
+                              12h
+                            </p>
+                          </li>
+                          <li class="flex">
+                            <p class="flex-1">
+                              $15
+                            </p>
+                            <p class="flex-1">
+                              12h
+                            </p>
+                          </li>
+                        </ul>
+                      </details>
+                      <button  type="button" data-button="primary-outline"
+                               class="rounded-full p-0.5 text-pink-400 drop-shadow-sm group bg-gradient-to-r from-pink-400 via-pink-600 to-pink-700 group-hover:bg-gradient-to-br hover:text-pink-50 focus:ring-2 focus:outline-none focus:ring-pink-300"
+                      >
+                              <span class="inline-flex items-center gap-2 overflow-hidden py-1.5 px-3.5 transition ease-in duration-75 bg-zinc-800 rounded-full group-hover:bg-opacity-0">
+                                  <span class="inline-block text-base font-semibold pb-0.5">
+                                    Add Bid
+                                  </span>
+                                  <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="-mr-1 w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                  </svg>
+                              </span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <li class="col-span-1">
+              <article aria-label="Product card" class="p-4 rounded-lg shadow-lg bg-zinc-800 text-amber-50 min-w-[18rem] max-w-[22rem]">
+                <div role="none" aria-label="Product card">
+                  <a href="#">
+                    <img class="rounded-lg" src="https://res.cloudinary.com/dmurhab0f/image/upload/v1669892589/milivoj-kuhar-radio-unsplash.jpg" alt=""/>
+                  </a>
+                  <div role="none" aria-label="Info about thrift and auction" class="w-12/12 mx-auto px-3">
+                    <a href="#" class="pt-2 text-xs font-semibold hover:text-cyan-200">
+                      #Tag
+                    </a>
+                    <h3 class="text-amber-200 text-xl font-semibold mb-2">
+                      Card title
+                    </h3>
+                    <section  data-profile="mini" class="w-6/12 mx-auto">
+                      <img
+                        src="https://mdbcdn.b-cdn.net/img/new/avatars/1.webp"
+                        class="rounded-full w-[32px] shadow-lg float-left mb-1 mr-1"
+                        alt="Avatar"
+                      />
+                      <p class="text-sm text-amber-100">
+                        User_Name
+                      </p>
+                      <p class="text-xs font-thin">
+                        <em>Info about user</em>
+                      </p>
+                    </section>
+                    <p class="font-inria-serif text-end text-sm font-light bg-gradient-to-r from-cyan-400 to-amber-300 text-transparent bg-clip-text hover:bg-gradient-to-t">
+                      <a href="#" class="pr-1">
+                        NameOfCharity
+                      </a>
+                      40%
+                    </p>
+                    <ul role="group" aria-label="Current bid and auction end time" class="p-2">
+                      <li class="text-center">
+                        <p class="inline-block">
+                          Currant Bid:
+                        </p>
+                        <p class="inline-block text-lg font-semibold">
+                          £146
+                        </p>
+                      </li>
+                      <li class="text-center">
+                        <p class="inline-block text-sm">
+                          Auction end:
+                        </p>
+                        <p class="inline-block text-base font-semibold">
+                          2 days
+                        </p>
+                      </li>
+                    </ul>
+                    <div role="group" aria-label="View bids and/or add a bid" class="flex flex-row justify-between items-start py-2">
+                      <details  class="text-amber-50">
+                        <summary class="inline-flex justify-center items-center gap-2 pt-2 pb-2 px-3.5 rounded-full bg-gradient-to-r from-cyan-600 via-cyan-700 to-cyan-800 hover:bg-gradient-to-br drop-shadow-sm focus:ring-2 focus:outline-none focus:ring-cyan-300">
+                        <span class="inline-block text-base font-semibold pb-0.5">
+                          View Bids
+                        </span>
+                          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="-mr-1 w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75l3 3m0 0l3-3m-3 3v-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                        </summary>
+                        <ul class="flex flex-col rounded-sm  bg-transparent mx-2 p-2">
+                          <li class="flex">
+                            <p class="flex-1">
+                              $15
+                            </p>
+                            <p class="flex-1">
+                              12h
+                            </p>
+                          </li>
+                          <li class="flex">
+                            <p class="flex-1">
+                              $15
+                            </p>
+                            <p class="flex-1">
+                              12h
+                            </p>
+                          </li>
+                          <li class="flex">
+                            <p class="flex-1">
+                              $15
+                            </p>
+                            <p class="flex-1">
+                              12h
+                            </p>
+                          </li>
+                        </ul>
+                      </details>
+                      <button  type="button" data-button="primary-outline"
+                               class="rounded-full p-0.5 text-pink-400 drop-shadow-sm group bg-gradient-to-r from-pink-400 via-pink-600 to-pink-700 group-hover:bg-gradient-to-br hover:text-pink-50 focus:ring-2 focus:outline-none focus:ring-pink-300"
+                      >
+                              <span class="inline-flex items-center gap-2 overflow-hidden py-1.5 px-3.5 transition ease-in duration-75 bg-zinc-800 rounded-full group-hover:bg-opacity-0">
+                                  <span class="inline-block text-base font-semibold pb-0.5">
+                                    Add Bid
+                                  </span>
+                                  <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="-mr-1 w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                  </svg>
+                              </span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <li class="col-span-1">
+              <article aria-label="Product card" class="p-4 rounded-lg shadow-lg bg-zinc-800 text-amber-50 min-w-[18rem] max-w-[22rem]">
+                <div role="none" aria-label="Product card">
+                  <a href="#">
+                    <img class="rounded-lg" src="https://res.cloudinary.com/dmurhab0f/image/upload/v1669892589/milivoj-kuhar-radio-unsplash.jpg" alt=""/>
+                  </a>
+                  <div role="none" aria-label="Info about thrift and auction" class="w-12/12 mx-auto px-3">
+                    <a href="#" class="pt-2 text-xs font-semibold hover:text-cyan-200">
+                      #Tag
+                    </a>
+                    <h3 class="text-amber-200 text-xl font-semibold mb-2">
+                      Card title
+                    </h3>
+                    <section  data-profile="mini" class="w-6/12 mx-auto">
+                      <img
+                        src="https://mdbcdn.b-cdn.net/img/new/avatars/1.webp"
+                        class="rounded-full w-[32px] shadow-lg float-left mb-1 mr-1"
+                        alt="Avatar"
+                      />
+                      <p class="text-sm text-amber-100">
+                        User_Name
+                      </p>
+                      <p class="text-xs font-thin">
+                        <em>Info about user</em>
+                      </p>
+                    </section>
+                    <p class="font-inria-serif text-end text-sm font-light bg-gradient-to-r from-cyan-400 to-amber-300 text-transparent bg-clip-text hover:bg-gradient-to-t">
+                      <a href="#" class="pr-1">
+                        NameOfCharity
+                      </a>
+                      40%
+                    </p>
+                    <ul role="group" aria-label="Current bid and auction end time" class="p-2">
+                      <li class="text-center">
+                        <p class="inline-block">
+                          Currant Bid:
+                        </p>
+                        <p class="inline-block text-lg font-semibold">
+                          £146
+                        </p>
+                      </li>
+                      <li class="text-center">
+                        <p class="inline-block text-sm">
+                          Auction end:
+                        </p>
+                        <p class="inline-block text-base font-semibold">
+                          2 days
+                        </p>
+                      </li>
+                    </ul>
+                    <div role="group" aria-label="View bids and/or add a bid" class="flex flex-row justify-between items-start py-2">
+                      <details  class="text-amber-50">
+                        <summary class="inline-flex justify-center items-center gap-2 pt-2 pb-2 px-3.5 rounded-full bg-gradient-to-r from-cyan-600 via-cyan-700 to-cyan-800 hover:bg-gradient-to-br drop-shadow-sm focus:ring-2 focus:outline-none focus:ring-cyan-300">
+                        <span class="inline-block text-base font-semibold pb-0.5">
+                          View Bids
+                        </span>
+                          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="-mr-1 w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75l3 3m0 0l3-3m-3 3v-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                        </summary>
+                        <ul class="flex flex-col rounded-sm  bg-transparent mx-2 p-2">
+                          <li class="flex">
+                            <p class="flex-1">
+                              $15
+                            </p>
+                            <p class="flex-1">
+                              12h
+                            </p>
+                          </li>
+                          <li class="flex">
+                            <p class="flex-1">
+                              $15
+                            </p>
+                            <p class="flex-1">
+                              12h
+                            </p>
+                          </li>
+                          <li class="flex">
+                            <p class="flex-1">
+                              $15
+                            </p>
+                            <p class="flex-1">
+                              12h
+                            </p>
+                          </li>
+                        </ul>
+                      </details>
+                      <button  type="button" data-button="primary-outline"
+                               class="rounded-full p-0.5 text-pink-400 drop-shadow-sm group bg-gradient-to-r from-pink-400 via-pink-600 to-pink-700 group-hover:bg-gradient-to-br hover:text-pink-50 focus:ring-2 focus:outline-none focus:ring-pink-300"
+                      >
+                              <span class="inline-flex items-center gap-2 overflow-hidden py-1.5 px-3.5 transition ease-in duration-75 bg-zinc-800 rounded-full group-hover:bg-opacity-0">
+                                  <span class="inline-block text-base font-semibold pb-0.5">
+                                    Add Bid
+                                  </span>
+                                  <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="-mr-1 w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                  </svg>
+                              </span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <li class="col-span-1">
+              <article aria-label="Product card" class="p-4 rounded-lg shadow-lg bg-zinc-800 text-amber-50 min-w-[18rem] max-w-[22rem]">
+                <div role="none" aria-label="Product card">
+                  <a href="#">
+                    <img class="rounded-lg" src="https://res.cloudinary.com/dmurhab0f/image/upload/v1669892589/milivoj-kuhar-radio-unsplash.jpg" alt=""/>
+                  </a>
+                  <div role="none" aria-label="Info about thrift and auction" class="w-12/12 mx-auto px-3">
+                    <a href="#" class="pt-2 text-xs font-semibold hover:text-cyan-200">
+                      #Tag
+                    </a>
+                    <h3 class="text-amber-200 text-xl font-semibold mb-2">
+                      Card title
+                    </h3>
+                    <section  data-profile="mini" class="w-6/12 mx-auto">
+                      <img
+                        src="https://mdbcdn.b-cdn.net/img/new/avatars/1.webp"
+                        class="rounded-full w-[32px] shadow-lg float-left mb-1 mr-1"
+                        alt="Avatar"
+                      />
+                      <p class="text-sm text-amber-100">
+                        User_Name
+                      </p>
+                      <p class="text-xs font-thin">
+                        <em>Info about user</em>
+                      </p>
+                    </section>
+                    <p class="font-inria-serif text-end text-sm font-light bg-gradient-to-r from-cyan-400 to-amber-300 text-transparent bg-clip-text hover:bg-gradient-to-t">
+                      <a href="#" class="pr-1">
+                        NameOfCharity
+                      </a>
+                      40%
+                    </p>
+                    <ul role="group" aria-label="Current bid and auction end time" class="p-2">
+                      <li class="text-center">
+                        <p class="inline-block">
+                          Currant Bid:
+                        </p>
+                        <p class="inline-block text-lg font-semibold">
+                          £146
+                        </p>
+                      </li>
+                      <li class="text-center">
+                        <p class="inline-block text-sm">
+                          Auction end:
+                        </p>
+                        <p class="inline-block text-base font-semibold">
+                          2 days
+                        </p>
+                      </li>
+                    </ul>
+                    <div role="group" aria-label="View bids and/or add a bid" class="flex flex-row justify-between items-start py-2">
+                      <details  class="text-amber-50">
+                        <summary class="inline-flex justify-center items-center gap-2 pt-2 pb-2 px-3.5 rounded-full bg-gradient-to-r from-cyan-600 via-cyan-700 to-cyan-800 hover:bg-gradient-to-br drop-shadow-sm focus:ring-2 focus:outline-none focus:ring-cyan-300">
+                        <span class="inline-block text-base font-semibold pb-0.5">
+                          View Bids
+                        </span>
+                          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="-mr-1 w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75l3 3m0 0l3-3m-3 3v-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                        </summary>
+                        <ul class="flex flex-col rounded-sm  bg-transparent mx-2 p-2">
+                          <li class="flex">
+                            <p class="flex-1">
+                              $15
+                            </p>
+                            <p class="flex-1">
+                              12h
+                            </p>
+                          </li>
+                          <li class="flex">
+                            <p class="flex-1">
+                              $15
+                            </p>
+                            <p class="flex-1">
+                              12h
+                            </p>
+                          </li>
+                          <li class="flex">
+                            <p class="flex-1">
+                              $15
+                            </p>
+                            <p class="flex-1">
+                              12h
+                            </p>
+                          </li>
+                        </ul>
+                      </details>
+                      <button  type="button" data-button="primary-outline"
+                               class="rounded-full p-0.5 text-pink-400 drop-shadow-sm group bg-gradient-to-r from-pink-400 via-pink-600 to-pink-700 group-hover:bg-gradient-to-br hover:text-pink-50 focus:ring-2 focus:outline-none focus:ring-pink-300"
+                      >
+                              <span class="inline-flex items-center gap-2 overflow-hidden py-1.5 px-3.5 transition ease-in duration-75 bg-zinc-800 rounded-full group-hover:bg-opacity-0">
+                                  <span class="inline-block text-base font-semibold pb-0.5">
+                                    Add Bid
+                                  </span>
+                                  <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="-mr-1 w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                  </svg>
+                              </span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <li class="col-span-1">
+              <article aria-label="Product card" class="p-4 rounded-lg shadow-lg bg-zinc-800 text-amber-50 min-w-[18rem] max-w-[22rem]">
+                <div role="none" aria-label="Product card">
+                  <a href="#">
+                    <img class="rounded-lg" src="https://res.cloudinary.com/dmurhab0f/image/upload/v1669892589/milivoj-kuhar-radio-unsplash.jpg" alt=""/>
+                  </a>
+                  <div role="none" aria-label="Info about thrift and auction" class="w-12/12 mx-auto px-3">
+                    <a href="#" class="pt-2 text-xs font-semibold hover:text-cyan-200">
+                      #Tag
+                    </a>
+                    <h3 class="text-amber-200 text-xl font-semibold mb-2">
+                      Card title
+                    </h3>
+                    <section  data-profile="mini" class="w-6/12 mx-auto">
+                      <img
+                        src="https://mdbcdn.b-cdn.net/img/new/avatars/1.webp"
+                        class="rounded-full w-[32px] shadow-lg float-left mb-1 mr-1"
+                        alt="Avatar"
+                      />
+                      <p class="text-sm text-amber-100">
+                        User_Name
+                      </p>
+                      <p class="text-xs font-thin">
+                        <em>Info about user</em>
+                      </p>
+                    </section>
+                    <p class="font-inria-serif text-end text-sm font-light bg-gradient-to-r from-cyan-400 to-amber-300 text-transparent bg-clip-text hover:bg-gradient-to-t">
+                      <a href="#" class="pr-1">
+                        NameOfCharity
+                      </a>
+                      40%
+                    </p>
+                    <ul role="group" aria-label="Current bid and auction end time" class="p-2">
+                      <li class="text-center">
+                        <p class="inline-block">
+                          Currant Bid:
+                        </p>
+                        <p class="inline-block text-lg font-semibold">
+                          £146
+                        </p>
+                      </li>
+                      <li class="text-center">
+                        <p class="inline-block text-sm">
+                          Auction end:
+                        </p>
+                        <p class="inline-block text-base font-semibold">
+                          2 days
+                        </p>
+                      </li>
+                    </ul>
+                    <div role="group" aria-label="View bids and/or add a bid" class="flex flex-row justify-between items-start py-2">
+                      <details  class="text-amber-50">
+                        <summary class="inline-flex justify-center items-center gap-2 pt-2 pb-2 px-3.5 rounded-full bg-gradient-to-r from-cyan-600 via-cyan-700 to-cyan-800 hover:bg-gradient-to-br drop-shadow-sm focus:ring-2 focus:outline-none focus:ring-cyan-300">
+                        <span class="inline-block text-base font-semibold pb-0.5">
+                          View Bids
+                        </span>
+                          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="-mr-1 w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75l3 3m0 0l3-3m-3 3v-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                        </summary>
+                        <ul class="flex flex-col rounded-sm  bg-transparent mx-2 p-2">
+                          <li class="flex">
+                            <p class="flex-1">
+                              $15
+                            </p>
+                            <p class="flex-1">
+                              12h
+                            </p>
+                          </li>
+                          <li class="flex">
+                            <p class="flex-1">
+                              $15
+                            </p>
+                            <p class="flex-1">
+                              12h
+                            </p>
+                          </li>
+                          <li class="flex">
+                            <p class="flex-1">
+                              $15
+                            </p>
+                            <p class="flex-1">
+                              12h
+                            </p>
+                          </li>
+                        </ul>
+                      </details>
+                      <button  type="button" data-button="primary-outline"
+                               class="rounded-full p-0.5 text-pink-400 drop-shadow-sm group bg-gradient-to-r from-pink-400 via-pink-600 to-pink-700 group-hover:bg-gradient-to-br hover:text-pink-50 focus:ring-2 focus:outline-none focus:ring-pink-300"
+                      >
+                              <span class="inline-flex items-center gap-2 overflow-hidden py-1.5 px-3.5 transition ease-in duration-75 bg-zinc-800 rounded-full group-hover:bg-opacity-0">
+                                  <span class="inline-block text-base font-semibold pb-0.5">
+                                    Add Bid
+                                  </span>
+                                  <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="-mr-1 w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                  </svg>
+                              </span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <li class="col-span-1">
+              <article aria-label="Product card" class="p-4 rounded-lg shadow-lg bg-zinc-800 text-amber-50 min-w-[18rem] max-w-[22rem]">
+                <div role="none" aria-label="Product card">
+                  <a href="#">
+                    <img class="rounded-lg" src="https://res.cloudinary.com/dmurhab0f/image/upload/v1669892589/milivoj-kuhar-radio-unsplash.jpg" alt=""/>
+                  </a>
+                  <div role="none" aria-label="Info about thrift and auction" class="w-12/12 mx-auto px-3">
+                    <a href="#" class="pt-2 text-xs font-semibold hover:text-cyan-200">
+                      #Tag
+                    </a>
+                    <h3 class="text-amber-200 text-xl font-semibold mb-2">
+                      Card title
+                    </h3>
+                    <section  data-profile="mini" class="w-6/12 mx-auto">
+                      <img
+                        src="https://mdbcdn.b-cdn.net/img/new/avatars/1.webp"
+                        class="rounded-full w-[32px] shadow-lg float-left mb-1 mr-1"
+                        alt="Avatar"
+                      />
+                      <p class="text-sm text-amber-100">
+                        User_Name
+                      </p>
+                      <p class="text-xs font-thin">
+                        <em>Info about user</em>
+                      </p>
+                    </section>
+                    <p class="font-inria-serif text-end text-sm font-light bg-gradient-to-r from-cyan-400 to-amber-300 text-transparent bg-clip-text hover:bg-gradient-to-t">
+                      <a href="#" class="pr-1">
+                        NameOfCharity
+                      </a>
+                      40%
+                    </p>
+                    <ul role="group" aria-label="Current bid and auction end time" class="p-2">
+                      <li class="text-center">
+                        <p class="inline-block">
+                          Currant Bid:
+                        </p>
+                        <p class="inline-block text-lg font-semibold">
+                          £146
+                        </p>
+                      </li>
+                      <li class="text-center">
+                        <p class="inline-block text-sm">
+                          Auction end:
+                        </p>
+                        <p class="inline-block text-base font-semibold">
+                          2 days
+                        </p>
+                      </li>
+                    </ul>
+                    <div role="group" aria-label="View bids and/or add a bid" class="flex flex-row justify-between items-start py-2">
+                      <details  class="text-amber-50">
+                        <summary class="inline-flex justify-center items-center gap-2 pt-2 pb-2 px-3.5 rounded-full bg-gradient-to-r from-cyan-600 via-cyan-700 to-cyan-800 hover:bg-gradient-to-br drop-shadow-sm focus:ring-2 focus:outline-none focus:ring-cyan-300">
+                        <span class="inline-block text-base font-semibold pb-0.5">
+                          View Bids
+                        </span>
+                          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="-mr-1 w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75l3 3m0 0l3-3m-3 3v-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                        </summary>
+                        <ul class="flex flex-col rounded-sm  bg-transparent mx-2 p-2">
+                          <li class="flex">
+                            <p class="flex-1">
+                              $15
+                            </p>
+                            <p class="flex-1">
+                              12h
+                            </p>
+                          </li>
+                          <li class="flex">
+                            <p class="flex-1">
+                              $15
+                            </p>
+                            <p class="flex-1">
+                              12h
+                            </p>
+                          </li>
+                          <li class="flex">
+                            <p class="flex-1">
+                              $15
+                            </p>
+                            <p class="flex-1">
+                              12h
+                            </p>
+                          </li>
+                        </ul>
+                      </details>
+                      <button  type="button" data-button="primary-outline"
+                               class="rounded-full p-0.5 text-pink-400 drop-shadow-sm group bg-gradient-to-r from-pink-400 via-pink-600 to-pink-700 group-hover:bg-gradient-to-br hover:text-pink-50 focus:ring-2 focus:outline-none focus:ring-pink-300"
+                      >
+                              <span class="inline-flex items-center gap-2 overflow-hidden py-1.5 px-3.5 transition ease-in duration-75 bg-zinc-800 rounded-full group-hover:bg-opacity-0">
+                                  <span class="inline-block text-base font-semibold pb-0.5">
+                                    Add Bid
+                                  </span>
+                                  <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="-mr-1 w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                  </svg>
+                              </span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <li class="col-span-1">
+              <article aria-label="Product card" class="p-4 rounded-lg shadow-lg bg-zinc-800 text-amber-50 min-w-[18rem] max-w-[22rem]">
+                <div role="none" aria-label="Product card">
+                  <a href="#">
+                    <img class="rounded-lg" src="https://res.cloudinary.com/dmurhab0f/image/upload/v1669892589/milivoj-kuhar-radio-unsplash.jpg" alt=""/>
+                  </a>
+                  <div role="none" aria-label="Info about thrift and auction" class="w-12/12 mx-auto px-3">
+                    <a href="#" class="pt-2 text-xs font-semibold hover:text-cyan-200">
+                      #Tag
+                    </a>
+                    <h3 class="text-amber-200 text-xl font-semibold mb-2">
+                      Card title
+                    </h3>
+                    <section  data-profile="mini" class="w-6/12 mx-auto">
+                      <img
+                        src="https://mdbcdn.b-cdn.net/img/new/avatars/1.webp"
+                        class="rounded-full w-[32px] shadow-lg float-left mb-1 mr-1"
+                        alt="Avatar"
+                      />
+                      <p class="text-sm text-amber-100">
+                        User_Name
+                      </p>
+                      <p class="text-xs font-thin">
+                        <em>Info about user</em>
+                      </p>
+                    </section>
+                    <p class="font-inria-serif text-end text-sm font-light bg-gradient-to-r from-cyan-400 to-amber-300 text-transparent bg-clip-text hover:bg-gradient-to-t">
+                      <a href="#" class="pr-1">
+                        NameOfCharity
+                      </a>
+                      40%
+                    </p>
+                    <ul role="group" aria-label="Current bid and auction end time" class="p-2">
+                      <li class="text-center">
+                        <p class="inline-block">
+                          Currant Bid:
+                        </p>
+                        <p class="inline-block text-lg font-semibold">
+                          £146
+                        </p>
+                      </li>
+                      <li class="text-center">
+                        <p class="inline-block text-sm">
+                          Auction end:
+                        </p>
+                        <p class="inline-block text-base font-semibold">
+                          2 days
+                        </p>
+                      </li>
+                    </ul>
+                    <div role="group" aria-label="View bids and/or add a bid" class="flex flex-row justify-between items-start py-2">
+                      <details  class="text-amber-50">
+                        <summary class="inline-flex justify-center items-center gap-2 pt-2 pb-2 px-3.5 rounded-full bg-gradient-to-r from-cyan-600 via-cyan-700 to-cyan-800 hover:bg-gradient-to-br drop-shadow-sm focus:ring-2 focus:outline-none focus:ring-cyan-300">
+                        <span class="inline-block text-base font-semibold pb-0.5">
+                          View Bids
+                        </span>
+                          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="-mr-1 w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75l3 3m0 0l3-3m-3 3v-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                        </summary>
+                        <ul class="flex flex-col rounded-sm  bg-transparent mx-2 p-2">
+                          <li class="flex">
+                            <p class="flex-1">
+                              $15
+                            </p>
+                            <p class="flex-1">
+                              12h
+                            </p>
+                          </li>
+                          <li class="flex">
+                            <p class="flex-1">
+                              $15
+                            </p>
+                            <p class="flex-1">
+                              12h
+                            </p>
+                          </li>
+                          <li class="flex">
+                            <p class="flex-1">
+                              $15
+                            </p>
+                            <p class="flex-1">
+                              12h
+                            </p>
+                          </li>
+                        </ul>
+                      </details>
+                      <button  type="button" data-button="primary-outline"
+                               class="rounded-full p-0.5 text-pink-400 drop-shadow-sm group bg-gradient-to-r from-pink-400 via-pink-600 to-pink-700 group-hover:bg-gradient-to-br hover:text-pink-50 focus:ring-2 focus:outline-none focus:ring-pink-300"
+                      >
+                              <span class="inline-flex items-center gap-2 overflow-hidden py-1.5 px-3.5 transition ease-in duration-75 bg-zinc-800 rounded-full group-hover:bg-opacity-0">
+                                  <span class="inline-block text-base font-semibold pb-0.5">
+                                    Add Bid
+                                  </span>
+                                  <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="-mr-1 w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                  </svg>
+                              </span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </li>
+          </ul>
+            <div class="flex justify-center">
+                <div class="flex flex-col md:flex-row md:max-w-xl rounded-lg bg-white shadow-lg">
+                    <img class=" w-full h-96 md:h-auto object-cover md:w-48 rounded-t-lg md:rounded-none md:rounded-l-lg" src="https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.jpg" alt="" />
+                    <div class="p-6 flex flex-col justify-start">
+                        <h3 class="text-gray-900 text-xl font-medium mb-2">Card title</h3>
+                        <p class="text-gray-700 text-base mb-4">
+                            This is a wider card with supporting text below as a natural lead-in to additional content. This content is a bit longer.
+                        </p>
+                        <p class="text-gray-600 text-xs">Last updated 3 mins ago</p>
+                    </div>
+                </div>
+            </div>
+        </main>
         <div role="none" class="container mx-auto p-2 bg-zinc-600 flex flex-wrap items-center justify-evenly gap-2">
           <button type="button" data-button="primary"
-            class="inline-flex justify-center items-center overflow-hidden gap-2 p-[6px_16px_6px] rounded-full transition-all ease-in duration-75 text-pink-50 bg-gradient-to-r from-pink-500 via-pink-700 to-pink-800 dropshadow-sm hover:bg-gradient-to-br focus:ring-2 focus:outline-none focus:ring-pink-300"
+                  class="inline-flex justify-center items-center overflow-hidden gap-2 p-[6px_16px_6px] rounded-full transition-all ease-in duration-75 text-pink-50 bg-gradient-to-r from-pink-500 via-pink-700 to-pink-800 dropshadow-sm hover:bg-gradient-to-br focus:ring-2 focus:outline-none focus:ring-pink-300"
           >
             <svg aria-hidden="true" class="-ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path></svg>
             <span class="text-base font-semibold pb-1">Sign Up</span>
@@ -148,43 +1103,6 @@
             </ul>
           </details>
         </div>
-
-        <main class="container mx-auto prose-h3:font-bold">
-            <h1 class="">Hello</h1>
-            <article class="flex justify-center m-sm">
-                <div class="rounded-lg shadow-lg bg-zinc-800 p-sm max-w-sm">
-                    <a href="#">
-                        <img class="rounded-t-lg" src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" alt=""/>
-                    </a>
-                  <a href="#" class="text-zinc-50 text-sm hover:text-cyan-200">#Tag</a>
-                    <div class="p-6">
-                        <h3 class="text-amber-100 mb-2">Card title</h3>
-                        <p class="text-zinc-50 mb-4">
-                            Some quick example text to build on the card title and make up the bulk of the card's
-                            content.
-                        </p>
-                        <img
-                        src="https://mdbcdn.b-cdn.net/img/new/avatars/1.webp"
-                        class="rounded-full w-[32px] shadow-lg"
-                        alt="Avatar"
-                      />
-                        <button type="button" class=" inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Button</button>
-                    </div>
-                </div>
-            </article>
-            <div class="flex justify-center">
-                <div class="flex flex-col md:flex-row md:max-w-xl rounded-lg bg-white shadow-lg">
-                    <img class=" w-full h-96 md:h-auto object-cover md:w-48 rounded-t-lg md:rounded-none md:rounded-l-lg" src="https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.jpg" alt="" />
-                    <div class="p-6 flex flex-col justify-start">
-                        <h3 class="text-gray-900 text-xl font-medium mb-2">Card title</h3>
-                        <p class="text-gray-700 text-base mb-4">
-                            This is a wider card with supporting text below as a natural lead-in to additional content. This content is a bit longer.
-                        </p>
-                        <p class="text-gray-600 text-xs">Last updated 3 mins ago</p>
-                    </div>
-                </div>
-            </div>
-        </main>
         <footer class="w-full h-auto py-10 bg-zinc-900 text-zinc-50 prose-h2:text-amber-100">
             <div role="none" aria-labelledby="container" class="container mx-auto flex flex-wrap justify-around gap-4">
                 <section class="flex flex-col justify-evenly gap-6 text-center">

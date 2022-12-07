@@ -53,15 +53,6 @@ module.exports = {
             "inria-serif": "'Inria Serif'",
             'mono': ['ui-monospace', 'SFMono-Regular',],
         },
-        fontSize: {
-            '2xs': '10px',
-            xs: '12px',
-            sm: '14px',
-            base: '16px',
-            lg: '18px',
-            xl: '21px',
-            '2xl': '24px',
-        },
         transformOrigin: {
             center: 'center',
             top: 'top',

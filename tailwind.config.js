@@ -49,9 +49,9 @@ module.exports = {
             video: '16 / 9',
         },
         fontFamily: {
-            'inter': 'Inter',
-            "inria-serif": "'Inria Serif'",
-            'mono': ['ui-monospace', 'SFMono-Regular',],
+            inter: 'Inter',
+            'inria-serif': "'Inria Serif'",
+            mono: ['ui-monospace', 'SFMono-Regular'],
         },
         transformOrigin: {
             center: 'center',
@@ -163,5 +163,9 @@ module.exports = {
             50: '50',
         },
     },
-    plugins: [require('./node_modules/flowbite/plugin'), require('@tailwindcss/typography'), require('@tailwindcss/forms'),],
+    plugins: [
+        require('./node_modules/flowbite/plugin'),
+        require('@tailwindcss/typography'),
+        require('@tailwindcss/forms'),
+    ],
 };

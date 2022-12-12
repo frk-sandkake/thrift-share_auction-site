@@ -12,9 +12,9 @@
         />
         <meta name="author" content="Linda Sandaker" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Home page | for Users of Thrift&Share | © 2022 frk.Sandkake</title>
+        <title>Single items page | for Users of Thrift&Share | © 2022 frk.Sandkake</title>
         <script type="module" src="./js/index.js" defer></script>
-        <script type="module" src="./js/getAllListings.js" defer></script>
+        <script type="module" src="./js/getListingId.js" defer></script>
     </head>
     <body class="bg-amber-50">
         <button
@@ -40,28 +40,26 @@
         </button>
         <header
             id="mobileHeader"
-            class="relative z-50 w-full h-auto bg-zinc-800 drop-shadow-sm text-zinc-50 prose-a:font-semibold"
+            class="relative z-50 w-full py-2 bg-zinc-800 drop-shadow-lg text-zinc-50 prose-a:font-semibold"
         >
             <div
                 role="none"
                 aria-labelledby="container"
-                class="w-full relative flex flex-col justify-between items-start md:flex-row md:justify-between md:items-center"
+                class="container px-2 sm:px-4 md:px-8 max-w-6xl relative h-auto flex flex-col justify-around items-start md:flex-row md:justify-between md:items-center"
             >
-                <a href="/" class="w-1/3 min-w-[132px] max-w-[180px]">
+                <a href="/" class="md:w-4/12 min-w-[132px] max-w-[204px]">
                     <img
                         src="./uploads/logo-thrift-share.svg"
                         alt="Thrift & Share logo"
                         width="594"
                         height="208"
-                        class="w-full h-auto"
+                        class="w-full"
                     />
                 </a>
-                <nav id="navBar" class="hidden md:w-2/3 md:flex md:justify-between">
-                    <ul id="menuBar" role="list" class="flex gap-4 justify-between items-center">
-                        <li>
-                            <a href="#" class="text-cyan-300 underline" aria-current="true"
-                                >Thrifts</a
-                            >
+                <nav id="navBar" class="hidden md:w-8/12 md:flex md:justify-between">
+                    <ul id="menuBar" role="list" class="flex gap-4 justify-evenly items-center">
+                        <li class="pl-4">
+                            <a href="index.html" class="hover:text-cyan-300">Thrifts</a>
                         </li>
                         <li><a href="#" class="hover:text-cyan-300">Sellers</a></li>
                         <li><a href="#" class="hover:text-cyan-300">Shares</a></li>
@@ -133,8 +131,8 @@
                     role="list"
                     class="overflow-hidden transition-all w-10/12 h-3/6 text-center py-8 bg-zinc-800"
                 >
-                    <li class="py-4 active">
-                        <a href="#" class="text-cyan-300 underline" aria-current="true">Thrifts</a>
+                    <li class="py-4">
+                        <a href="#" class="hover:text-cyan-300" aria-current="true">Thrifts</a>
                     </li>
                     <li class="py-4"><a href="#" class="hover:text-cyan-300">Sellers</a></li>
                     <li class="py-4"><a href="#" class="hover:text-cyan-300">Shares</a></li>
@@ -196,55 +194,215 @@
                 </button>
             </nav>
         </header>
-        <nav id="breadCrumb" class="" aria-label="Breadcrumb">
-            <ol class="inline-flex items-center space-x-1 md:space-x-3">
-                <li class="inline-flex items-center">
-                    <a
-                        href="/"
-                        class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
-                    >
-                        <svg
-                            class="w-[16px] h-[16px] mr-2"
-                            fill="currentColor"
-                            viewBox="0 0 20 20"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-                            <path
-                                d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"
-                            ></path>
-                        </svg>
-                        Home
-                    </a>
-                </li>
-                <li aria-current="page">
-                    <div class="flex items-center">
-                        <svg
-                            class="w-[16px] h-[16px] text-gray-400"
-                            fill="currentColor"
-                            viewBox="0 0 20 20"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-                            <path
-                                fill-rule="evenodd"
-                                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                                clip-rule="evenodd"
-                            ></path>
-                        </svg>
-                        <span
-                            class="ml-1 text-sm font-medium text-gray-500 md:ml-2 dark:text-gray-400"
-                            >All Thrifts</span
-                        >
-                    </div>
-                </li>
-            </ol>
-        </nav>
+        <nav
+            id="breadCrumb"
+            class="container px-2 sm:px-4 md:px-8 max-w-6xl"
+            aria-label="Breadcrumb"
+        ></nav>
 
-        <main class="container py-8 prose-h3:font-bold">
-            <h1 class="text-center font-bold text-4xl text-zinc-600">All Thrifts</h1>
-            <ul
-                id="allThrifts"
-                class="grid grid-cols-1 gap-4 py-8 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3 lg:gap-12"
-            ></ul>
+        <main class="container max-w-6xl">
+            <h1 id="title" class="sr-only text-center font-bold text-4xl text-zinc-600">
+                Details page
+            </h1>
+            <article
+                id="thriftArticle"
+                aria-label="Product page"
+                class="mb-8 p-2 rounded-lg shadow-lg bg-zinc-800 text-amber-50 min-w-[16rem] w-full sm:p-4 sm:mb-12 xl:p-8"
+            >
+                <div
+                    role="none"
+                    aria-label="Product item content"
+                    class="grid grid-cols-1 gap-1 justify-items-center items-center md:grid-cols-12 md:grid-rows-12 md:gap-4 lg:gap-8 xl:gap-x-12 xl:gap-y-8"
+                >
+                    <section
+                        id="imageGallery"
+                        aria-label="Image Gallery"
+                        class="w-full md:col-span-5 md:row-span-3"
+                    >
+                        <img
+                            class="rounded-lg object-cover "
+                            src="https://res.cloudinary.com/dmurhab0f/image/upload/v1669892589/milivoj-kuhar-radio-unsplash.jpg"
+                            alt="Default image"
+                        />
+                        <ul
+                            id="thumbNails"
+                            role="group"
+                            aria-label="Thumbnails"
+                            class="inline-flex gap-1 py-2 w-full h-24"
+                        >
+                            <img
+                                class="rounded-lg object-cover w-full h-auto"
+                                src="https://res.cloudinary.com/dmurhab0f/image/upload/v1669892589/milivoj-kuhar-radio-unsplash.jpg"
+                                alt="Default image"
+                            />
+                            <img
+                                class="rounded-lg object-cover w-full h-auto"
+                                src="https://res.cloudinary.com/dmurhab0f/image/upload/v1669892589/milivoj-kuhar-radio-unsplash.jpg"
+                                alt="Default image"
+                            />
+                            <img
+                                class="rounded-lg object-cover w-full h-auto"
+                                src="https://res.cloudinary.com/dmurhab0f/image/upload/v1669892589/milivoj-kuhar-radio-unsplash.jpg"
+                                alt="Default image"
+                            />
+                            <img
+                                class="rounded-lg object-cover w-full h-auto"
+                                src="https://res.cloudinary.com/dmurhab0f/image/upload/v1669892589/milivoj-kuhar-radio-unsplash.jpg"
+                                alt="Default image"
+                            />
+                        </ul>
+                    </section>
+                    <section
+                        aria-label="Info about thrift and auction"
+                        class="px-4 w-full sm:w-10/12 sm:px-8 md:col-span-7 md:row-span-5 md:px-8 md:py-4 lg:px-12"
+                    >
+                        <ul id="tagLinksWrapper" role="group">
+                            <li>
+                                <a
+                                    aria-label="Tags"
+                                    href="#"
+                                    class="pt-2 text-sm capitalize font-semibold hover:text-cyan-200 md:text-base"
+                                    >#Tag</a
+                                >
+                            </li>
+                        </ul>
+                        <h2
+                            id="itemsTitle"
+                            class="text-amber-200 text-xl font-semibold mb-3 md:text-2xl"
+                        >
+                            Thrift title
+                        </h2>
+                        <section id="description" class="sm:p-4">
+                            <h3 class="pb-2 text-lg font-semibold text-amber-10">Description:</h3>
+                            <p id="descriptionBody" class="text-sm text-amber-50"></p>
+                        </section>
+                        <ul role="group" aria-label="Auction and Charity info" class="py-6">
+                            <li aria-label="Chosen charity and percent" class="text-center py-2">
+                                <p class="inline-block text-base">Charity:</p>
+                                <p
+                                    class="inline-block font-inria-serif text-base font-light bg-gradient-to-r from-cyan-400 to-amber-300 text-transparent bg-clip-text hover:bg-gradient-to-t"
+                                >
+                                    <a href="#" class="pr-1">NameOfCharity</a>
+                                    40%
+                                </p>
+                            </li>
+                            <li aria-label="Current Bid" class="text-center pb-2">
+                                <p class="inline-block text-lg">Currant Bid:</p>
+                                <p id="currentBid" class="inline-block text-xl font-semibold"></p>
+                            </li>
+                            <li aria-label="Auction end time" class="text-center pb-2">
+                                <p class="inline-block text-lg">Auction end:</p>
+                                <p id="timeEndsAt" class="inline-block text-lg font-semibold"></p>
+                            </li>
+                        </ul>
+                        <div
+                            role="group"
+                            aria-label="View bids and/or add a bid"
+                            class="flex flex-row justify-between items-start py-2 sm:justify-evenly sm:py-4 md:py-8"
+                        >
+                            <details
+                                id="viewBids"
+                                aria-label="View bids history"
+                                class="cursor-pointer text-amber-50"
+                            >
+                                <summary
+                                    class="inline-flex justify-center items-center gap-2 pt-2 pb-2 px-6 rounded-full bg-gradient-to-r from-cyan-600 via-cyan-700 to-cyan-800 hover:bg-gradient-to-br drop-shadow-sm focus:ring-2 focus:outline-none focus:ring-cyan-300"
+                                >
+                                    <span
+                                        id="bidCounts"
+                                        class="text-sm inline-block font-semibold pb-0.5 sm:text-base"
+                                    >
+                                    </span>
+                                    <svg
+                                        aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke-width="1.5"
+                                        stroke="currentColor"
+                                        class="-mr-1 w-6 h-6"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            d="M9 12.75l3 3m0 0l3-3m-3 3v-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                                        />
+                                    </svg>
+                                </summary>
+                                <ul
+                                    id="bidderListUL"
+                                    role="list"
+                                    aria-label="Bidders and amount"
+                                    class="flex flex-col gap-1 bg-transparent mx-1 p-1"
+                                ></ul>
+                            </details>
+                            <button
+                                id="addBid"
+                                type="button"
+                                data-button="primary-outline"
+                                class="rounded-full p-0.5 text-pink-400 drop-shadow-sm group bg-gradient-to-r from-pink-400 via-pink-600 to-pink-700 group-hover:bg-gradient-to-br hover:text-pink-50 focus:ring-2 focus:outline-none focus:ring-pink-300"
+                            >
+                                <span
+                                    class="inline-flex items-center gap-2 overflow-hidden py-1.5 px-3.5 transition ease-in duration-75 bg-zinc-800 rounded-full group-hover:bg-opacity-0"
+                                >
+                                    <span
+                                        class="inline-block text-sm font-semibold pb-0.5 sm:text-base"
+                                    >
+                                        Add Bid
+                                    </span>
+                                    <svg
+                                        aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke-width="1.5"
+                                        stroke="currentColor"
+                                        class="-mr-1 w-6 h-6"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
+                                        />
+                                    </svg>
+                                </span>
+                            </button>
+                        </div>
+                    </section>
+                    <section
+                        id="sellerProfile"
+                        data-profile="mini"
+                        class="col-span-1 py-8 sm:py-10 md:col-span-5 md:row-span-1"
+                    >
+                        <h3 class="sr-only text-lg font-semibold text-amber-100">Seller:</h3>
+                        <div
+                            role="group"
+                            aria-label="Profile Info"
+                            class="px-4 grid grid-cols-5 sm:grid-cols-6 gap-1 items-center md:grid-cols-4"
+                        >
+                            <div
+                                id="sellerAvatar"
+                                class="col-start-2 col-end-3 row-span-3 rounded-md w-16 h-16 shadow-lg sm:col-start-3 sm:col-end-4 sm:w-24 sm:h-24 md:w-28 md:h-28 md:col-span-2"
+                            >
+                                <img
+                                    src="https://mdbcdn.b-cdn.net/img/new/avatars/1.webp"
+                                    class="object-cover"
+                                    alt="Avatar"
+                                />
+                            </div>
+                            <div
+                                id="sellerInfo"
+                                class="col-start-3 col-end-5 row-span-3 sm:col-start-4 sm:col-end-6 md:col-span-2"
+                            >
+                                <p class="text-base text-amber-100 sm:text-lg"></p>
+                                <p class="text-xs font-thin">
+                                    <em>Some info about the seller and favorite charities</em>
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </article>
             <div id="errorMessage"></div>
             <div class="flex justify-center">
                 <div class="flex flex-col md:flex-row md:max-w-xl rounded-lg bg-white shadow-lg">
@@ -285,24 +443,6 @@
                     ></path>
                 </svg>
                 <span class="text-base font-semibold pb-1">Sign Up</span>
-            </button>
-            <button
-                type="button"
-                data-button="primary-outline"
-                class="inline-flex justify-center items-center overflow-hidden gap-sm p-[6px_16px_4px] rounded-[36px] transition-all ease-in duration-75 text-pink-500 border-2 border-solid border-pink-600 shadow-sm hover:text-pink-50 hover:bg-pink-600 focus:ring-2 focus:outline-none focus:ring-pink-300"
-            >
-                <svg
-                    aria-hidden="true"
-                    class="-ml-sm w-[16px] h-[16px]"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
-                    <path
-                        d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"
-                    ></path>
-                </svg>
-                <span class="text-base font-semibold leading-5 pb-xs">Sign Up</span>
             </button>
             <button
                 type="button"

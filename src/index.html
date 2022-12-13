@@ -12,7 +12,7 @@
         />
         <meta name="author" content="Linda Sandaker" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Home page | for Users of Thrift&Share | © 2022 frk.Sandkake</title>
+        <title> Home page | for Users and Guests of Thrift&Share | © 2022 frk.Sandkake</title>
         <script type="module" src="./js/index.js" defer></script>
         <script type="module" src="./js/getAllListings.js" defer></script>
     </head>
@@ -238,7 +238,73 @@
                 </li>
             </ol>
         </nav>
-
+        <section class="container mx-auto py-6 w-10/12 rounded-lg drop-shadow-lg bg-zinc-800 text-amber-50 text-center sm:w-sm max-w-xl">
+            <form id="signUpForm" class="flex flex-col items-center gap-4">
+                <h2 class="text-xl font-semibold font-inria-serif w-full text-center text-cyan-500"><em>Sign up for a thrift adventure</em></h2>
+                <fieldset class="flex flex-col justify-center gap-4 pt-4 pb-8 sm:flex-wrap sm:flex-row sm:justify-evenly sm:gap-6">
+                    <legend class="w-full text-center text-amber-200 font-regular text-lg py-2">Create new user:</legend>
+                    <div role="group" aria-label="Create user name" class="relative flex flex-col min-w-sm px-2">
+                        <input id="userName" name="userName" class="peer drop-shadow-sm rounded-sm border-0 border-b-2 border-cyan-100 placeholder-transparent bg-transparent focus:outline-none focus:ring-0 focus:border-fuchsia-600 invalid:border-amber-800" placeholder="Your username (Required)" type="text"  >
+                        <label for="userName" class="absolute left-3 -top-3.5 text-zinc-300 transition-all peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-zinc-300 peer-focus:text-sm">Your username (Required)</label>
+                        <span id="errorName" class="hidden py-2 text-sm text-red-500" aria-errormessage="userName" aria-live="polite">Please choose a User Name</span>
+                    </div>
+                    <div role="group" aria-label="Enter email address" class="relative flex flex-col min-w-sm px-2">
+                        <input id="emailSignUp" name="emailSignUp" class="peer drop-shadow-sm rounded-sm border-0 border-b-2 border-cyan-100 placeholder-transparent bg-transparent focus:outline-none focus:ring-0 focus:border-fuchsia-600 invalid:border-amber-800" placeholder="Email address (Required)" type="text"  >
+                        <label for="emailSignUp" class="absolute left-3 -top-3.5 text-zinc-300 transition-all peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-zinc-300 peer-focus:text-sm">Email address (Required)</label>
+                        <span id="errorEmailSignUp" class="hidden py-2 text-sm text-red-500" aria-errormessage="emailSignUp" aria-live="polite">Please enter your Noroff provided email address</span>
+                    </div>
+                    <div role="group" aria-label="Create password" class="relative flex flex-col min-w-sm px-2">
+                        <input id="passwordCreate" name="passwordCreate" class="peer drop-shadow-sm rounded-sm border-0 border-b-2 border-cyan-100 placeholder-transparent bg-transparent focus:outline-none focus:ring-0 focus:border-fuchsia-600 invalid:border-amber-800" placeholder="Create new password (Required)" type="password"  >
+                        <label for="passwordCreate" class="absolute left-3 -top-3.5 text-zinc-300 transition-all peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-zinc-300 peer-focus:text-sm">Create new password (Required)</label>
+                        <span id="errorPasswordCreate" class="hidden py-2 text-sm text-red-500" aria-errormessage="passwordCreate" aria-live="polite">Please create a password with minimum 8 characters</span>
+                    </div>
+                    <div role="group" aria-label="Verify password" class="relative flex flex-col min-w-sm px-2">
+                        <input id="passwordVerify" name="passwordVerify" class="peer drop-shadow-sm rounded-sm border-0 border-b-2 border-cyan-100 placeholder-transparent bg-transparent focus:outline-none focus:ring-0 focus:border-fuchsia-600 invalid:border-amber-800" placeholder="Verify your password (Required)" type="password"  >
+                        <label for="passwordVerify" class="absolute left-3 -top-3.5 text-zinc-300 transition-all peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-zinc-300 peer-focus:text-sm">Verify your password (Required)</label>
+                        <span id="errorPasswordVerify" class="hidden py-2 text-sm text-red-500" aria-errormessage="passwordVerify" aria-live="polite">Both passwords must be the same</span>
+                    </div>
+                </fieldset>
+                <button
+                  id="signUpBtn"
+                  type="submit"
+                  data-button="primary"
+                  class="w-64  inline-flex justify-center items-center overflow-hidden gap-2 p-[6px_16px_6px] rounded-full transition-all ease-in duration-75 text-pink-50 bg-gradient-to-r from-pink-400 via-pink-600 to-pink-700 dropshadow-sm hover:bg-gradient-to-br focus:ring-2 focus:outline-none focus:ring-pink-300"
+                >
+                    <span class="text-base font-semibold pb-1">Sign Up</span>
+                </button>
+                <div role="group" aria-label="Checkbox">
+                    <input type="checkbox" name="termsConditions" id="termsConditions" class="rounded-sm border-amber-800 bg-zinc-100">
+                    <label for="termsConditions" class="text-xs text-zinc-300">Accept terms and conditions</label>
+                </div>
+            </form>
+            <section aria-label="To logIn form" class="py-8 inline-block">
+                <h3 class="inline-block">Or go to user...</h3>
+                <button
+                  id="logInBtn"
+                  type="button"
+                  data-button="secondary-outline"
+                  class="inline-block rounded-full p-[2px_2px] text-cyan-300 group bg-gradient-to-r from-cyan-400 via-cyan-600 to-cyan-700 hover:bg-gradient-to-br hover:text-amber-50 shadow-sm focus:ring-2 focus:outline-none focus:ring-cyan-300"
+                >
+                    <span role="group"
+                         class="inline-flex justify-center items-center gap-1 overflow-hidden p-[2px_18px] transition-all ease-in duration-75 bg-zinc-800 rounded-full group-hover:bg-opacity-0"
+                    >
+                        <span class="text-base font-semibold pb-1">Log In</span>
+                        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="-mr-1 w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12.75 15l3-3m0 0l-3-3m3 3h-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </span>
+                </button>
+                <a href="./index.html" aria-label="HomeLink">
+                    <img
+                      src="./uploads/logo-thrift-share.svg"
+                      alt="Thrift & Share logo"
+                      width="594"
+                      height="208"
+                      class="my-8 object-cover min-w-[132px] max-w-[196px]"
+                    />
+                </a>
+            </section>
+        </section>
         <main class="container py-8 prose-h3:font-bold">
             <h1 class="text-center font-bold text-4xl text-zinc-600">All Thrifts</h1>
             <ul
@@ -264,28 +330,11 @@
                 </div>
             </div>
         </main>
+
         <div
             role="none"
             class="container mx-auto p-2 bg-zinc-600 flex flex-wrap items-center justify-evenly gap-2"
         >
-            <button
-                type="button"
-                data-button="primary"
-                class="inline-flex justify-center items-center overflow-hidden gap-2 p-[6px_16px_6px] rounded-full transition-all ease-in duration-75 text-pink-50 bg-gradient-to-r from-pink-500 via-pink-700 to-pink-800 dropshadow-sm hover:bg-gradient-to-br focus:ring-2 focus:outline-none focus:ring-pink-300"
-            >
-                <svg
-                    aria-hidden="true"
-                    class="-ml-2 w-4 h-4"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
-                    <path
-                        d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"
-                    ></path>
-                </svg>
-                <span class="text-base font-semibold pb-1">Sign Up</span>
-            </button>
             <button
                 type="button"
                 data-button="primary-outline"
@@ -344,61 +393,8 @@
                 </svg>
                 <span class="text-base font-semibold pb-1">Sign Up</span>
             </button>
-            <button
-                type="button"
-                data-button="secondary-outline"
-                class="rounded-full p-[2px_2px] text-cyan-300 group bg-gradient-to-r from-cyan-400 via-cyan-600 to-cyan-700 hover:bg-gradient-to-br hover:text-amber-50 shadow-sm focus:ring-2 focus:outline-none focus:ring-cyan-300"
-            >
-                <span
-                    class="inline-flex justify-center items-center gap-1 overflow-hidden p-[2px_16px_2px] transition-all ease-in duration-75 bg-zinc-800 rounded-full group-hover:bg-opacity-0"
-                >
-                    <svg
-                        aria-hidden="true"
-                        class="-ml-1 w-4 h-4"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <path
-                            d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"
-                        ></path>
-                    </svg>
-                    <span class="text-base font-semibold pb-1">Sign Up</span>
-                </span>
-            </button>
-            <details class="text-zinc-800">
-                <summary
-                    class="inline-flex justify-center items-center overflow-hidden gap-2 p-[4px_16px_10px] rounded-full text-amber-50 bg-gradient-to-r from-cyan-600 via-cyan-700 to-cyan-800 hover:bg-gradient-to-br drop-shadow-sm focus:ring-2 focus:outline-none focus:ring-cyan-300 prose-base font-semibold pb-1"
-                >
-                    View Bids
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                        class="-mr-2 w-6 h-6"
-                    >
-                        <path
-                            fill-rule="evenodd"
-                            d="M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 111.06 1.06l-7.5 7.5z"
-                            clip-rule="evenodd"
-                        />
-                    </svg>
-                </summary>
-                <ul class="flex flex-col rounded-sm bg-amber-50 mx-2 px-2">
-                    <li class="flex">
-                        <p class="flex-1">$15</p>
-                        <p class="flex-1">12h</p>
-                    </li>
-                    <li class="flex">
-                        <p class="flex-1">$15</p>
-                        <p class="flex-1">12h</p>
-                    </li>
-                    <li class="flex">
-                        <p class="flex-1">$15</p>
-                        <p class="flex-1">12h</p>
-                    </li>
-                </ul>
-            </details>
+
+
         </div>
         <footer class="w-full h-auto py-10 bg-zinc-900 text-zinc-50 prose-h2:text-amber-100">
             <div

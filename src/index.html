@@ -15,6 +15,8 @@
         <title> Home page | for Users and Guests of Thrift&Share | © 2022 frk.Sandkake</title>
         <script type="module" src="./js/index.js" defer></script>
         <script type="module" src="./js/getAllListings.js" defer></script>
+        <script type="module" src="./js/signUpUser.js" defer></script>
+
     </head>
     <body class="bg-amber-50">
         <button
@@ -243,25 +245,25 @@
                 <h2 class="text-xl font-semibold font-inria-serif w-full text-center text-cyan-500"><em>Sign up for a thrift adventure</em></h2>
                 <fieldset class="flex flex-col justify-center gap-4 pt-4 pb-8 sm:flex-wrap sm:flex-row sm:justify-evenly sm:gap-6">
                     <legend class="w-full text-center text-amber-200 font-regular text-lg py-2">Create new user:</legend>
-                    <div role="group" aria-label="Create user name" class="relative flex flex-col min-w-sm px-2">
+                    <div role="group" aria-label="Create user name" class="relative flex flex-col w-[250px] px-2">
                         <input id="userName" name="userName" class="peer drop-shadow-sm rounded-sm border-0 border-b-2 border-cyan-100 placeholder-transparent bg-transparent focus:outline-none focus:ring-0 focus:border-fuchsia-600 invalid:border-amber-800" placeholder="Your username (Required)" type="text"  >
-                        <label for="userName" class="absolute left-3 -top-3.5 text-zinc-300 transition-all peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-zinc-300 peer-focus:text-sm">Your username (Required)</label>
-                        <span id="errorName" class="hidden py-2 text-sm text-red-500" aria-errormessage="userName" aria-live="polite">Please choose a User Name</span>
+                        <label for="userName" class="absolute left-3 -top-3.5 text-zinc-300 transition-all peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-zinc-300 peer-focus:text-sm">Your username <span class="text-xs">(Required)</span></label>
+                        <span id="errorName" class="hidden py-2 text-sm text-red-500" aria-errormessage="userName" aria-live="polite">Minimum 3 characters</span>
                     </div>
-                    <div role="group" aria-label="Enter email address" class="relative flex flex-col min-w-sm px-2">
+                    <div role="group" aria-label="Enter email address" class="relative flex flex-col w-[250px] px-2">
                         <input id="emailSignUp" name="emailSignUp" class="peer drop-shadow-sm rounded-sm border-0 border-b-2 border-cyan-100 placeholder-transparent bg-transparent focus:outline-none focus:ring-0 focus:border-fuchsia-600 invalid:border-amber-800" placeholder="Email address (Required)" type="text"  >
-                        <label for="emailSignUp" class="absolute left-3 -top-3.5 text-zinc-300 transition-all peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-zinc-300 peer-focus:text-sm">Email address (Required)</label>
-                        <span id="errorEmailSignUp" class="hidden py-2 text-sm text-red-500" aria-errormessage="emailSignUp" aria-live="polite">Please enter your Noroff provided email address</span>
+                        <label for="emailSignUp" class="absolute left-3 -top-3.5 text-zinc-300 transition-all peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-zinc-300 peer-focus:text-sm">Email address <span class="text-xs">(Required)</span></label>
+                        <span id="errorEmailSignUp" class="hidden py-2 text-sm text-red-500" aria-errormessage="emailSignUp" aria-live="polite">Noroff email only</span>
                     </div>
-                    <div role="group" aria-label="Create password" class="relative flex flex-col min-w-sm px-2">
+                    <div role="group" aria-label="Create password" class="relative flex flex-col w-[250px] px-2">
                         <input id="passwordCreate" name="passwordCreate" class="peer drop-shadow-sm rounded-sm border-0 border-b-2 border-cyan-100 placeholder-transparent bg-transparent focus:outline-none focus:ring-0 focus:border-fuchsia-600 invalid:border-amber-800" placeholder="Create new password (Required)" type="password"  >
-                        <label for="passwordCreate" class="absolute left-3 -top-3.5 text-zinc-300 transition-all peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-zinc-300 peer-focus:text-sm">Create new password (Required)</label>
-                        <span id="errorPasswordCreate" class="hidden py-2 text-sm text-red-500" aria-errormessage="passwordCreate" aria-live="polite">Please create a password with minimum 8 characters</span>
+                        <label for="passwordCreate" class="absolute left-3 -top-3.5 text-zinc-300 transition-all peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-zinc-300 peer-focus:text-sm">Create new password <span class="text-xs">(Required)</span></label>
+                        <span id="errorPasswordCreate" class="hidden py-2 text-sm text-red-500" aria-errormessage="passwordCreate" aria-live="polite">Minimum 8 characters</span>
                     </div>
-                    <div role="group" aria-label="Verify password" class="relative flex flex-col min-w-sm px-2">
+                    <div role="group" aria-label="Verify password" class="relative flex flex-col w-[250px] px-2">
                         <input id="passwordVerify" name="passwordVerify" class="peer drop-shadow-sm rounded-sm border-0 border-b-2 border-cyan-100 placeholder-transparent bg-transparent focus:outline-none focus:ring-0 focus:border-fuchsia-600 invalid:border-amber-800" placeholder="Verify your password (Required)" type="password"  >
-                        <label for="passwordVerify" class="absolute left-3 -top-3.5 text-zinc-300 transition-all peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-zinc-300 peer-focus:text-sm">Verify your password (Required)</label>
-                        <span id="errorPasswordVerify" class="hidden py-2 text-sm text-red-500" aria-errormessage="passwordVerify" aria-live="polite">Both passwords must be the same</span>
+                        <label for="passwordVerify" class="absolute left-3 -top-3.5 text-zinc-300 transition-all peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-zinc-300 peer-focus:text-sm">Verify your password <span class="text-xs">(Required)</span></label>
+                        <span id="errorPasswordVerify" class="hidden py-2 text-sm text-red-500" aria-errormessage="passwordVerify" aria-live="polite">Passwords doesn't match</span>
                     </div>
                 </fieldset>
                 <button
@@ -276,6 +278,7 @@
                     <input type="checkbox" name="termsConditions" id="termsConditions" class="rounded-sm border-amber-800 bg-zinc-100">
                     <label for="termsConditions" class="text-xs text-zinc-300">Accept terms and conditions</label>
                 </div>
+                <div id="errorMessageSignUp"></div>
             </form>
             <section aria-label="To logIn form" class="py-8 inline-block">
                 <h3 class="inline-block">Or go to user...</h3>

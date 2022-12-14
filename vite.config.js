@@ -6,6 +6,7 @@ export default {
         rollupOptions: {
             input: {
                 home: resolve(__dirname, 'src/index.html'),
+                single: resolve(__dirname, 'src/single-item.html'),
             },
         },
         outDir: '../dist',

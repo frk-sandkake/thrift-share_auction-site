@@ -1,6 +1,6 @@
 import { POST_LOGIN_URL } from './settings/api';
 import { checkLength, emailValid } from './utils/validation';
-import { saveToken, saveUserToStorage } from "./utils/storage";
+import { saveToken, saveUserToStorage } from './utils/storage';
 import postLogIn from './utils/fetchLogin';
 
 const logInForm = document.getElementById('logInForm');
@@ -41,7 +41,7 @@ function checkInputsLogIn() {
     return validLogInInput;
 }
 
-if(logInForm) {
+if (logInForm) {
     logInForm.addEventListener('submit', (e) => {
         e.preventDefault();
 
@@ -50,17 +50,19 @@ if(logInForm) {
                 email: email.value,
                 password: password.value,
             };
-           // async fetch in /utils/fetchLogin.js
+            // async fetch in /utils/fetchLogin.js
             const USER_LOGIN_URL_ENDPOINT = `${POST_LOGIN_URL}`;
-            postLogIn(userData, USER_LOGIN_URL_ENDPOINT).then((logInUserData) => {
-                saveToken(logInUserData.accessToken);
-                saveUserToStorage(logInUserData.userToSave);
-                location.href = '/index.html';
-            }).catch((errMessage) => {
-                errorMessage.innerHTML = `${errMessage}`;
-            })
+            postLogIn(userData, USER_LOGIN_URL_ENDPOINT)
+                .then((logInUserData) => {
+                    saveToken(logInUserData.accessToken);
+                    saveUserToStorage(logInUserData.userToSave);
+                    location.href = '/index.html';
+                })
+                .catch((errMessage) => {
+                    errorMessage.innerHTML = `${errMessage}`;
+                });
         } else {
-            errorMessage.innerHTML = 'Did you forget something? :)'
+            errorMessage.innerHTML = 'Did you forget something? :)';
         }
     });
 }

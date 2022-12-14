@@ -1,5 +1,5 @@
 import { GET_LISTINGS_URL } from './settings/api';
-import { timeFormat } from './utils/timeDateFormat';
+import timeFormat from './utils/timeDateFormat';
 import getCrumbs from './components/breadCrumbNav';
 
 const errorMessage = document.querySelector('#errorMessage');

@@ -6,4 +6,4 @@ function timeFormat(input) {
     });
 }
 
-export { timeFormat };
+export default timeFormat;

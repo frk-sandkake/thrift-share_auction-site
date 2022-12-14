@@ -4,8 +4,7 @@ function getCrumbs(thriftData) {
     breadCrumbs.innerHTML = '';
     if (breadCrumbs.id) {
         const { title } = thriftData;
-        let crumbLinks;
-        crumbLinks = `
+        const crumbLinks = `
             <li class="text-sm font-semibold">
                 <a href="/index.html" class="${
                     pathname === '/index.html'

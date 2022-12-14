@@ -1,4 +1,4 @@
-import { timeFormat } from './utils/timeDateFormat';
+import timeFormat from './utils/timeDateFormat';
 import { GET_12_LISTINGS_BIDS_TAGS_URL } from './settings/api';
 
 const allThriftsUl = document.getElementById('allThrifts');

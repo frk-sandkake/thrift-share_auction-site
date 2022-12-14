@@ -1,42 +1,54 @@
 import '../style.css';
+import createNavMobile from "./components/mobileNav";
+import createNavDesktop from './components/headerNav';
+import { clearDataFromStorage } from "./utils/storage";
 import { menuOpen, menuClose } from './utils/mobileNavControll';
 
+createNavMobile();
+createNavDesktop();
+
+const logOutBtn = document.getElementById('logoutBtn');
+
+function logOutUser() {
+    clearDataFromStorage();
+    window.location.replace('/index.html');
+}
+
+if(logOutBtn) {
+    logOutBtn.addEventListener('click', () => {
+        logOutUser();
+    });
+}
 const burgerBtn = document.getElementById('hamburger');
 burgerBtn.addEventListener('click', menuOpen);
 
 const closeNavBtn = document.getElementById('closeNavBtn');
 closeNavBtn.addEventListener('click', menuClose);
 
-const logInBtn = document.querySelectorAll('.login-btn');
+const logInBtn = document.querySelectorAll('#loginBtn, .login-btn');
+const signUpBtn = document.querySelectorAll('#signupBtn, .signup-btn');
+const logInModal = document.getElementById('loginModal');
+const signUpModal = document.getElementById('signupModal');
+const closeModalBtn = document.querySelectorAll('.exit-modal');
 
 logInBtn.forEach((trigger) => {
-    trigger.addEventListener('click', (e) => {
-        e.preventDefault();
-        const logInModal = document.getElementById('loginModal');
+    trigger.addEventListener('click', () => {
         logInModal.classList.remove('hidden');
-        const closeModalBtn = document.querySelectorAll('.exit-modal');
-        closeModalBtn.forEach((closeModalBtn) => {
-            closeModalBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                logInModal.classList.add('hidden');
-            });
-        });
+        signUpModal.classList.add('hidden');
+
     });
 });
 
-const signUpBtn = document.querySelectorAll('.signup-btn');
-
 signUpBtn.forEach((trigger) => {
-    trigger.addEventListener('click', (e) => {
-        e.preventDefault();
-        const signUpModal = document.getElementById('signupModal');
+    trigger.addEventListener('click', () => {
         signUpModal.classList.remove('hidden');
-        const closeModalBtn = document.querySelectorAll('.exit-modal');
-        closeModalBtn.forEach((closeModalBtn) => {
-            closeModalBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                signUpModal.classList.add('hidden');
-            });
-        });
+        logInModal.classList.add('hidden');
+    });
+});
+
+closeModalBtn.forEach((closeModalBtn) => {
+    closeModalBtn.addEventListener('click', () => {
+        logInModal.classList.add('hidden');
+        signUpModal.classList.add('hidden');
     });
 });

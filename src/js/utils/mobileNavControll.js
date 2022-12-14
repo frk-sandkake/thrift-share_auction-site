@@ -2,13 +2,13 @@ const navMenuMobile = document.getElementById('navMobile');
 const mobileHeader = document.getElementById('mobileHeader');
 
 function menuOpen() {
-    navMenuMobile.style.width = '100%';
+    navMenuMobile.style.height = '100vh';
     mobileHeader.style.position = 'fixed';
-    mobileHeader.style.top = '0';
+
 }
 
 function menuClose() {
-    navMenuMobile.style.width = '0';
+    navMenuMobile.style.height = '64px';
     mobileHeader.style.position = 'relative';
 }
 

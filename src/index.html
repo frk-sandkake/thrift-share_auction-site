@@ -42,139 +42,76 @@
             <span class="sr-only">Back to top</span>
         </button>
         <header
-            id="mobileHeader"
-            class="relative z-50 w-full h-auto bg-zinc-800 drop-shadow-sm text-zinc-50 prose-a:font-semibold"
+            class="relative z-50 w-full bg-zinc-800 drop-shadow-sm text-zinc-50 font-semibold prose-a:font-semibold"
         >
             <div
-                role="none"
+              id="desktopHeader"
+                role="presentation"
                 aria-labelledby="container"
-                class="container px-2 sm:px-4 md:px-8 max-w-6xl relative h-auto flex flex-col justify-around md:flex-row md:justify-between md:items-center"
+                class="container px-2 sm:px-4 max-w-6xl relative h-auto flex flex-col justify-around sm:flex-row sm:justify-between md:items-center"
             >
-                <a href="/" class="w-1/3 min-w-[132px] max-w-[180px]">
-                    <img
-                        src="./uploads/logo-thrift-share.svg"
-                        alt="Thrift & Share logo"
-                        width="594"
-                        height="208"
-                        class="w-full h-auto"
-                    />
-                </a>
-                <nav id="navBar" class="hidden md:w-8/12 md:flex md:justify-between">
-                    <ul id="menuBar" role="list" class="flex gap-4 justify-evenly items-center">
-                        <li class="pl-4">
-                            <a href="/" class="text-cyan-300 underline" aria-current="true"
-                                >Thrifts</a
-                            >
-                        </li>
-                        <li><a href="#" class="hover:text-cyan-300">Sellers</a></li>
-                        <li><a href="#" class="hover:text-cyan-300">Shares</a></li>
-                        <li><a href="#" class="hover:text-cyan-300">About Us</a></li>
-                    </ul>
-                    <ul
-                        id="userMenuBar"
-                        role="group"
-                        class="flex flex-row gap-4 justify-between items-center"
-                    >
-                        <li>
-                            <button
-                                type="button"
-                                aria-controls="loginModal"
-                                class="login-btn text-zinc-50 hover:text-cyan-300"
-                            >
-                                Log In
-                            </button>
-                        </li>
-                        <li>
-                            <button
-                                type="button"
-                                aria-controls="signupModal"
-                                class="signup-btn p-[6px_16px_8px] rounded-full text-base font-semibold transition-all ease-in duration-75 text-pink-50 bg-gradient-to-r from-pink-500 via-pink-700 to-pink-800 dropshadow-sm hover:bg-gradient-to-br focus:ring-2 focus:outline-none focus:ring-pink-300"
-                            >   Sign Up
-                            </button>
-                        </li>
-                    </ul>
+                <nav id="navBar" class="hidden md:w-full md:flex md:justify-between">
                 </nav>
+            </div>
+            <div id="mobileHeader" role="presentation" class="relative z-50 w-full bg-zinc-800 drop-shadow-sm">
+                    <a role="link" href="index.html" class=""
+                    >
+                        <img
+                          src="/logo-thrift-share.svg"
+                          alt="Thrift & Share logo"
+                          width="594"
+                          height="208"
+                          class="min-w-[132px] max-w-[196px] max-h-[96px]"
+                        />
+                        <span class="sr-only">Logo</span>
+                    </a>
+
                 <button
-                    type="button"
-                    id="hamburger"
-                    aria-haspopup="true"
-                    aria-controls="navMobile"
-                    class="absolute top-0 right-0 md:hidden text-zinc-50 hover:text-cyan-300"
+                  type="button"
+                  id="hamburger"
+                  aria-haspopup="true"
+                  aria-controls="navMobile"
+                  class="absolute z-30 top-0 right-0 md:hidden text-zinc-50 hover:text-cyan-300"
                 >
                     <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                        class="w-8 h-8 m-2 sm:m-4"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      class="w-8 h-8 m-2 sm:m-4"
                     >
                         <path
-                            fill-rule="evenodd"
-                            d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75H12a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm0 5.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75z"
-                            clip-rule="evenodd"
+                          fill-rule="evenodd"
+                          d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75H12a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm0 5.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75z"
+                          clip-rule="evenodd"
                         />
                     </svg>
                 </button>
             </div>
             <nav
                 id="navMobile"
-                class="fixed z-30 h-screen w-0 top-11 left-0 overflow-x-hidden transition-all flex flex-col justify-around items-center bg-zinc-800 bg-opacity-60 md:hidden"
+                class="fixed z-30 top-0 overflow-y-auto transition-all flex flex-col justify-between items-center bg-zinc-800 bg-opacity-60 md:hidden"
             >
-                <ul
-                    id="menuMobile"
-                    role="list"
-                    class="overflow-hidden transition-all w-10/12 h-3/6 text-center py-8 bg-zinc-800"
-                >
-                    <li class="py-4">
-                        <a href="/" class="text-cyan-300 underline" aria-current="true">Thrifts</a>
-                    </li>
-                    <li class="py-4"><a href="#" class="hover:text-cyan-300">Sellers</a></li>
-                    <li class="py-4"><a href="#" class="hover:text-cyan-300">Shares</a></li>
-                    <li class="py-4"><a href="#" class="hover:text-cyan-300">About Us</a></li>
-                </ul>
-                <ul
-                    id="userMenuMobile"
-                    role="group"
-                    class="overflow-hidden transition-all w-10/12 h-3/6 text-center py-8 bg-zinc-800"
-                >
-                    <li class="py-4">
-                        <button
-                            type="button"
-                            aria-controls="loginModal"
-                            class="login-btn text-zinc-50 hover:text-cyan-300"
-                        >
-                            Log In
-                        </button>
-                    </li>
-                    <li class="pb-4">
-                        <button
-                          type="button"
-                          aria-controls="signupModal"
-                          class="signup-btn p-[6px_16px_8px] rounded-full text-base font-semibold transition-all ease-in duration-75 text-pink-50 bg-gradient-to-r from-pink-500 via-pink-700 to-pink-800 dropshadow-sm hover:bg-gradient-to-br focus:ring-2 focus:outline-none focus:ring-pink-300"
-                        >   Sign Up
-                        </button>
-                    </li>
-                </ul>
-                <button
-                    id="closeNavBtn"
-                    type="button"
-                    aria-controls="navMobile"
-                    class="absolute z-50 top-4 right-4 text-zinc-50 hover:text-cyan-300"
-                >
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                        class="w-8 h-8 m-2 sm:m-4"
-                    >
-                        <path
-                            fill-rule="evenodd"
-                            d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-1.72 6.97a.75.75 0 10-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 101.06 1.06L12 13.06l1.72 1.72a.75.75 0 101.06-1.06L13.06 12l1.72-1.72a.75.75 0 10-1.06-1.06L12 10.94l-1.72-1.72z"
-                            clip-rule="evenodd"
-                        />
-                    </svg>
-                    <span class="sr-only">Close Menu</span>
-                </button>
             </nav>
+            <button
+              id="closeNavBtn"
+              type="button"
+              aria-controls="navMobile"
+              class="absolute z-30 top-4 right-4 text-zinc-50 hover:text-cyan-300"
+            >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  class="w-8 h-8 m-2 sm:m-4"
+                >
+                    <path
+                      fill-rule="evenodd"
+                      d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-1.72 6.97a.75.75 0 10-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 101.06 1.06L12 13.06l1.72 1.72a.75.75 0 101.06-1.06L13.06 12l1.72-1.72a.75.75 0 10-1.06-1.06L12 10.94l-1.72-1.72z"
+                      clip-rule="evenodd"
+                    />
+                </svg>
+                <span class="sr-only">Close Menu</span>
+            </button>
         </header>
         <nav id="breadCrumb" class="" aria-label="Breadcrumb">
             <ol class="inline-flex items-center space-x-1 md:space-x-3">

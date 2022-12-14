@@ -60,7 +60,6 @@ function checkInputsSignUp() {
         passwordVerify.classList.add('text-red-500', 'border-red-500');
         errorPasswordVerify.classList.remove('hidden');
     }
-
     return validInput;
 }
 
@@ -73,12 +72,12 @@ signupForm.addEventListener('submit', (e) => {
             email: email.value,
             password: password.value,
         };
-
+        // async fetch in /utils/fetchSignup.js
         const USER_SIGNUP_URL = `${POST_SIGNUP_URL}`;
         postSignUp(userData, USER_SIGNUP_URL)
             .then((response) => {
                 signupForm.reset();
-                location.href = '/';
+                location.href = '../index.html';
             })
             .catch((errMessage) => {
                 errorMessage.innerHTML = `${errMessage}`;

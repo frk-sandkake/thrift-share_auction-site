@@ -47,7 +47,7 @@
             <div
                 role="none"
                 aria-labelledby="container"
-                class="w-full relative flex flex-col justify-between items-start md:flex-row md:justify-between md:items-center"
+                class="container px-2 sm:px-4 md:px-8 max-w-6xl relative h-auto flex flex-col justify-around md:flex-row md:justify-between md:items-center"
             >
                 <a href="/" class="w-1/3 min-w-[132px] max-w-[180px]">
                     <img
@@ -58,10 +58,10 @@
                         class="w-full h-auto"
                     />
                 </a>
-                <nav id="navBar" class="hidden md:w-2/3 md:flex md:justify-between">
-                    <ul id="menuBar" role="list" class="flex gap-4 justify-between items-center">
-                        <li>
-                            <a href="#" class="text-cyan-300 underline" aria-current="true"
+                <nav id="navBar" class="hidden md:w-8/12 md:flex md:justify-between">
+                    <ul id="menuBar" role="list" class="flex gap-4 justify-evenly items-center">
+                        <li class="pl-4">
+                            <a href="/" class="text-cyan-300 underline" aria-current="true"
                                 >Thrifts</a
                             >
                         </li>
@@ -77,8 +77,8 @@
                         <li>
                             <button
                                 type="button"
-                                data-button="link"
-                                class="text-zinc-50 hover:text-cyan-300"
+                                aria-controls="loginModal"
+                                class="login-btn text-zinc-50 hover:text-cyan-300"
                             >
                                 Log In
                             </button>
@@ -86,21 +86,9 @@
                         <li>
                             <button
                                 type="button"
-                                data-button="primary"
-                                class="inline-flex justify-center items-center overflow-hidden gap-2 p-[6px_16px_6px] rounded-full transition-all ease-in duration-75 text-pink-50 bg-gradient-to-r from-pink-500 via-pink-700 to-pink-800 dropshadow-sm hover:bg-gradient-to-br focus:ring-2 focus:outline-none focus:ring-pink-300"
-                            >
-                                <svg
-                                    aria-hidden="true"
-                                    class="-ml-2 w-4 h-4"
-                                    fill="currentColor"
-                                    viewBox="0 0 20 20"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"
-                                    ></path>
-                                </svg>
-                                <span class="text-base font-semibold pb-1">Sign Up</span>
+                                aria-controls="signupModal"
+                                class="signup-btn p-[6px_16px_8px] rounded-full text-base font-semibold transition-all ease-in duration-75 text-pink-50 bg-gradient-to-r from-pink-500 via-pink-700 to-pink-800 dropshadow-sm hover:bg-gradient-to-br focus:ring-2 focus:outline-none focus:ring-pink-300"
+                            >   Sign Up
                             </button>
                         </li>
                     </ul>
@@ -128,15 +116,15 @@
             </div>
             <nav
                 id="navMobile"
-                class="fixed z-40 h-screen w-0 top-11 left-0 overflow-x-hidden transition-all flex flex-col justify-around items-center bg-zinc-800 bg-opacity-60 md:hidden"
+                class="fixed z-30 h-screen w-0 top-11 left-0 overflow-x-hidden transition-all flex flex-col justify-around items-center bg-zinc-800 bg-opacity-60 md:hidden"
             >
                 <ul
                     id="menuMobile"
                     role="list"
                     class="overflow-hidden transition-all w-10/12 h-3/6 text-center py-8 bg-zinc-800"
                 >
-                    <li class="py-4 active">
-                        <a href="#" class="text-cyan-300 underline" aria-current="true">Thrifts</a>
+                    <li class="py-4">
+                        <a href="/" class="text-cyan-300 underline" aria-current="true">Thrifts</a>
                     </li>
                     <li class="py-4"><a href="#" class="hover:text-cyan-300">Sellers</a></li>
                     <li class="py-4"><a href="#" class="hover:text-cyan-300">Shares</a></li>
@@ -150,30 +138,18 @@
                     <li class="py-4">
                         <button
                             type="button"
-                            data-button="link"
-                            class="text-zinc-50 hover:text-cyan-300"
+                            aria-controls="loginModal"
+                            class="login-btn text-zinc-50 hover:text-cyan-300"
                         >
                             Log In
                         </button>
                     </li>
                     <li class="pb-4">
                         <button
-                            type="button"
-                            data-button="primary"
-                            class="inline-flex justify-center items-center overflow-hidden gap-2 p-[6px_16px_6px] rounded-full transition ease-in duration-75 text-pink-50 bg-gradient-to-r from-pink-500 via-pink-700 to-pink-800 dropshadow-sm hover:bg-gradient-to-br focus:ring-2 focus:outline-none focus:ring-pink-300"
-                        >
-                            <svg
-                                aria-hidden="true"
-                                class="-ml-2 w-4 h-4"
-                                fill="currentColor"
-                                viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path
-                                    d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"
-                                ></path>
-                            </svg>
-                            <span class="text-base font-semibold pb-1">Sign Up</span>
+                          type="button"
+                          aria-controls="signupModal"
+                          class="signup-btn p-[6px_16px_8px] rounded-full text-base font-semibold transition-all ease-in duration-75 text-pink-50 bg-gradient-to-r from-pink-500 via-pink-700 to-pink-800 dropshadow-sm hover:bg-gradient-to-br focus:ring-2 focus:outline-none focus:ring-pink-300"
+                        >   Sign Up
                         </button>
                     </li>
                 </ul>
@@ -195,6 +171,7 @@
                             clip-rule="evenodd"
                         />
                     </svg>
+                    <span class="sr-only">Close Menu</span>
                 </button>
             </nav>
         </header>
@@ -240,74 +217,7 @@
                 </li>
             </ol>
         </nav>
-        <section class="container mx-auto py-6 w-10/12 rounded-lg drop-shadow-lg bg-zinc-800 text-amber-50 text-center sm:w-sm max-w-xl">
-            <form id="signUpForm" class="flex flex-col items-center gap-4">
-                <h2 class="text-xl font-semibold font-inria-serif w-full text-center text-cyan-500"><em>Sign up for a thrift adventure</em></h2>
-                <fieldset class="flex flex-col justify-center gap-4 pt-4 pb-8 sm:flex-wrap sm:flex-row sm:justify-evenly sm:gap-6">
-                    <legend class="w-full text-center text-amber-200 font-regular text-lg py-2">Create new user:</legend>
-                    <div role="group" aria-label="Create user name" class="relative flex flex-col w-[250px] px-2">
-                        <input id="userName" name="userName" class="peer drop-shadow-sm rounded-sm border-0 border-b-2 border-cyan-100 placeholder-transparent bg-transparent focus:outline-none focus:ring-0 focus:border-fuchsia-600 invalid:border-amber-800" placeholder="Your username (Required)" type="text"  >
-                        <label for="userName" class="absolute left-3 -top-3.5 text-zinc-300 transition-all peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-zinc-300 peer-focus:text-sm">Your username <span class="text-xs">(Required)</span></label>
-                        <span id="errorName" class="hidden py-2 text-sm text-red-500" aria-errormessage="userName" aria-live="polite">Minimum 3 characters</span>
-                    </div>
-                    <div role="group" aria-label="Enter email address" class="relative flex flex-col w-[250px] px-2">
-                        <input id="emailSignUp" name="emailSignUp" class="peer drop-shadow-sm rounded-sm border-0 border-b-2 border-cyan-100 placeholder-transparent bg-transparent focus:outline-none focus:ring-0 focus:border-fuchsia-600 invalid:border-amber-800" placeholder="Email address (Required)" type="text"  >
-                        <label for="emailSignUp" class="absolute left-3 -top-3.5 text-zinc-300 transition-all peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-zinc-300 peer-focus:text-sm">Email address <span class="text-xs">(Required)</span></label>
-                        <span id="errorEmailSignUp" class="hidden py-2 text-sm text-red-500" aria-errormessage="emailSignUp" aria-live="polite">Noroff email only</span>
-                    </div>
-                    <div role="group" aria-label="Create password" class="relative flex flex-col w-[250px] px-2">
-                        <input id="passwordCreate" name="passwordCreate" class="peer drop-shadow-sm rounded-sm border-0 border-b-2 border-cyan-100 placeholder-transparent bg-transparent focus:outline-none focus:ring-0 focus:border-fuchsia-600 invalid:border-amber-800" placeholder="Create new password (Required)" type="password"  >
-                        <label for="passwordCreate" class="absolute left-3 -top-3.5 text-zinc-300 transition-all peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-zinc-300 peer-focus:text-sm">Create new password <span class="text-xs">(Required)</span></label>
-                        <span id="errorPasswordCreate" class="hidden py-2 text-sm text-red-500" aria-errormessage="passwordCreate" aria-live="polite">Minimum 8 characters</span>
-                    </div>
-                    <div role="group" aria-label="Verify password" class="relative flex flex-col w-[250px] px-2">
-                        <input id="passwordVerify" name="passwordVerify" class="peer drop-shadow-sm rounded-sm border-0 border-b-2 border-cyan-100 placeholder-transparent bg-transparent focus:outline-none focus:ring-0 focus:border-fuchsia-600 invalid:border-amber-800" placeholder="Verify your password (Required)" type="password"  >
-                        <label for="passwordVerify" class="absolute left-3 -top-3.5 text-zinc-300 transition-all peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-zinc-300 peer-focus:text-sm">Verify your password <span class="text-xs">(Required)</span></label>
-                        <span id="errorPasswordVerify" class="hidden py-2 text-sm text-red-500" aria-errormessage="passwordVerify" aria-live="polite">Passwords doesn't match</span>
-                    </div>
-                </fieldset>
-                <button
-                  id="signUpBtn"
-                  type="submit"
-                  data-button="primary"
-                  class="w-64  inline-flex justify-center items-center overflow-hidden gap-2 p-[6px_16px_6px] rounded-full transition-all ease-in duration-75 text-pink-50 bg-gradient-to-r from-pink-400 via-pink-600 to-pink-700 dropshadow-sm hover:bg-gradient-to-br focus:ring-2 focus:outline-none focus:ring-pink-300"
-                >
-                    <span class="text-base font-semibold pb-1">Sign Up</span>
-                </button>
-                <div role="group" aria-label="Checkbox">
-                    <input type="checkbox" name="termsConditions" id="termsConditions" class="rounded-sm border-amber-800 bg-zinc-100">
-                    <label for="termsConditions" class="text-xs text-zinc-300">Accept terms and conditions</label>
-                </div>
-                <div id="errorMessageSignUp"></div>
-            </form>
-            <section aria-label="To logIn form" class="py-8 inline-block">
-                <h3 class="inline-block">Or go to user...</h3>
-                <button
-                  id="logInBtn"
-                  type="button"
-                  data-button="secondary-outline"
-                  class="inline-block rounded-full p-[2px_2px] text-cyan-300 group bg-gradient-to-r from-cyan-400 via-cyan-600 to-cyan-700 hover:bg-gradient-to-br hover:text-amber-50 shadow-sm focus:ring-2 focus:outline-none focus:ring-cyan-300"
-                >
-                    <span role="group"
-                         class="inline-flex justify-center items-center gap-1 overflow-hidden p-[2px_18px] transition-all ease-in duration-75 bg-zinc-800 rounded-full group-hover:bg-opacity-0"
-                    >
-                        <span class="text-base font-semibold pb-1">Log In</span>
-                        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="-mr-1 w-6 h-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M12.75 15l3-3m0 0l-3-3m3 3h-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                    </span>
-                </button>
-                <a href="./index.html" aria-label="HomeLink">
-                    <img
-                      src="./uploads/logo-thrift-share.svg"
-                      alt="Thrift & Share logo"
-                      width="594"
-                      height="208"
-                      class="my-8 object-cover min-w-[132px] max-w-[196px]"
-                    />
-                </a>
-            </section>
-        </section>
+        <!-- AllThrifts -->
         <main class="container py-8 prose-h3:font-bold">
             <h1 class="text-center font-bold text-4xl text-zinc-600">All Thrifts</h1>
             <ul
@@ -333,7 +243,177 @@
                 </div>
             </div>
         </main>
-
+        <!-- SignUpForm -->
+        <div id="signupModal" role="alertdialog" class="modal hidden fixed top-0 left-0 right-0 z-50 w-screen h-screen overflow-x-hidden overflow-y-auto transition-all">
+            <div  class="relative w-screen h-screen bg-amber-50 bg-opacity-95 flex justify-center items-center">
+                <section class="container mx-auto py-6 w-10/12 rounded-lg drop-shadow-lg bg-zinc-800 text-amber-50 text-center sm:w-sm max-w-xl">
+                    <button
+                      type="button"
+                      aria-label="Exit signup"
+                      aria-controls="signupModal"
+                      class="exit-modal absolute z-50 top-4 right-4 text-zinc-50 hover:text-cyan-300"
+                    >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                          class="w-8 h-8 m-2 sm:m-4"
+                        >
+                            <path
+                              fill-rule="evenodd"
+                              d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-1.72 6.97a.75.75 0 10-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 101.06 1.06L12 13.06l1.72 1.72a.75.75 0 101.06-1.06L13.06 12l1.72-1.72a.75.75 0 10-1.06-1.06L12 10.94l-1.72-1.72z"
+                              clip-rule="evenodd"
+                            />
+                        </svg>
+                        <span class="sr-only">Close Signup</span>
+                    </button>
+                    <form id="signUpForm" class="flex flex-col items-center gap-4">
+                        <h2 class="text-xl font-semibold font-inria-serif w-full text-center text-cyan-500"><em>Sign up for a thrift adventure</em></h2>
+                        <fieldset class="flex flex-col justify-center gap-4 pt-4 pb-8 sm:flex-wrap sm:flex-row sm:justify-evenly sm:gap-6">
+                            <legend class="w-full text-center text-amber-200 font-regular text-lg py-2">Create new user:</legend>
+                            <div role="group" aria-label="Create user name" class="relative flex flex-col w-[250px] px-2">
+                                <input id="userName" name="userName" class="peer drop-shadow-sm rounded-sm border-0 border-b-2 border-cyan-100 placeholder-transparent bg-transparent focus:outline-none focus:ring-0 focus:border-fuchsia-600 invalid:border-amber-800" placeholder="Your username (Required)" type="text"  >
+                                <label for="userName" class="absolute left-3 -top-3.5 text-zinc-300 transition-all peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-zinc-300 peer-focus:text-sm">Your username <span class="text-xs">(Required)</span></label>
+                                <span id="errorName" role="alert" class="hidden py-2 text-sm text-red-500" aria-errormessage="userName" aria-live="polite">Minimum 3 characters</span>
+                            </div>
+                            <div role="group" aria-label="Enter email address" class="relative flex flex-col w-[250px] px-2">
+                                <input id="emailSignUp" name="emailSignUp" class="peer drop-shadow-sm rounded-sm border-0 border-b-2 border-cyan-100 placeholder-transparent bg-transparent focus:outline-none focus:ring-0 focus:border-fuchsia-600 invalid:border-amber-800" placeholder="Email address (Required)" type="text"  >
+                                <label for="emailSignUp" class="absolute left-3 -top-3.5 text-zinc-300 transition-all peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-zinc-300 peer-focus:text-sm">Email address <span class="text-xs">(Required)</span></label>
+                                <span id="errorEmailSignUp" role="alert" class="hidden py-2 text-sm text-red-500" aria-errormessage="emailSignUp" aria-live="polite">Noroff email only</span>
+                            </div>
+                            <div role="group" aria-label="Create password" class="relative flex flex-col w-[250px] px-2">
+                                <input id="passwordCreate" name="passwordCreate" class="peer drop-shadow-sm rounded-sm border-0 border-b-2 border-cyan-100 placeholder-transparent bg-transparent focus:outline-none focus:ring-0 focus:border-fuchsia-600 invalid:border-amber-800" placeholder="Create new password (Required)" type="password"  >
+                                <label for="passwordCreate" class="absolute left-3 -top-3.5 text-zinc-300 transition-all peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-zinc-300 peer-focus:text-sm">Create new password <span class="text-xs">(Required)</span></label>
+                                <span id="errorPasswordCreate" role="alert" class="hidden py-2 text-sm text-red-500" aria-errormessage="passwordCreate" aria-live="polite">Minimum 8 characters</span>
+                            </div>
+                            <div role="group" aria-label="Verify password" class="relative flex flex-col w-[250px] px-2">
+                                <input id="passwordVerify" name="passwordVerify" class="peer drop-shadow-sm rounded-sm border-0 border-b-2 border-cyan-100 placeholder-transparent bg-transparent focus:outline-none focus:ring-0 focus:border-fuchsia-600 invalid:border-amber-800" placeholder="Verify your password (Required)" type="password"  >
+                                <label for="passwordVerify" class="absolute left-3 -top-3.5 text-zinc-300 transition-all peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-zinc-300 peer-focus:text-sm">Verify your password <span class="text-xs">(Required)</span></label>
+                                <span id="errorPasswordVerify" role="alert" class="hidden py-2 text-sm text-red-500" aria-errormessage="passwordVerify" aria-live="polite">Passwords doesn't match</span>
+                            </div>
+                        </fieldset>
+                        <button
+                          id="signUpBtnSubmit"
+                          type="submit"
+                          data-button="primary"
+                          class="w-64 p-[6px_16px_8px] rounded-full text-base font-semibold transition-all ease-in duration-75 text-pink-50 bg-gradient-to-r from-pink-500 via-pink-700 to-pink-800 dropshadow-sm hover:bg-gradient-to-br focus:ring-2 focus:outline-none focus:ring-pink-300"
+                        >   Sign Up
+                        </button>
+                        <div role="group" aria-label="Checkbox">
+                            <input type="checkbox" name="termsConditions" id="termsConditions" class="rounded-sm border-amber-800 bg-zinc-100">
+                            <label for="termsConditions" class="text-xs text-zinc-300">Accept terms and conditions</label>
+                        </div>
+                        <div id="errorMessageSignUp"></div>
+                    </form>
+                    <section aria-label="To logIn form" class="py-8 inline-block">
+                        <h3 class="inline-block">Or go to user...</h3>
+                        <button
+                          id="logInBtn"
+                          type="button"
+                          aria-label="Login here"
+                          aria-controls="loginModal"
+                          class="login-btn inline-block rounded-full p-[2px_2px] text-cyan-300 group bg-gradient-to-r from-cyan-400 via-cyan-600 to-cyan-700 hover:bg-gradient-to-br hover:text-amber-50 shadow-sm focus:ring-2 focus:outline-none focus:ring-cyan-300"
+                        >
+                            <span role="presentation"
+                                  class="inline-flex justify-center items-center gap-1 overflow-hidden p-[2px_18px] transition-all ease-in duration-75 bg-zinc-800 rounded-full group-hover:bg-opacity-0"
+                            >
+                                <span role="presentation" class="text-base font-semibold pb-1">Log In</span>
+                                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="-mr-1 w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12.75 15l3-3m0 0l-3-3m3 3h-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </span>
+                        </button>
+                        <a href="./index.html" aria-label="HomeLink">
+                            <img
+                              src="./uploads/logo-thrift-share.svg"
+                              alt="Thrift & Share logo"
+                              width="594"
+                              height="208"
+                              class="my-8 object-cover min-w-[132px] max-w-[196px]"
+                            />
+                        </a>
+                    </section>
+                </section>
+            </div>
+        </div>
+        <!-- LogInForm -->
+        <div id="loginModal" role="alertdialog" class="modal hidden fixed top-0 left-0 right-0 z-50 w-screen h-screen overflow-x-hidden overflow-y-auto transition-all">
+            <div  class="relative w-screen h-screen bg-amber-50 bg-opacity-95 flex justify-center items-center">
+                <section class="relative container mx-auto py-6 w-10/12 rounded-lg drop-shadow-lg bg-zinc-800 text-amber-50 text-center sm:w-sm max-w-xl">
+                    <button
+                      type="button"
+                      aria-controls="loginModal"
+                      aria-label="Exit login"
+                      class="exit-modal absolute z-50 top-4 right-4 text-zinc-50 hover:text-cyan-300"
+                    >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                          class="w-8 h-8 m-2 sm:m-4"
+                        >
+                            <path
+                              fill-rule="evenodd"
+                              d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-1.72 6.97a.75.75 0 10-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 101.06 1.06L12 13.06l1.72 1.72a.75.75 0 101.06-1.06L13.06 12l1.72-1.72a.75.75 0 10-1.06-1.06L12 10.94l-1.72-1.72z"
+                              clip-rule="evenodd"
+                            />
+                        </svg>
+                        <span class="sr-only">Close Login</span>
+                    </button>
+                    <form id="logInForm" class="flex flex-col items-center gap-4">
+                        <h2 class="text-xl font-semibold font-inria-serif w-full text-center text-cyan-500"><em>Welcome back!</em></h2>
+                        <fieldset class="flex flex-col justify-center gap-4 pt-4 pb-8 sm:flex-wrap sm:flex-row sm:justify-evenly sm:gap-6">
+                            <legend class="w-full text-center text-amber-200 font-regular text-lg py-2">Enter your user details:</legend>
+                            <div role="group" aria-label="Enter email address" class="relative flex flex-col w-[250px] px-2">
+                                <input id="emailLogIn" name="emailLogIn" class="peer drop-shadow-sm rounded-sm border-0 border-b-2 border-cyan-100 placeholder-transparent bg-transparent focus:outline-none focus:ring-0 focus:border-fuchsia-600 invalid:border-amber-800" placeholder="Email address (Required)" type="text"  >
+                                <label for="emailLogIn" class="absolute left-3 -top-3.5 text-zinc-300 transition-all peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-zinc-300 peer-focus:text-sm">Email address <span class="text-xs">(Required)</span></label>
+                                <span role="alert" id="errorEmailLogIn" class="hidden py-2 text-sm text-red-500" aria-errormessage="emailLogIn" aria-live="polite">Not correct email</span>
+                            </div>
+                            <div role="group" aria-label="Enter password" class="relative flex flex-col w-[250px] px-2">
+                                <input id="password" name="password" class="peer drop-shadow-sm rounded-sm border-0 border-b-2 border-cyan-100 placeholder-transparent bg-transparent focus:outline-none focus:ring-0 focus:border-fuchsia-600 invalid:border-amber-800" placeholder="Enter password (Required)" type="password"  >
+                                <label for="password" class="absolute left-3 -top-3.5 text-zinc-300 transition-all peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-zinc-300 peer-focus:text-sm">Enter password <span class="text-xs">(Required)</span></label>
+                                <span role="alert" id="errorPassword" class="hidden py-2 text-sm text-red-500" aria-errormessage="password" aria-live="polite">Not correct password</span>
+                            </div>
+                        </fieldset>
+                        <button
+                          id="logInBtnSubmit"
+                          type="submit"
+                          aria-label="Log in"
+                          class="w-64 p-[6px_16px_8px] rounded-full text-base font-semibold transition-all ease-in duration-75 text-pink-50 bg-gradient-to-r from-pink-500 via-pink-700 to-pink-800 dropshadow-sm hover:bg-gradient-to-br focus:ring-2 focus:outline-none focus:ring-pink-300"
+                        >   Log In
+                        </button>
+                        <div role="alert" id="errorMessageLogIn"></div>
+                    </form>
+                    <section aria-label="To sign up form" class="py-8 inline-block">
+                        <h3 class="inline-block">Or go to user...</h3>
+                        <button
+                          type="button"
+                          aria-label="To sign up"
+                          aria-controls="signupModal"
+                          class="signup-btn inline-block rounded-full p-[2px_2px] text-cyan-300 group bg-gradient-to-r from-cyan-400 via-cyan-600 to-cyan-700 hover:bg-gradient-to-br hover:text-amber-50 shadow-sm focus:ring-2 focus:outline-none focus:ring-cyan-300"
+                        >
+                    <span role="presentation"
+                          class="inline-flex justify-center items-center gap-1 overflow-hidden p-[2px_18px] transition-all ease-in duration-75 bg-zinc-800 rounded-full group-hover:bg-opacity-0"
+                    >
+                        <span role="presentation" class="text-base font-semibold pb-1">Sign Up</span>
+                        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="-mr-1 w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12.75 15l3-3m0 0l-3-3m3 3h-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </span>
+                        </button>
+                        <a href="./index.html" aria-label="HomeLink">
+                            <img
+                              src="./uploads/logo-thrift-share.svg"
+                              alt="Thrift & Share logo"
+                              width="594"
+                              height="208"
+                              class="my-8 object-cover min-w-[132px] max-w-[196px]"
+                            />
+                        </a>
+                    </section>
+                </section>
+            </div>
+        </div>
         <div
             role="none"
             class="container mx-auto p-2 bg-zinc-600 flex flex-wrap items-center justify-evenly gap-2"

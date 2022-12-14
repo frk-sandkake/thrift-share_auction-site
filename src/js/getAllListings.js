@@ -52,7 +52,7 @@ const showThriftsDataHTML = (thrifts) => {
 
                 return `
             <li class="col-span-1">
-              <article id="thriftCard" aria-label="Product card" class="p-2 rounded-lg shadow-lg bg-zinc-800 text-amber-50 min-w-[16rem] max-w-[22rem] lg:p-4">
+              <article id="thriftCard" aria-label="Product card" class="p-2 rounded-lg shadow-lg bg-zinc-800 text-amber-50 min-w-[20rem] max-w-[22rem] lg:p-4">
                 <div role="none" aria-label="Product card">
                   <a href="single-item.html?id=${id}" class="block">${thriftImage}</a>
                   <div role="none" aria-label="Info about thrift and auction" class="w-12/12 px-2 py-2">
@@ -84,7 +84,7 @@ const showThriftsDataHTML = (thrifts) => {
                         </p>
                       </li>
                     </ul>
-                    <div role="group" aria-label="Buttons View and/or Add bid" class="flex flex-row justify-between items-start p-2">
+                    <div role="group" aria-label="Buttons View and/or Add bid" class="flex flex-row justify-around items-start">
                       <details id="viewBids" aria-label="View bids history" class="cursor-pointer text-amber-50">
                         <summary class="inline-flex justify-center items-center gap-2 pt-2 pb-2 px-6 rounded-full bg-gradient-to-r from-cyan-600 via-cyan-700 to-cyan-800 hover:bg-gradient-to-br drop-shadow-sm focus:ring-2 focus:outline-none focus:ring-cyan-300">
                         <span class="text-sm inline-block font-semibold pb-0.5 sm:text-base">
@@ -98,7 +98,7 @@ const showThriftsDataHTML = (thrifts) => {
                           ${bidderInfo}                      
                         </ul>
                       </details>
-                      <button id="addBid" type="button" data-button="primary-outline"
+                      <button id="addBid" type="button" 
                               class="inline-block rounded-full p-0.5 text-pink-400 drop-shadow-sm group bg-gradient-to-r from-pink-400 via-pink-600 to-pink-700 group-hover:bg-gradient-to-br hover:text-pink-50 focus:ring-2 focus:outline-none focus:ring-pink-300"
                       >
                               <span class="inline-flex items-center gap-1 overflow-hidden py-1.5 px-3.5 transition ease-in duration-75 bg-zinc-800 rounded-full group-hover:bg-opacity-0">

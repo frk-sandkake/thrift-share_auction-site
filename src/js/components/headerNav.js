@@ -9,11 +9,7 @@ function createNavDesktop() {
         let navLinks;
         navLinks = `
             <li role="menuitem">
-                <a role="link" href="/index.html" class="${
-                    pathname === '/index.html'
-                        ? ''
-                        : ''
-                }"
+                <a role="link" href="/index.html" class="${pathname === '/index.html' ? '' : ''}"
                 > 
                     <img
                         src="/logo-thrift-share.svg"
@@ -70,14 +66,18 @@ function createNavDesktop() {
                 </li>
                 <li role="menuitem">
                     <a role="link" href="/index.html" class="${
-                        pathname === '/index.html' ? 'text-cyan-300 underline' : 'hover:text-cyan-300'
+                        pathname === '/index.html'
+                            ? 'text-cyan-300 underline'
+                            : 'hover:text-cyan-300'
                     }">
                           Home
                     </a>
                 </li>
                 <li role="menuitem">
                     <a role="link" href="/profile.html" class="${
-                        pathname === '/profile.html' ? 'text-cyan-300 underline' : 'hover:text-cyan-300'
+                        pathname === '/profile.html'
+                            ? 'text-cyan-300 underline'
+                            : 'hover:text-cyan-300'
                     }">
                          ${userName}
                     </a>

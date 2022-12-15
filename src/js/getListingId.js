@@ -46,7 +46,7 @@ const getThriftDetails = async () => {
         let tag = 'Tag';
         const [first] = tags;
         if (!first) {
-            `Tag`;
+            tag = `Tag`;
         } else {
             tag = first;
         }
@@ -77,12 +77,11 @@ const getThriftDetails = async () => {
         sortedBids.sort((x, y) => y.amount - x.amount);
         console.log(bids);
 
-        let currentBid = 0;
+        let currentBid = 0; // Updates the highest bid, shows 0 if no bids
         const [first1] = bids;
         if (!first1) {
-            `${0}`;
+            currentBid = `${0}`;
         } else {
-            // Updates the highest bid, shows 0 if no bids
             currentBid = first1.amount;
         }
         const newCurrentBid = currentBid;

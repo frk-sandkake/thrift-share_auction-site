@@ -1,30 +1,32 @@
 import '../style.css';
-import createNavMobile from "./components/mobileNav";
+import createNavMobile from './components/mobileNav';
 import createNavDesktop from './components/headerNav';
-import { clearDataFromStorage } from "./utils/storage";
+import { clearDataFromStorage } from './utils/storage';
 import { menuOpen, menuClose } from './utils/mobileNavControll';
 
+/** HeaderNavigation */
 createNavMobile();
 createNavDesktop();
 
-const logOutBtn = document.getElementById('logoutBtn');
-
-function logOutUser() {
-    clearDataFromStorage();
-    window.location.replace('/index.html');
-}
-
-if(logOutBtn) {
-    logOutBtn.addEventListener('click', () => {
-        logOutUser();
-    });
-}
 const burgerBtn = document.getElementById('hamburger');
 burgerBtn.addEventListener('click', menuOpen);
 
 const closeNavBtn = document.getElementById('closeNavBtn');
 closeNavBtn.addEventListener('click', menuClose);
 
+function logOutUser() {
+    clearDataFromStorage();
+    window.location.replace('/index.html');
+}
+const logOutBtn = document.getElementById('logoutBtn');
+if (logOutBtn) {
+    logOutBtn.addEventListener('click', () => {
+        logOutUser();
+    });
+}
+/** HeaderNavigation - END */
+
+/** Modals - LogIn SignUp */
 const logInBtn = document.querySelectorAll('#loginBtn, .login-btn');
 const signUpBtn = document.querySelectorAll('#signupBtn, .signup-btn');
 const logInModal = document.getElementById('loginModal');
@@ -35,7 +37,6 @@ logInBtn.forEach((trigger) => {
     trigger.addEventListener('click', () => {
         logInModal.classList.remove('hidden');
         signUpModal.classList.add('hidden');
-
     });
 });
 
@@ -46,9 +47,10 @@ signUpBtn.forEach((trigger) => {
     });
 });
 
-closeModalBtn.forEach((closeModalBtn) => {
-    closeModalBtn.addEventListener('click', () => {
+closeModalBtn.forEach((trigger) => {
+    trigger.addEventListener('click', () => {
         logInModal.classList.add('hidden');
         signUpModal.classList.add('hidden');
     });
 });
+/** Modals - LogIn SignUp - END */

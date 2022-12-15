@@ -6,6 +6,7 @@ const errorMessage = document.querySelector('#errorMessage');
 const tagsList = document.getElementById('tagLinksWrapper');
 const pageTitle = document.querySelector('title');
 const itemsTitle = document.getElementById('itemsTitle');
+const thriftId = document.getElementById('thriftId');
 const descriptionBody = document.getElementById('descriptionBody');
 const imageGallery = document.getElementById('imageGallery');
 
@@ -32,7 +33,7 @@ const getThriftDetails = async () => {
     const thriftData = await response.json();
 
     if (response.ok) {
-        const { title, tags, description, media, endsAt, bids, _count, seller } = thriftData;
+        const { id, title, tags, description, media, endsAt, bids, _count, seller } = thriftData;
         // console.log(thriftData);
         getCrumbs(thriftData); // breadCrumbNav.js
         pageTitle.innerHTML = `${title}`;
@@ -40,6 +41,7 @@ const getThriftDetails = async () => {
 
         /** All about the thrift */
         itemsTitle.innerHTML = `${title}`;
+        thriftId.innerHTML = `ID: <small class="invisible transition-all group-hover:visible">${id}</small>  `;
 
         let tag = 'Tag';
         const [first] = tags;

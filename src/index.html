@@ -42,7 +42,7 @@
             <span class="sr-only">Back to top</span>
         </button>
         <header
-            class="relative z-50 w-full bg-zinc-800 drop-shadow-sm text-zinc-50 font-semibold prose-a:font-semibold"
+            class="relative top-0 z-50 w-full bg-zinc-800 drop-shadow-lg text-zinc-50 font-semibold prose-a:font-semibold md:relative"
         >
             <div
               id="desktopHeader"
@@ -53,7 +53,7 @@
                 <nav id="navBar" class="hidden md:w-full md:flex md:justify-between">
                 </nav>
             </div>
-            <div id="mobileHeader" role="presentation" class="relative z-50 w-full bg-zinc-800 drop-shadow-sm">
+            <div id="mobileHeader" role="group" class="relative z-50 w-full flex flex-row justify-between items-center bg-zinc-800 md:hidden">
                     <a role="link" href="index.html" class=""
                     >
                         <img
@@ -61,23 +61,22 @@
                           alt="Thrift & Share logo"
                           width="594"
                           height="208"
-                          class="min-w-[132px] max-w-[196px] max-h-[96px]"
+                          class="w-[156px] sm:w-[172px]"
                         />
                         <span class="sr-only">Logo</span>
                     </a>
-
                 <button
                   type="button"
                   id="hamburger"
                   aria-haspopup="true"
                   aria-controls="navMobile"
-                  class="absolute z-30 top-0 right-0 md:hidden text-zinc-50 hover:text-cyan-300"
+                  class="absolute top-0 right-0 md:hidden text-zinc-50 hover:text-cyan-300"
                 >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
                       fill="currentColor"
-                      class="w-8 h-8 m-2 sm:m-4"
+                      class="w-8 h-8 m-2 sm:m-3"
                     >
                         <path
                           fill-rule="evenodd"
@@ -88,32 +87,12 @@
                 </button>
             </div>
             <nav
-                id="navMobile"
-                class="fixed z-30 top-0 overflow-y-auto transition-all flex flex-col justify-between items-center bg-zinc-800 bg-opacity-60 md:hidden"
+              id="navMobile"
+              class="absolute z-30 top-0 w-screen h-screen overflow-hidden transition-all flex flex-col justify-between items-center bg-zinc-800 bg-opacity-60 md:hidden"
             >
             </nav>
-            <button
-              id="closeNavBtn"
-              type="button"
-              aria-controls="navMobile"
-              class="absolute z-30 top-4 right-4 text-zinc-50 hover:text-cyan-300"
-            >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  class="w-8 h-8 m-2 sm:m-4"
-                >
-                    <path
-                      fill-rule="evenodd"
-                      d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-1.72 6.97a.75.75 0 10-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 101.06 1.06L12 13.06l1.72 1.72a.75.75 0 101.06-1.06L13.06 12l1.72-1.72a.75.75 0 10-1.06-1.06L12 10.94l-1.72-1.72z"
-                      clip-rule="evenodd"
-                    />
-                </svg>
-                <span class="sr-only">Close Menu</span>
-            </button>
         </header>
-        <nav id="breadCrumb" class="" aria-label="Breadcrumb">
+        <nav id="breadCrumb" class="p-1" aria-label="Breadcrumb">
             <ol class="inline-flex items-center space-x-1 md:space-x-3">
                 <li class="inline-flex items-center">
                     <a

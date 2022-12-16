@@ -7,6 +7,7 @@ export default {
             input: {
                 home: resolve(__dirname, 'src/index.html'),
                 single: resolve(__dirname, 'src/single-item.html'),
+                profile: resolve(__dirname, 'src/profile.html'),
             },
         },
         outDir: '../dist',

@@ -62,7 +62,7 @@ function createNavMobile() {
           `;
         }
         navMobil.innerHTML = `
-          <ul id="menuMobile" role="menu" role="list" class="absolute top-0 right-0 w-10/12 h-screen overflow-hidden transition-all text-center flex flex-col justify-evenly py-8 bg-zinc-800">
+          <ul id="menuMobile" role="menu" role="list" class="absolute top-0 right-0 w-10/12 h-screen overflow-y-auto transition-all text-center flex flex-col justify-evenly py-8 bg-zinc-800">
                ${navMobileLinks}
           </ul>
           <button

@@ -9,10 +9,14 @@ createNavMobile();
 createNavDesktop();
 
 const burgerBtn = document.getElementById('hamburger');
-burgerBtn.addEventListener('click', menuOpen);
+burgerBtn.addEventListener('click', () => {
+    menuOpen();
+});
 
 const closeNavBtn = document.getElementById('closeNavBtn');
-closeNavBtn.addEventListener('click', menuClose);
+closeNavBtn.addEventListener('click', () => {
+    menuClose();
+});
 
 function logOutUser() {
     clearDataFromStorage();

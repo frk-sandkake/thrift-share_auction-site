@@ -89,7 +89,7 @@ hopefully gives the visitors and users a calm and warm impression.
 
 The logo is self-made with the website title "Thrift&Share" in a gradient from the color palette.
 
-<img src="logo-thrift-share-svg.png">
+<img src="logo-thrift-share.png">
 
 
 #### Inspiration:

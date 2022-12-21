@@ -15,6 +15,7 @@
         <title> Profile page | for User of Thrift&Share | © 2022 frk.Sandkake</title>
         <script type="module" src="./js/index.js" defer></script>
         <script type="module" src="./js/profile.js" defer></script>
+        <script type="module" src="./js/createThrift.js" defer></script>
     </head>
     <body class="bg-amber-50">
         <button
@@ -243,22 +244,23 @@
                         <span class="sr-only">Exit</span>
                     </button>
                     <h2 class="text-2xl pl-2 pt-4 font-semibold font-inria-serif w-full italic text-fuchsia-600">Add New Thrift;</h2>
-                    <form id="addThriftForm" class="flex flex-col justify-center items-center space-y-4">
+                    <form id="addThriftForm" method="post" class="flex flex-col justify-center items-center space-y-4">
                         <fieldset class="flex flex-col justify-center space-y-6">
                             <legend class="sr-only w-full text-amber-200 font-regular text-base">Thrift Details:</legend>
                             <div role="group" aria-label="Title" class="relative flex flex-col w-[300px] px-2">
-                                <input id="productTitle" name="productTitle" class="peer drop-shadow-sm rounded-sm border-0 border-b-2 border-amber-200 placeholder-transparent bg-transparent focus:outline-none focus:ring-0 focus:border-fuchsia-600 invalid:border-amber-800" placeholder="Give it a good title (Required)" type="text" autofocus>
-                                <label for="productTitle" class="absolute left-3 -top-3.5 text-sm text-zinc-300 transition-all peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-2 peer-placeholder-shown:text-sm peer-focus:-top-3.5 peer-focus:text-zinc-400 peer-focus:text-sm">Give it a good title <span class="text-xs">(Required)</span></label>
-                                <span role="alert" id="errorProductTitle" class="hidden py-2 text-sm text-red-500" aria-errormessage="productTitle" aria-live="polite">Title must be longer</span>
+                                <input id="thriftTitle" name="thriftTitle" class="peer drop-shadow-sm rounded-sm border-0 border-b-2 border-amber-200 placeholder-transparent bg-transparent focus:outline-none focus:ring-0 focus:border-fuchsia-600 invalid:border-amber-800" placeholder="Give it a good title (Required)" type="text" autofocus>
+                                <label for="thriftTitle" class="absolute left-3 -top-3.5 text-sm text-zinc-300 transition-all peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-2 peer-placeholder-shown:text-sm peer-focus:-top-3.5 peer-focus:text-zinc-400 peer-focus:text-sm">Give it a good title <span class="text-xs">(Required)</span></label>
+                                <span role="alert" id="errorThriftTitle" class="hidden py-2 text-sm text-red-500" aria-errormessage="thriftTitle" aria-live="polite">Title must be longer</span>
                             </div>
                             <div role="group" aria-label="Description" class="relative flex flex-col w-[300px] px-2 pt-2">
                             <textarea
-                              id="productBody"
-                              name="productBody"
+                              id="thriftDescription"
+                              name="thriftDescription"
                               class="peer drop-shadow-sm text-sm rounded-md h-18 border border-amber-200 placeholder-transparent bg-transparent focus:outline-none focus:ring-0 focus:border-fuchsia-600"
                             >
-                            </textarea><label for="productBody" class="absolute left-3 -top-3 text-zinc-400 text-sm transition-all peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-3 peer-focus:-top-3 peer-focus:text-zinc-400 peer-focus:text-sm">Description of the Thrift <span class="text-xs">(Required)</span></label>
-                                <span role="alert" id="errorProductBody" class="hidden py-2 text-sm text-red-500" aria-errormessage="productBody" aria-live="polite">Please, tell me more</span>
+                            </textarea>
+                                <label for="thriftDescription" class="absolute left-3 -top-3 text-zinc-400 text-sm transition-all peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-3 peer-focus:-top-3 peer-focus:text-zinc-400 peer-focus:text-sm">Description of the Thrift <span class="text-xs">(Required)</span></label>
+                                <span role="alert" id="errorThriftDescription" class="hidden py-2 text-sm text-red-500" aria-errormessage="thriftDescription" aria-live="polite">Please, tell me more</span>
                             </div>
                             <div role="group" aria-label="image URL" class="relative flex flex-col w-[300px] px-2">
                                 <input id="thriftImageUrl" name="thriftImageUrl" class="peer drop-shadow-sm rounded-sm border-0 border-b-2 border-amber-200 placeholder-transparent bg-transparent focus:outline-none focus:ring-0 focus:border-fuchsia-600 invalid:border-amber-800" placeholder="1 image URL (Optional)" type="text">
@@ -274,7 +276,7 @@
                                 <span role="alert" id="errorThriftTags" class="hidden py-2 text-sm text-red-500" aria-errormessage="thriftTags" aria-live="polite">Max three tags</span>
                             </div>
                             <div role="group" aria-label="End-time" class="relative flex flex-col w-[200px] px-2">
-                                <input id="endTime" name="endTime" class="peer drop-shadow-sm rounded-sm border-0 border-b-2 border-amber-200 placeholder-transparent bg-transparent focus:outline-none focus:ring-0 focus:border-fuchsia-600 invalid:border-amber-800" placeholder="End-time for Thrift (Required)" type="datetime-local">
+                                <input id="endTime" name="deadline" class="peer drop-shadow-sm rounded-sm border-0 border-b-2 border-amber-200 placeholder-transparent bg-transparent focus:outline-none focus:ring-0 focus:border-fuchsia-600 invalid:border-amber-800" placeholder="End-time for Thrift (Required)" type="datetime-local">
                                 <label for="endTime" class="absolute left-3 -top-3 text-sm text-zinc-400 transition-all peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-2 peer-focus:-top-3 peer-focus:text-zinc-400 peer-focus:text-sm">End-time for Thrift <span class="text-xs">(Required)</span></label>
                                 <span role="alert" id="errorEndTime" class="hidden py-2 text-sm text-red-500" aria-errormessage="endTime" aria-live="polite">Did you forget to set the end-time?</span>
                             </div>

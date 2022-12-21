@@ -17,4 +17,13 @@ function matchPasswords(password, confirmPassword) {
     return password === confirmPassword;
 }
 
-export { checkLength, emailValid, matchPasswords };
+const checkImgUrl = (url) => {
+    const urlPattern =
+      /https?:\/\/(\w+:?\w*)?(\S+)(:\d+)?(\/|\/([\w#!:.?+=&%\-\/]))?/;
+    if (typeof url === 'object') {
+        return urlPattern.test(url.value);
+    }
+    return urlPattern.test(url);
+};
+
+export { checkLength, emailValid, matchPasswords, checkImgUrl };

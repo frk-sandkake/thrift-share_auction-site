@@ -219,9 +219,9 @@
                 </div>
         </dialog>
         <!-- AddThriftForm -->
-        <dialog id="addThriftModal" aria-modal="true" class="bg-zinc-800 bg-opacity-50 w-full h-full">
-            <div  class="relative py-4 overflow-x-hidden overflow-y-auto">
-                <section class="container mx-auto max-w-[460px] overflow-x-hidden overflow-y-auto flex flex-col justify-center items-center py-6 rounded-lg drop-shadow-lg bg-zinc-800 text-zinc-300">
+        <dialog id="addThriftModal" aria-modal="true" class="bg-zinc-800 bg-opacity-50 w-full h-full p-0 mx-auto sm:px-4 md:px-8 lg-px-12">
+            <div role="none" class="relative">
+                <section class="mx-auto overflow-y-auto flex flex-col items-center m-6 rounded-lg drop-shadow-lg bg-zinc-800 text-zinc-300">
                     <button
                       type="button"
                       id="exitThriftAdd"
@@ -243,40 +243,61 @@
                         </svg>
                         <span class="sr-only">Exit</span>
                     </button>
-                    <h2 class="text-2xl pl-2 pt-4 font-semibold font-inria-serif w-full italic text-fuchsia-600">Add New Thrift;</h2>
-                    <form id="addThriftForm" method="post" class="flex flex-col justify-center items-center space-y-4">
-                        <fieldset class="flex flex-col justify-center space-y-6">
+                    <h2 class="text-2xl pt-4 font-semibold font-inria-serif text-center italic text-fuchsia-600">Add New Thrift;</h2>
+                    <form id="addThriftForm" method="post" class="flex flex-wrap flex-row justify-evenly space-y-4">
+                        <fieldset class="flex flex-col space-y-8">
                             <legend class="sr-only w-full text-amber-200 font-regular text-base">Thrift Details:</legend>
-                            <div role="group" aria-label="Title" class="relative flex flex-col w-[300px] px-2">
-                                <input id="thriftTitle" name="thriftTitle" class="peer drop-shadow-sm rounded-sm border-0 border-b-2 border-amber-200 placeholder-transparent bg-transparent focus:outline-none focus:ring-0 focus:border-fuchsia-600 invalid:border-amber-800" placeholder="Give it a good title (Required)" type="text" autofocus>
+                            <div role="group" aria-label="Title" class="relative flex flex-col w-[288px] sm:w-[300] px-2">
+                                <input id="thriftTitle" name="thriftTitle" class="peer drop-shadow-sm rounded-sm border-0 border-b-2 border-amber-200 placeholder-transparent bg-transparent focus:outline-none focus:ring-0 focus:border-fuchsia-600" placeholder="Give it a good title (Required)" type="text" autofocus>
                                 <label for="thriftTitle" class="absolute left-3 -top-3.5 text-sm text-zinc-300 transition-all peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-2 peer-placeholder-shown:text-sm peer-focus:-top-3.5 peer-focus:text-zinc-400 peer-focus:text-sm">Give it a good title <span class="text-xs">(Required)</span></label>
                                 <span role="alert" id="errorThriftTitle" class="hidden py-2 text-sm text-red-500" aria-errormessage="thriftTitle" aria-live="polite">Title must be longer</span>
                             </div>
-                            <div role="group" aria-label="Description" class="relative flex flex-col w-[300px] px-2 pt-2">
+                            <div role="group" aria-label="Description" class="relative flex flex-col w-[288px] sm:w-[300] px-2 pt-2">
                             <textarea
                               id="thriftDescription"
                               name="thriftDescription"
+                              rows="3"
+                              cols="5"
                               class="peer drop-shadow-sm text-sm rounded-md h-18 border border-amber-200 placeholder-transparent bg-transparent focus:outline-none focus:ring-0 focus:border-fuchsia-600"
                             >
                             </textarea>
                                 <label for="thriftDescription" class="absolute left-3 -top-3 text-zinc-400 text-sm transition-all peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-3 peer-focus:-top-3 peer-focus:text-zinc-400 peer-focus:text-sm">Description of the Thrift <span class="text-xs">(Required)</span></label>
                                 <span role="alert" id="errorThriftDescription" class="hidden py-2 text-sm text-red-500" aria-errormessage="thriftDescription" aria-live="polite">Please, tell me more</span>
                             </div>
-                            <div role="group" aria-label="image URL" class="relative flex flex-col w-[300px] px-2">
-                                <input id="thriftImageUrl" name="thriftImageUrl" class="peer drop-shadow-sm rounded-sm border-0 border-b-2 border-amber-200 placeholder-transparent bg-transparent focus:outline-none focus:ring-0 focus:border-fuchsia-600 invalid:border-amber-800" placeholder="1 image URL (Optional)" type="text">
-                                <label for="thriftImageUrl" class="absolute left-3 -top-3.5 text-sm text-zinc-300 transition-all peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-zinc-400 peer-focus:text-sm">Only images with URL: "https://" <span class="text-xs">(Optional)</span></label>
-                                <span role="alert" id="errorThriftImageUrl" class="hidden py-2 text-sm text-red-500" aria-errormessage="thriftImageUrl" aria-live="polite">Only images with a URL; "https://"</span>
-                            </div>
                         </fieldset>
                         <fieldset class="flex flex-col items-center space-y-5">
-                            <legend class="sr-only">Set category and auction end time</legend>
-                            <div role="group" aria-label="Tags" class="relative flex flex-col w-[250px] px-2 mt-0">
-                                <input id="thriftTags" name="thriftTags" class="peer drop-shadow-sm rounded-sm border-0 border-b-2 border-amber-200 placeholder-transparent bg-transparent focus:outline-none focus:ring-0 focus:border-fuchsia-600 invalid:border-amber-800" placeholder="Separate categories with a ',' (Optional)" type="text">
-                                <label for="thriftTags" class="absolute left-3 -top-3.5 text-sm text-zinc-300 transition-all peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-2 peer-focus:-top-4 peer-focus:text-zinc-400 peer-focus:text-sm">"Tag1", "Tag2","Tag3" <span class="text-xs">(Optional)</span></label>
-                                <span role="alert" id="errorThriftTags" class="hidden py-2 text-sm text-red-500" aria-errormessage="thriftTags" aria-live="polite">Max three tags</span>
+                            <legend class="sr-only">Add images, category and auction end time</legend>
+                            <div role="group" class="flex flex-col space-y-6">
+                                <div role="group" aria-label="imageURL1" class="relative flex flex-col w-[288px] sm:w-[300] px-2">
+                                    <input id="thriftImageUrl1" name="thriftImageUrl1" class="peer drop-shadow-sm rounded-sm border-0 border-b-2 border-amber-200 placeholder-transparent bg-transparent focus:outline-none focus:ring-0 focus:border-fuchsia-600" placeholder="image URL (Optional)" type="text">
+                                    <label for="thriftImageUrl1" class="absolute left-3 -top-3.5 text-sm text-zinc-300 transition-all peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-zinc-400 peer-focus:text-sm">Image 1 (URL: "https://") <span class="text-xs">(Optional)</span></label>
+                                    <span role="alert" id="errorThriftImageUrl" class="hidden py-2 text-sm text-red-500" aria-errormessage="thriftImageUrl1" aria-live="polite">Did you add a URL link?</span>
+                                </div>
+                                <div role="group" aria-label="imageURL2" class="relative flex flex-col w-[288px] sm:w-[300] px-2">
+                                    <input id="thriftImageUrl2" name="thriftImageUrl2" class="peer drop-shadow-sm rounded-sm border-0 border-b-2 border-amber-200 placeholder-transparent bg-transparent focus:outline-none focus:ring-0 focus:border-fuchsia-600" placeholder="image URL (Optional)" type="text">
+                                    <label for="thriftImageUrl2" class="absolute left-3 -top-3.5 text-sm text-zinc-300 transition-all peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-zinc-400 peer-focus:text-sm">Image 2 (URL: "https://") <span class="text-xs">(Optional)</span></label>
+                                </div>
+                                <div role="group" aria-label="imageURL3" class="relative flex flex-col w-[288px] sm:w-[300] px-2">
+                                    <input id="thriftImageUrl3" name="thriftImageUrl3" class="peer drop-shadow-sm rounded-sm border-0 border-b-2 border-amber-200 placeholder-transparent bg-transparent focus:outline-none focus:ring-0 focus:border-fuchsia-600" placeholder="image URL (Optional)" type="text">
+                                    <label for="thriftImageUrl3" class="absolute left-3 -top-3.5 text-sm text-zinc-300 transition-all peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-zinc-400 peer-focus:text-sm">Image 3 (URL: "https://") <span class="text-xs">(Optional)</span></label>
+                                </div>
                             </div>
-                            <div role="group" aria-label="End-time" class="relative flex flex-col w-[200px] px-2">
-                                <input id="endTime" name="deadline" class="peer drop-shadow-sm rounded-sm border-0 border-b-2 border-amber-200 placeholder-transparent bg-transparent focus:outline-none focus:ring-0 focus:border-fuchsia-600 invalid:border-amber-800" placeholder="End-time for Thrift (Required)" type="datetime-local">
+                            <div role="group" class="flex flex-row">
+                            <div role="group" aria-label="Tag1" class="relative flex flex-col w-[98px] sm:w-[106] px-2 mt-0">
+                                <input id="thriftTag1" name="thriftTags1" class="peer drop-shadow-sm rounded-sm border-0 border-b-2 border-amber-200 placeholder-transparent bg-transparent focus:outline-none focus:ring-0 focus:border-fuchsia-600" placeholder="tag1 (Optional)" type="text">
+                                <label for="thriftTag1" class="absolute left-3 -top-3.5 text-sm text-zinc-300 transition-all peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-2 peer-focus:-top-4 peer-focus:text-zinc-400 peer-focus:text-sm">Tag1 <span class="text-xs">(Optional)</span></label>
+                            </div>
+                            <div role="group" aria-label="Tag2" class="relative flex flex-col w-[98px] sm:w-[106] px-2 mt-0">
+                                <input id="thriftTag2" name="thriftTag2" class="peer drop-shadow-sm rounded-sm border-0 border-b-2 border-amber-200 placeholder-transparent bg-transparent focus:outline-none focus:ring-0 focus:border-fuchsia-600" placeholder="Tag2(Optional)" type="text">
+                                <label for="thriftTag2" class="absolute left-3 -top-3.5 text-sm text-zinc-300 transition-all peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-2 peer-focus:-top-4 peer-focus:text-zinc-400 peer-focus:text-sm">Tag2 <span class="text-xs">(Optional)</span></label>
+                            </div>
+                            <div role="group" aria-label="Tag3" class="relative flex flex-col w-[98px] sm:w-[106] px-2 mt-0">
+                                <input id="thriftTag3" name="thriftTag3" class="peer drop-shadow-sm rounded-sm border-0 border-b-2 border-amber-200 placeholder-transparent bg-transparent focus:outline-none focus:ring-0 focus:border-fuchsia-600" placeholder="Tag3 (Optional)" type="text">
+                                <label for="thriftTag3" class="absolute left-3 -top-3.5 text-sm text-zinc-300 transition-all peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-2 peer-focus:-top-4 peer-focus:text-zinc-400 peer-focus:text-sm">Tag3 <span class="text-xs">(Optional)</span></label>
+                            </div>
+                            </div>
+                            <div role="group" aria-label="End-time" class="relative flex flex-col w-[204px] px-2">
+                                <input id="endTime" name="deadline" class="peer drop-shadow-sm rounded-sm border-0 border-b-2 border-amber-200 placeholder-transparent bg-transparent focus:outline-none focus:ring-0 focus:border-fuchsia-600" placeholder="End-time for Thrift (Required)" type="datetime-local">
                                 <label for="endTime" class="absolute left-3 -top-3 text-sm text-zinc-400 transition-all peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-2 peer-focus:-top-3 peer-focus:text-zinc-400 peer-focus:text-sm">End-time for Thrift <span class="text-xs">(Required)</span></label>
                                 <span role="alert" id="errorEndTime" class="hidden py-2 text-sm text-red-500" aria-errormessage="endTime" aria-live="polite">Did you forget to set the end-time?</span>
                             </div>
@@ -289,10 +310,10 @@
                     </form>
                     <a href="./index.html" aria-label="HomeLink">
                         <img
-                          src="./uploads/logo-thrift-share.svg"
+                          src="./logo-thrift-share.png"
                           alt="Thrift & Share logo"
-                          width="594"
-                          height="208"
+                          width="273"
+                          height="96"
                           class="my-4 object-cover w-[164px] h-[56px]"
                         />
                     </a>

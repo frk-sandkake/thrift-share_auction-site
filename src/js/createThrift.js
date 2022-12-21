@@ -7,13 +7,16 @@ const thriftTitle = document.getElementById('thriftTitle');
 const errorThriftTitle = document.getElementById('errorThriftTitle');
 const thriftDescription = document.getElementById('thriftDescription');
 const errorThriftDescription = document.getElementById('errorThriftDescription');
-const thriftImage = document.getElementById('thriftImageUrl');
+const thriftImage1 = document.getElementById('thriftImageUrl1');
+const thriftImage2 = document.getElementById('thriftImageUrl2');
+const thriftImage3 = document.getElementById('thriftImageUrl3');
 const errorThriftImage = document.getElementById('errorThriftImageUrl');
-const thriftTags = document.getElementById('thriftTags');
+const thriftTag1 = document.getElementById('thriftTag1');
+const thriftTag2 = document.getElementById('thriftTag2');
+const thriftTag3 = document.getElementById('thriftTag3');
 const endTime = document.getElementById('endTime');
 const errorEndTime = document.getElementById('errorEndTime');
 const errorMessageAddThrift = document.getElementById('errorMessageAddThrift');
-
 
 addThriftForm.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -37,12 +40,12 @@ addThriftForm.addEventListener('submit', (e) => {
     errorThriftDescription.classList.remove('hidden');
   }
 
-  if (checkImgUrl(thriftImage.value || thriftImage.value === '')) {
-    thriftImage.classList.add('text-green-500', 'border-green-500');
+  if (checkImgUrl(thriftImage1.value || thriftImage1.value === '')) {
+    thriftImage1.classList.add('text-green-500', 'border-green-500');
     errorThriftImage.classList.add('hidden');
     validInputAddThrift = true;
   } else {
-    thriftImage.classList.add('text-red-500', 'border-red-500');
+    thriftImage1.classList.add('text-red-500', 'border-red-500');
     errorThriftImage.classList.remove('hidden');
   }
 
@@ -55,10 +58,9 @@ addThriftForm.addEventListener('submit', (e) => {
     errorEndTime.classList.remove('hidden');
   }
 
-
   if (validInputAddThrift) {
-    const tags = [thriftTags.value];
-    const thriftGallery = [thriftImage.value];
+    const tags = [thriftTag1.value, thriftTag2.value, thriftTag3.value];
+    const thriftGallery = [thriftImage1.value, thriftImage2.value, thriftImage3.value];
 
     const postData = {
       "title": thriftTitle.value,
@@ -81,7 +83,6 @@ addThriftForm.addEventListener('submit', (e) => {
       });
       if (response.ok) {
         const postJSON = await response.json();
-        console.log(postJSON);
         errorMessageAddThrift.innerHTML = 'Your thrift is listed!';
       } else {
         const errMessage = await response.json();

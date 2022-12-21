@@ -23,6 +23,14 @@ function getDataFromStorage(key) {
     return [];
 }
 
+export function getToken() {
+    const value = localStorage.getItem(tokenKey);
+    if (value) {
+        return JSON.parse(value);
+    }
+    return null;
+}
+
 export function getUserNameStorage() {
     const user = getDataFromStorage(userKey);
     if (userKey) {

@@ -10,7 +10,7 @@ const POST_SIGNUP_URL = `${AUCTION_API_BASE_URL}/auth/register`;
 const POST_LOGIN_URL = `${AUCTION_API_BASE_URL}/auth/login`;
 
 // PROFILE
-// const GET_PROFILE_URL = `${AUCTION_API_BASE_URL}/auth/profiles`;
+const GET_PROFILE_URL = `${AUCTION_API_BASE_URL}/auth/profiles`;
 // const POST_BIDS_URL = `${AUCTION_API_BASE_URL}/${id}bids`;
 
 export {
@@ -19,4 +19,5 @@ export {
     POST_LOGIN_URL,
     GET_LISTINGS_URL,
     GET_12_LISTINGS_BIDS_TAGS_URL,
+    GET_PROFILE_URL,
 };

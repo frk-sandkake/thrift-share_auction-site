@@ -133,7 +133,6 @@ async function getAllThrifts() {
     const thrifts = await response.json();
     if (response.ok) {
         showThriftsDataHTML(thrifts);
-        console.log(thrifts);
     } else {
         const errMessage = `I'm sorry but ${thrifts.errors[0].message}`;
         throw Error(errMessage);

@@ -1,11 +1,11 @@
 const navMenuMobile = document.getElementById('navMobile');
 
 function menuOpen() {
-    navMenuMobile.style.height = '100vh';
+    navMenuMobile.classList.remove('hidden');
 }
 
 function menuClose() {
-    navMenuMobile.style.height = '56px';
+    navMenuMobile.classList.add('hidden');
 }
 
 export { menuOpen, menuClose };

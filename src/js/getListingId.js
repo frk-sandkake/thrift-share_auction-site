@@ -20,7 +20,6 @@ const bidderList = document.getElementById('bidderListUL');
 
 const getId = new URLSearchParams(window.location.search).get('id');
 const GET_THRIFT_ID_URL = `${GET_LISTINGS_URL}/${getId}?_seller=true&_bids=true&tags=string`;
-console.log(pageTitle);
 
 const getThriftDetails = async () => {
     const response = await fetch(`${GET_THRIFT_ID_URL}`, {
@@ -29,12 +28,10 @@ const getThriftDetails = async () => {
             'Content-Type': 'application/json',
         },
     });
-    // console.log(response);
     const thriftData = await response.json();
 
     if (response.ok) {
         const { id, title, tags, description, media, endsAt, bids, _count, seller } = thriftData;
-        // console.log(thriftData);
         getCrumbs(thriftData); // breadCrumbNav.js
         pageTitle.innerHTML = `${title}`;
         document.title = `${title}`;
@@ -64,10 +61,6 @@ const getThriftDetails = async () => {
             thriftImage = `<img class="rounded-lg object-cover w-full max-h-72" src="https://res.cloudinary.com/dmurhab0f/image/upload/v1669892589/milivoj-kuhar-radio-unsplash.jpg" alt="Default image"/>`;
         }
         imageGallery.innerHTML = `${thriftImage}`;
-        /** All about the thrift - End */
-
-        // console.log(getId, singleThriftContainer, errorMessage, pageTitle);
-        // console.log(GET_12_LISTINGS_BIDS_TAGS_URL, GET_LISTINGS_URL);
 
         /** All about the Bids */
         const endTime = timeFormat(endsAt); // "Dec 8, 12 AM"
@@ -75,7 +68,6 @@ const getThriftDetails = async () => {
 
         const sortedBids = bids; // Sorts bids; highest nr 1
         sortedBids.sort((x, y) => y.amount - x.amount);
-        console.log(bids);
 
         let currentBid = 0; // Updates the highest bid, shows 0 if no bids
         const [first1] = bids;
@@ -97,7 +89,6 @@ const getThriftDetails = async () => {
             )
             .join('');
         bidderList.innerHTML = `${bidderInfo}`;
-        /** All about the Bids - End */
 
         /** All about the Seller */
         const getSellerAvatar = seller.avatar;
@@ -121,11 +112,6 @@ const getThriftDetails = async () => {
     `;
 
         sellerInfo.innerHTML = `${sellerNameEmail}`;
-        /** All about the Seller - End */
-
-        console.log(sellerName, sellerEmail);
-        console.log(newCurrentBid);
-        console.log(thriftData);
     } else {
         const errMessage = `I'm sorry but ${thriftData.errors[0].message}`;
         errorMessage.innerHTML = `${errMessage}`;
@@ -133,4 +119,4 @@ const getThriftDetails = async () => {
     }
 };
 
-getThriftDetails().then((r) => {});
+getThriftDetails().then(() => {});

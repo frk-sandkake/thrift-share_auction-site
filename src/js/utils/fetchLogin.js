@@ -13,8 +13,7 @@ async function postLogIn(userData, POST_LOGIN_URL) {
             name: jsonLogin.name,
             email: jsonLogin.email,
         };
-        let logInUserData;
-        logInUserData = {
+        const logInUserData = {
             userToSave,
             accessToken: jsonLogin.accessToken,
         };

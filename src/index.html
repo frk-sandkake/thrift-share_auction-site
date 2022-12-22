@@ -19,27 +19,6 @@
         <script type="module" src="./js/logInUser.js" defer></script>
     </head>
     <body class="bg-amber-50">
-        <button
-            id="toTopBtn"
-            title="Go back to top"
-            class="w-auto h-auto bg-zinc-700 text-cyan-300 rounded-full border-0 outline-0 fixed bottom-[20px] right-[30px] z-10 hover:bg-zinc-800"
-        >
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                class="w-[48px] h-[48px]"
-            >
-                <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M4.5 12.75l7.5-7.5 7.5 7.5m-15 6l7.5-7.5 7.5 7.5"
-                />
-            </svg>
-            <span class="sr-only">Back to top</span>
-        </button>
         <header
             class="relative top-0 z-50 w-full bg-zinc-800 drop-shadow-lg text-zinc-50 font-semibold prose-a:font-semibold md:relative"
         >
@@ -87,7 +66,7 @@
             </div>
             <nav
               id="navMobile"
-              class="absolute z-30 top-0 w-screen h-screen overflow-hidden transition-all flex flex-col justify-between items-center bg-zinc-800 bg-opacity-60 md:hidden"
+              class="absolute z-30 hidden top-0 w-screen h-screen overflow-hidden transition-all flex flex-col justify-between items-center bg-zinc-800 bg-opacity-60 md:hidden"
             >
             </nav>
         </header>
@@ -104,27 +83,10 @@
                 class="grid grid-cols-1 gap-4 py-8 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3 lg:gap-12"
             ></ul>
             <div id="errorMessage"></div>
-            <div class="flex justify-center">
-                <div class="flex flex-col md:flex-row md:max-w-xl rounded-lg bg-white shadow-lg">
-                    <img
-                        class="w-full h-96 md:h-auto object-cover md:w-48 rounded-t-lg md:rounded-none md:rounded-l-lg"
-                        src="https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.jpg"
-                        alt=""
-                    />
-                    <div class="p-6 flex flex-col justify-start">
-                        <h3 class="text-gray-900 text-xl font-medium mb-2">Card title</h3>
-                        <p class="text-gray-700 text-base mb-4">
-                            This is a wider card with supporting text below as a natural lead-in to
-                            additional content. This content is a bit longer.
-                        </p>
-                        <p class="text-gray-600 text-xs">Last updated 3 mins ago</p>
-                    </div>
-                </div>
-            </div>
         </main>
         <!-- SignUpForm -->
-        <div id="signupModal" role="alertdialog" class="modal hidden fixed top-0 left-0 right-0 z-50 w-screen h-screen overflow-x-hidden overflow-y-auto transition-all">
-            <div  class="relative w-screen h-screen bg-amber-50 bg-opacity-95 flex justify-center items-center">
+        <div id="signupModal" role="alertdialog" class="modal hidden fixed top-0 left-0 right-0 z-50 overflow-x-hidden overflow-y-auto transition-all">
+            <div  class="relative w-full h-full bg-amber-50 bg-opacity-95 flex justify-center items-center">
                 <section class="container mx-auto py-6 w-10/12 rounded-lg drop-shadow-lg bg-zinc-800 text-amber-50 text-center sm:w-sm max-w-xl">
                     <button
                       type="button"
@@ -204,10 +166,10 @@
                         </button>
                         <a href="./index.html" aria-label="HomeLink">
                             <img
-                              src="./uploads/logo-thrift-share.svg"
+                              src="logo-thrift-share.png"
                               alt="Thrift & Share logo"
-                              width="594"
-                              height="208"
+                              width="273"
+                              height="96"
                               class="my-8 object-cover min-w-[132px] max-w-[196px]"
                             />
                         </a>
@@ -282,10 +244,10 @@
                         </button>
                         <a href="./index.html" aria-label="HomeLink">
                             <img
-                              src="./uploads/logo-thrift-share.svg"
+                              src="logo-thrift-share.png"
                               alt="Thrift & Share logo"
-                              width="594"
-                              height="208"
+                              width="273"
+                              height="96"
                               class="my-8 object-cover min-w-[132px] max-w-[196px]"
                             />
                         </a>
@@ -293,71 +255,7 @@
                 </section>
             </div>
         </div>
-        <div
-            role="none"
-            class="container mx-auto p-2 bg-zinc-600 flex flex-wrap items-center justify-evenly gap-2"
-        >
-            <button
-                type="button"
-                data-button="primary-outline"
-                class="inline-flex justify-center items-center overflow-hidden gap-sm p-[6px_16px_4px] rounded-[36px] transition-all ease-in duration-75 text-pink-500 border-2 border-solid border-pink-600 shadow-sm hover:text-pink-50 hover:bg-pink-600 focus:ring-2 focus:outline-none focus:ring-pink-300"
-            >
-                <svg
-                    aria-hidden="true"
-                    class="-ml-sm w-[16px] h-[16px]"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
-                    <path
-                        d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"
-                    ></path>
-                </svg>
-                <span class="text-base font-semibold leading-5 pb-xs">Sign Up</span>
-            </button>
-            <button
-                type="button"
-                data-button="primary-outline"
-                class="rounded-full p-[2px_2px] text-pink-300 group bg-gradient-to-r from-pink-400 via-pink-600 to-pink-700 hover:bg-gradient-to-br hover:text-pink-50 drop-shadow-sm focus:ring-2 focus:outline-none focus:ring-pink-300"
-            >
-                <span
-                    class="inline-flex justify-center items-center gap-2 p-[2px_16px_2px] transition-all ease-in duration-75 bg-zinc-800 rounded-full group-hover:bg-opacity-0"
-                >
-                    <svg
-                        aria-hidden="true"
-                        class="-ml-2 w-4 h-4"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <path
-                            d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"
-                        ></path>
-                    </svg>
-                    <span class="text-base font-semibold pb-1">Sign Up</span>
-                </span>
-            </button>
-            <button
-                type="button"
-                data-button="secondary"
-                class="inline-flex justify-center items-center overflow-hidden gap-2 p-[6px_16px_4px] rounded-full text-amber-50 bg-gradient-to-r from-cyan-600 via-cyan-700 to-cyan-800 hover:bg-gradient-to-br shadow-sm focus:ring-2 focus:outline-none focus:ring-cyan-300"
-            >
-                <svg
-                    aria-hidden="true"
-                    class="-ml-2 w-4 h-4"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
-                    <path
-                        d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"
-                    ></path>
-                </svg>
-                <span class="text-base font-semibold pb-1">Sign Up</span>
-            </button>
-
-
-        </div>
+        <!-- Footer -->
         <footer class="w-full h-auto py-10 bg-zinc-900 text-zinc-50 prose-h2:text-amber-100">
             <div
                 role="none"
@@ -367,11 +265,11 @@
                 <section class="flex flex-col justify-evenly gap-6 text-center">
                     <a href="/" class="flex-0 block min-w-[196px] max-w-[340px]">
                         <img
-                            src="./uploads/logo-thrift-share.svg"
-                            alt="Thrift & Share logo"
-                            width="594"
-                            height="208"
-                            class="w-full h-auto"
+                          src="logo-thrift-share.png"
+                          alt="Thrift & Share logo"
+                          width="273"
+                          height="96"
+                          class="w-full h-auto"
                         />
                     </a>
                 </section>
@@ -379,7 +277,7 @@
                     id="topCharities"
                     class="flex flex-col gap-6 justify-evenly items-center text-center"
                 >
-                    <h2 class="">Top Charities</h2>
+                    <h2 class="text-xl">Top Charities</h2>
                     <ul class="flex flex-row gap-4">
                         <li>
                             <a

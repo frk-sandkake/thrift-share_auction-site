@@ -18,8 +18,7 @@ function matchPasswords(password, confirmPassword) {
 }
 
 const checkImgUrl = (url) => {
-    const urlPattern =
-      /https?:\/\/(\w+:?\w*)?(\S+)(:\d+)?(\/|\/([\w#!:.?+=&%\-\/]))?/;
+    const urlPattern = /https?:\/\/(\w+:?\w*)?(\S+)(:\d+)?(\/|\/([\w#!:.?+=&%-]))?/;
     if (typeof url === 'object') {
         return urlPattern.test(url.value);
     }

@@ -22,7 +22,7 @@ function logOutUser() {
     clearDataFromStorage();
     window.location.replace('/index.html');
 }
-const logOutBtn = document.getElementById('logoutBtn');
+const logOutBtn = document.querySelector('#logoutBtn, #logOutBtn');
 if (logOutBtn) {
     logOutBtn.addEventListener('click', () => {
         logOutUser();

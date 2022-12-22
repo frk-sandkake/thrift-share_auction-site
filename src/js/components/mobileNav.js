@@ -46,7 +46,7 @@ function createNavMobile() {
                  <li role="menuitem">
                     Some other page
                 </li>
-                <li role="group">
+                <li role="group" class="flex flex-col space-y-4">
                     <a role="link" href="/profile.html" class="${
                         pathname === '/profile.html'
                             ? 'text-cyan-300 underline'
@@ -54,7 +54,7 @@ function createNavMobile() {
                     }">
                          ${userName}
                     </a>
-                    <button id="logoutBtn" class="hover:text-pink-700">
+                    <button id="logOutBtn" class="logout-btn hover:text-pink-700">
                           LogOut
                     </button>
                 </li>
@@ -62,7 +62,7 @@ function createNavMobile() {
           `;
         }
         navMobil.innerHTML = `
-          <ul id="menuMobile" role="menu" role="list" class="absolute hidden top-0 right-0 w-10/12 h-screen overflow-y-auto transition-all text-center flex flex-col justify-evenly py-8 bg-zinc-800">
+          <ul id="menuMobile" role="menu" role="list" class="absolute top-0 right-0 w-10/12 h-screen overflow-y-auto transition-all text-center flex flex-col justify-evenly py-8 bg-zinc-800">
                ${navMobileLinks}
           </ul>
           <button

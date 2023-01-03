@@ -2,15 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
-
-    .btn-outline-pink {
-        @apply
-    }
-
-}
 .btn {
-    @apply p-[6px_16px_8px] rounded-full drop-shadow-sm text-base font-semibold
+    @apply pt-1.5 px-4 pb-2.5 rounded-full drop-shadow-sm text-base font-semibold
 }
 .btn-pink {
     @apply transition-all ease-in duration-75 text-pink-50 bg-gradient-to-r from-pink-500 via-pink-700 to-pink-800 hover:bg-gradient-to-br focus:ring-2 focus:outline-none focus:ring-pink-300
@@ -24,4 +17,20 @@
 
 .charity-link {
     @apply font-inria-serif text-base font-light bg-gradient-to-r from-cyan-400 to-amber-300 text-transparent bg-clip-text hover:bg-gradient-to-t
+}
+
+.footer_layout {
+    @apply py-6 grid grid-cols-12 justify-center items-center text-center
+}
+.footer_layout-logo {
+    @apply col-span-12 flex justify-center lg:col-start-1 lg:col-end-4 lg:row-start-1 lg:row-end-5
+}
+.footer_layout-news {
+    @apply pt-6 col-span-12 md:col-start-2 md:col-end-7 lg:col-start-4 lg:col-end-10 lg:row-start-1 lg:row-end-5 flex flex-col gap-4 items-center
+}
+.footer_layout-nav {
+    @apply col-span-12 pt-6 md:col-start-8 md:col-end-12 lg:col-start-10 lg:col-end-13 lg:row-start-2 lg:row-end-6 lg:pb-0 prose-a:font-medium prose-a:text-zinc-300
+}
+.footer_layout-copyright {
+    @apply col-span-12 lg:col-start-1 lg:col-end-4 lg:row-start-4 lg:row-end-6
 }

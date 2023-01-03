@@ -364,114 +364,109 @@
             <div id="errorMessage"></div>
         </main>
         <!-- Footer -->
-        <footer class="w-full h-auto py-10 bg-zinc-900 text-zinc-50 prose-h2:text-amber-100">
+        <footer class="bg-zinc-900 text-zinc-50">
             <div
-                role="none"
-                aria-labelledby="container"
-                class="container mx-auto flex flex-wrap justify-around gap-4"
+              role="none"
+              aria-labelledby="container"
+              class="container footer_layout"
             >
-                <section class="flex flex-col justify-evenly gap-6 text-center">
-                    <a href="/" class="flex-0 block min-w-[196px] max-w-[340px]">
+                <section class="footer_layout-logo">
+                    <a href="/" class="min-w-[196px] max-w-[340px]">
                         <img
                           src="logo-thrift-share.png"
                           alt="Thrift & Share logo"
                           width="273"
                           height="96"
-                            class="w-full h-auto"
+                          class="object-cover"
                         />
+                        <span class="sr-only">Thrift and Share</span>
                     </a>
                 </section>
                 <section
-                    id="topCharities"
-                    class="flex flex-col gap-6 justify-evenly items-center text-center"
+                  aria-label="Top three Charities"
+                  class="footer_layout-news"
                 >
-                    <h2 class="">Top Charities</h2>
-                    <ul class="flex flex-row gap-4">
+                    <h2 class="text-2xl font-bold text-amber-100">Top Charities</h2>
+                    <ul class="inline-flex gap-4">
                         <li>
                             <a
-                                href="#"
-                                class="font-inria-serif font-light bg-gradient-to-r from-cyan-400 to-amber-300 text-transparent bg-clip-text hover:bg-gradient-to-t"
-                                >NameOfCharity</a
+                              href="#"
+                              class="charity-link"
+                            >NameOfCharity</a
                             >
                         </li>
                         <li>
                             <a
-                                href="#"
-                                class="font-inria-serif font-light bg-gradient-to-r from-cyan-400 to-amber-300 text-transparent bg-clip-text hover:bg-gradient-to-t"
-                                >NameOfCharity</a
+                              href="#"
+                              class="charity-link"
+                            >NameOfCharity</a
                             >
                         </li>
                         <li>
                             <a
-                                href="#"
-                                class="font-inria-serif font-light bg-gradient-to-r from-cyan-400 to-amber-300 text-transparent bg-clip-text hover:bg-gradient-to-t"
-                                >NameOfCharity</a
+                              href="#"
+                              class="charity-link"
+                            >NameOfCharity</a
                             >
                         </li>
                     </ul>
-                    <form id="newsLetter" action="#" class="flex flex-row">
+                    <form aria-label="newsLetter" action="#" class="inline-flex py-6">
                         <div role="group" class="">
                             <input
-                                id="emailNews"
-                                type="text"
-                                placeholder="Your email address"
-                                class="rounded-full border-solid border-2 border-cyan-600 placeholder-zinc-300 bg-transparent"
+                              id="emailNews"
+                              type="text"
+                              placeholder="Your email address"
+                              class="py-1.5 rounded-full border-solid border-2 border-cyan-600 placeholder-zinc-300 bg-transparent"
                             />
-                            <label for="emailNews" class="block -mt-8"></label>
+                            <label for="emailNews" class="sr-only">Your email address</label>
                             <span id="emailNewsError" role="alert"></span>
                         </div>
                         <button
-                            type="submit"
-                            data-button="secondary"
-                            class="z-10 -ml-10 block py-2.5 px-5 rounded-full text-amber-50 bg-gradient-to-r from-cyan-600 via-cyan-700 to-cyan-800 hover:bg-gradient-to-br shadow-sm focus:ring-2 focus:outline-none focus:ring-cyan-300"
+                          type="submit"
+                          class="z-10 -ml-12 btn btn-blue"
                         >
-                            <span class="text-base font-semibold">Get News</span>
+                            Get News
                         </button>
                     </form>
                 </section>
-                <section class="text-center py-6 prose-a:font-medium prose-a:text-zinc-300">
-                    <nav id="navFooter" class="flex flex-row justify-between items-center gap-6">
+                <section aria-label="Footer navigation" class="footer_layout-nav">
+                    <nav id="navFooter" aria-label="Secondary Navigation" class="flex flex-row justify-center items-center space-x-12">
                         <ul
-                            id="menuBarFooter"
-                            role="list"
-                            class="flex flex-col gap-2 justify-between items-center"
+                          role="list"
+                          class="flex flex-col gap-2 justify-between items-center"
                         >
-                            <li><a href="#" class="hover:text-cyan-300">Thrifts</a></li>
+                            <li><a href="index.html" class="hover:text-cyan-300">Thrifts</a></li>
                             <li><a href="#" class="hover:text-cyan-300">Sellers</a></li>
                             <li><a href="#" class="hover:text-cyan-300">Shares</a></li>
                             <li><a href="#" class="hover:text-cyan-300">About Us</a></li>
                         </ul>
                         <ul
-                            id="topCategoriesFooter"
-                            role="list"
-                            class="flex flex-col gap-2 justify-between items-center"
+                          role="list"
+                          class="flex flex-col gap-2 items-center"
                         >
-                            <li><a href="#" class="hover:text-cyan-300">Thrifts</a></li>
-                            <li><a href="#" class="hover:text-cyan-300">Sellers</a></li>
-                            <li><a href="#" class="hover:text-cyan-300">Shares</a></li>
-                            <li><a href="#" class="hover:text-cyan-300">About Us</a></li>
+                            <li><a href="#" class="hover:text-cyan-300">FAQ</a></li>
+                            <li><a href="#" class="hover:text-cyan-300">About Project</a></li>
+                        </ul>
+                    </nav>
+                    <nav aria-label="Terms, conditions and privacy">
+                        <ul
+                          role="list"
+                          class="pt-4 inline-flex gap-3 text-sm font-light"
+                        >
+                            <li>
+                                <a href="#" class="hover:underline">Terms</a>
+                            </li>
+                            <li>
+                                <a href="#" class="hover:underline">Privacy</a>
+                            </li>
+                            <li>
+                                <a href="#" class="hover:underline">Cookies</a>
+                            </li>
                         </ul>
                     </nav>
                 </section>
-                <section class="w-full flex flex-row justify-around items-center pb-6">
-                    <small class="font-light">© 2022 frk.Sandkake’s Thrift&Share</small>
-                    <nav>
-                        <ul
-                            id="conditionsNav"
-                            role="group"
-                            class="flex flex-row gap-2 justify-between items-center"
-                        >
-                            <li>
-                                <a href="#" class="text-sm font-light hover:underline">Terms</a>
-                            </li>
-                            <li>
-                                <a href="#" class="text-sm font-light hover:underline">Privacy</a>
-                            </li>
-                            <li>
-                                <a href="#" class="text-sm font-light hover:underline">Cookies</a>
-                            </li>
-                        </ul>
-                    </nav>
+                <section aria-label="Copyrights" class="footer_layout-copyright">
+                    <small class="font-light">©frk.Sandkake’s Thrift&Share 2022</small>
                 </section>
             </div>
         </footer>

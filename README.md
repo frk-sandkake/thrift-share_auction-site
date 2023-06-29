@@ -8,7 +8,7 @@ at Noroff VOC Oslo, Norway. Student: Linda Sandaker, aka frk.Sandkake_
 <br><br>
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/204d98c8-ca9c-4c12-8f0c-6906fa804ace/deploy-status)](https://app.netlify.com/sites/the-thrift-share/deploys)
-![CodeFactor Grade](https://img.shields.io/codefactor/grade/github/frk-sandkake/semester-project-lindaMsandaker/main?logo=codefactor)
+![CodeFactor Grade](https://img.shields.io/codefactor/grade/github/frk-sandkake/thrift-share_action-site/main?logo=codefactor)
 ![nmp](https://img.shields.io/npm/v/vite?color=green&label=Vite)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 

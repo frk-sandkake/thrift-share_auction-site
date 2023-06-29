@@ -67,7 +67,7 @@ The project is to build a front-end application that handles the provided API.
 | CSS Framework   | CSS processors | Hosting services | Design Application | Planning Application |
 |-----------------|----------------|------------------|--------------------|----------------------|
 | Bootstrap (>5)  | SASS/SCSS      | GitHub Pages     | Adobe XD           | Trello               |
-| `Tailwind (>3)` | `PostCSS`      | `Netlify`        | `Figma`            | `GitHub Projects`    |**__
+| `Tailwind (>3)` | `PostCSS`      | `Netlify`        | `Figma`            | `GitHub Projects`    |
 | MUI (>5)        |                |                  | Sketch             |                      |
 
 <br>

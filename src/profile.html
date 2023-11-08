@@ -1,473 +1,411 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
-    <head>
-        <meta charset="UTF-8" />
-        <meta
-            name="description"
-            content="Auction site - Semester project Front-End Development Year 2, Noroff VOC Oslo."
-        />
-        <meta
-            name="keywords"
-            content="HTML, CSS, Vanilla JavaScript, API, GET, PUT, POST, Vite 3, TailwindCSS, PostCSS, Autoprefixer, Prettier"
-        />
-        <meta name="author" content="Linda Sandaker" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title> Profile page | for User of Thrift&Share | © 2022 frk.Sandkake</title>
-        <script type="module" src="./js/index.js" defer></script>
-        <script type="module" src="./js/profile.js" defer></script>
-        <script type="module" src="./js/createThrift.js" defer></script>
-    </head>
-    <body class="bg-amber-50">
-        <header
-            class="relative top-0 z-50 w-full bg-zinc-800 drop-shadow-lg text-zinc-50 font-semibold prose-a:font-semibold md:relative"
-        >
-            <div
-              id="desktopHeader"
-              title="desktop header"
-                class="container px-2 sm:px-4 max-w-6xl relative h-auto flex flex-col justify-around sm:flex-row sm:justify-between md:items-center"
-            >
-                <nav id="navBar" class="hidden md:w-full md:flex md:justify-between">
-                </nav>
-            </div>
-            <div id="mobileHeader" title="mobile header" role="group" class="relative z-50 w-full flex flex-row justify-between items-center bg-zinc-800 md:hidden">
-                    <a role="link" href="index.html" class=""
-                    >
-                        <img
-                          src="/logo-thrift-share.svg"
-                          alt="Thrift & Share logo"
-                          width="594"
-                          height="208"
-                          class="w-[156px] sm:w-[172px]"
-                        />
-                        <span class="sr-only">Logo</span>
-                    </a>
-                <button
-                  type="button"
-                  id="hamburger"
-                  aria-haspopup="true"
-                  aria-controls="navMobile"
-                  class="absolute top-0 right-0 md:hidden text-zinc-50 hover:text-cyan-300"
-                >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      class="w-8 h-8 m-2 sm:m-3"
-                    >
-                        <path
-                          fill-rule="evenodd"
-                          d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75H12a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm0 5.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75z"
-                          clip-rule="evenodd"
-                        />
-                    </svg>
-                </button>
-            </div>
-            <nav
-              id="navMobile"
-              class="absolute z-30 top-0 lg:hidden w-screen h-screen overflow-hidden transition-all flex flex-col justify-between items-center bg-zinc-800 bg-opacity-60 md:hidden"
-            >
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Auction site - Semester project Front-End Development Year 2, Noroff VOC Oslo." />
+    <meta name="keywords"
+        content="HTML, CSS, Vanilla JavaScript, API, GET, PUT, POST, Vite 3, TailwindCSS, PostCSS, Autoprefixer, Prettier" />
+    <meta name="author" content="Linda Sandaker" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> Profile page | for User of Thrift&Share | © 2022 frk.Sandkake</title>
+    <script type="module" src="./js/index.js" defer></script>
+    <script type="module" src="./js/profile.js" defer></script>
+    <script type="module" src="./js/createThrift.js" defer></script>
+</head>
+
+<body class="bg-amber-50">
+    <header
+        class="relative top-0 z-50 w-full bg-zinc-800 drop-shadow-lg text-zinc-50 font-semibold prose-a:font-semibold md:relative">
+        <div id="desktopHeader" title="desktop header"
+            class="container px-2 sm:px-4 max-w-6xl relative h-auto flex flex-col justify-around sm:flex-row sm:justify-between md:items-center">
+            <nav id="navBar" class="hidden md:w-full md:flex md:justify-between">
             </nav>
-        </header>
-        <nav
-          id="breadCrumb"
-          class="container px-2 sm:px-4 md:px-8 max-w-6xl"
-          aria-label="Breadcrumb"
-        ></nav>
-        <!-- ProfileSection -->
-        <article id="myProfile" class="relative overflow-hidden w-full bg-zinc-800 shadow-md shadow-zinc-900 text-amber-50">
-            <h1 class="sr-only text-center font-bold text-4xl text-zinc-600">My profile page</h1>
-            <div role="img" aria-hidden="true" class="absolute w-full bg-cover bg-center h-full rotate-180 z-0 bg-[url('/bg-globes.svg')] object-contain opacity-70" >
-            </div>
-            <div
-              role="group"
-              aria-label="Profile Info"
-              class="container mx-auto max-w-[856px] relative z-10 flex flex-col justify-evenly items-center lg:flex-row lg:justify-center"
-            >
-                <section
-                  id="profileInfo"
-                  class="container mx-auto my-4 rounded-md bg-zinc-800 bg-opacity-40 max-w-[460px] lg:my-8"
-                >
-                    <div class="float-left relative m-2 mr-6 w-28 h-28 shadow-md shadow-zinc-600 md:w-32 md:h-32 lg:w-36 lg:h-36">
-                    <div
-                      id="userAvatar"
-                      class="rounded-md"
-                    >
-                        <img
-                          src="https://mdbcdn.b-cdn.net/img/new/avatars/1.webp"
-                          class="object-cover"
-                          alt="Avatar"
-                        />
+        </div>
+        <div id="mobileHeader" title="mobile header" role="group"
+            class="relative z-50 w-full flex flex-row justify-between items-center bg-zinc-800 md:hidden">
+            <a role="link" href="index.html" class="">
+                <img src="/logo-thrift-share.svg" alt="Thrift & Share logo" width="594" height="208"
+                    class="w-[156px] sm:w-[172px]" />
+                <span class="sr-only">Logo</span>
+            </a>
+            <button type="button" id="hamburger" aria-haspopup="true" aria-controls="navMobile"
+                class="absolute top-0 right-0 md:hidden text-zinc-50 hover:text-cyan-300">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                    class="w-8 h-8 m-2 sm:m-3">
+                    <path fill-rule="evenodd"
+                        d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75H12a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm0 5.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75z"
+                        clip-rule="evenodd" />
+                </svg>
+            </button>
+        </div>
+        <nav id="navMobile"
+            class="absolute z-30 top-0 lg:hidden w-screen h-screen overflow-hidden transition-all flex flex-col justify-between items-center bg-zinc-800 bg-opacity-60 md:hidden">
+        </nav>
+    </header>
+    <nav id="breadCrumb" class="container px-2 sm:px-4 md:px-8 max-w-6xl" aria-label="Breadcrumb"></nav>
+    <!-- ProfileSection -->
+    <article id="myProfile" class="relative overflow-hidden w-full bg-zinc-800 shadow-md shadow-zinc-900 text-amber-50">
+        <h1 class="sr-only text-center font-bold text-4xl text-zinc-600">My profile page</h1>
+        <div role="img" aria-hidden="true"
+            class="absolute w-full bg-cover bg-center h-full rotate-180 z-0 bg-[url('/bg-globes.svg')] object-contain opacity-70">
+        </div>
+        <div role="group" aria-label="Profile Info"
+            class="container mx-auto max-w-[856px] relative z-10 flex flex-col justify-evenly items-center lg:flex-row lg:justify-center">
+            <section id="profileInfo"
+                class="container mx-auto my-4 rounded-md bg-zinc-800 bg-opacity-40 max-w-[460px] lg:my-8">
+                <div
+                    class="float-left relative m-2 mr-6 w-28 h-28 shadow-md shadow-zinc-600 md:w-32 md:h-32 lg:w-36 lg:h-36">
+                    <div id="userAvatar" class="rounded">
+                        <img src="https://mdbcdn.b-cdn.net/img/new/avatars/1.webp" class="object-cover" alt="Avatar" />
                     </div>
-                        <button id="avatarEditBtn" aria-controls="avatarEditModal"
-                                aria-label="Edit Avatar" class="absolute -top-3 -right-3 p-1.5 font-bold text-cyan-300 rounded-full border bg-zinc-800 border-cyan-600 hover:bg-cyan-800">
-                            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-3 h-3 md:w-4 md:h-4">
-                                <path d="M21.731 2.269a2.625 2.625 0 00-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 000-3.712zM19.513 8.199l-3.712-3.712-12.15 12.15a5.25 5.25 0 00-1.32 2.214l-.8 2.685a.75.75 0 00.933.933l2.685-.8a5.25 5.25 0 002.214-1.32L19.513 8.2z" />
-                            </svg>
-                        </button>
-                        <small class="inline-block text-xs font-thin invisible transition-all group-hover:visible">Change your Avatar</small>
-                    </div>
-                    <h2 id="userNameTitle" class="font-bold text-2xl my-1 p-1 text-amber-200">User_Name</h2>
-                    <p class="max-w-[380px] text-xs font-light italic pr-2 pb-2 md:text-sm">
-                        Some info about the seller or buyer and their experience with Thrift&Share
-                    </p>
-                    <div aria-hidden="true" class="inline-flex space-x-4 mb-4 text-zinc-400">
-                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-4 h-4"><!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
-                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-4 h-4"><!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path fill="currentColor" d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg>
-                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="w-4 h-4"><!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path fill="currentColor" d="M524.531,69.836a1.5,1.5,0,0,0-.764-.7A485.065,485.065,0,0,0,404.081,32.03a1.816,1.816,0,0,0-1.923.91,337.461,337.461,0,0,0-14.9,30.6,447.848,447.848,0,0,0-134.426,0,309.541,309.541,0,0,0-15.135-30.6,1.89,1.89,0,0,0-1.924-.91A483.689,483.689,0,0,0,116.085,69.137a1.712,1.712,0,0,0-.788.676C39.068,183.651,18.186,294.69,28.43,404.354a2.016,2.016,0,0,0,.765,1.375A487.666,487.666,0,0,0,176.02,479.918a1.9,1.9,0,0,0,2.063-.676A348.2,348.2,0,0,0,208.12,430.4a1.86,1.86,0,0,0-1.019-2.588,321.173,321.173,0,0,1-45.868-21.853,1.885,1.885,0,0,1-.185-3.126c3.082-2.309,6.166-4.711,9.109-7.137a1.819,1.819,0,0,1,1.9-.256c96.229,43.917,200.41,43.917,295.5,0a1.812,1.812,0,0,1,1.924.233c2.944,2.426,6.027,4.851,9.132,7.16a1.884,1.884,0,0,1-.162,3.126,301.407,301.407,0,0,1-45.89,21.83,1.875,1.875,0,0,0-1,2.611,391.055,391.055,0,0,0,30.014,48.815,1.864,1.864,0,0,0,2.063.7A486.048,486.048,0,0,0,610.7,405.729a1.882,1.882,0,0,0,.765-1.352C623.729,277.594,590.933,167.465,524.531,69.836ZM222.491,337.58c-28.972,0-52.844-26.587-52.844-59.239S193.056,219.1,222.491,219.1c29.665,0,53.306,26.82,52.843,59.239C275.334,310.993,251.924,337.58,222.491,337.58Zm195.38,0c-28.971,0-52.843-26.587-52.843-59.239S388.437,219.1,417.871,219.1c29.667,0,53.307,26.82,52.844,59.239C470.715,310.993,447.538,337.58,417.871,337.58Z"/></svg>
-                    </div>
-                    <div id="credits"></div>
-                </section>
-                <section class="w-full rounded-md py-4 lg:w-[250px] lg:bg-zinc-800 lg:bg-opacity-40">
-                    <h3 class="text-base text-amber-100 md:text-lg sr-only">Favorite charities:</h3>
-                    <ul class="w-full flex flex-row justify-around lg:flex-col lg:items-center lg:gap-2">
-                        <li>
-                            <p
-                              class="inline-block charity-link"
-                            >
-                                <a href="#" class="text-xs md:text-sm lg:text-base">NameOfCharity</a>
-                            </p>
-                        </li>
-                        <li>
-                            <p
-                              class="inline-block charity-link"
-                            >
-                                <a href="#" class="text-xs md:text-sm lg:text-base">NameOfCharity</a>
-                            </p>
-                        </li>
-                        <li>
-                            <p
-                              class="inline-block charity-link"
-                            >
-                                <a href="#" class="text-xs md:text-sm lg:text-base">NameOfCharity</a>
-                            </p>
-                        </li>
-                    </ul>
-                </section>
-            </div>
-        </article>
-        <!-- EditAvatarForm -->
-        <dialog id="avatarEditModal" aria-modal="true" class="bg-zinc-800 bg-opacity-50 w-full h-full">
-            <div  class="relative py-4 overflow-x-hidden overflow-y-auto">
-            <section class="container mx-auto max-w-[460px] overflow-x-hidden overflow-y-auto flex flex-col justify-center items-center space-y-2 py-6 rounded-lg drop-shadow-lg bg-zinc-800 text-amber-50">
-                <button
-                  type="button"
-                  id="exitAvatarEdit"
-                  aria-controls="avatarEditModal"
-                  aria-label="Exit"
-                  class="exit-modal absolute z-50 top-0 right-0 text-zinc-50 hover:text-cyan-300"
-                >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      class="w-8 h-8 m-2 sm:m-4"
-                    >
-                        <path
-                          fill-rule="evenodd"
-                          d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-1.72 6.97a.75.75 0 10-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 101.06 1.06L12 13.06l1.72 1.72a.75.75 0 101.06-1.06L13.06 12l1.72-1.72a.75.75 0 10-1.06-1.06L12 10.94l-1.72-1.72z"
-                          clip-rule="evenodd"
-                        />
+                    <button id="avatarEditBtn" aria-controls="avatarEditModal" aria-label="Edit Avatar"
+                        class="absolute -top-3 -right-3 p-1.5 font-bold text-cyan-300 rounded-full border bg-zinc-800 border-cyan-600 hover:bg-cyan-800">
+                        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                            fill="currentColor" class="w-3 h-3 md:w-4 md:h-4">
+                            <path
+                                d="M21.731 2.269a2.625 2.625 0 00-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 000-3.712zM19.513 8.199l-3.712-3.712-12.15 12.15a5.25 5.25 0 00-1.32 2.214l-.8 2.685a.75.75 0 00.933.933l2.685-.8a5.25 5.25 0 002.214-1.32L19.513 8.2z" />
+                        </svg>
+                    </button>
+                    <small class="inline-block text-xs font-thin invisible transition-all group-hover:visible">Change
+                        your Avatar</small>
+                </div>
+                <h2 id="userNameTitle" class="font-bold text-2xl my-1 p-1 text-amber-200">User_Name</h2>
+                <p class="max-w-[380px] text-xs font-light italic pr-2 pb-2 md:text-sm">
+                    Some info about the seller or buyer and their experience with Thrift&Share
+                </p>
+                <div aria-hidden="true" class="inline-flex space-x-4 mb-4 text-zinc-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+                        class="w-4 h-4"><!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                        <path fill="currentColor"
+                            d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+                        class="w-4 h-4"><!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                        <path fill="currentColor"
+                            d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"
+                        class="w-4 h-4"><!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                        <path fill="currentColor"
+                            d="M524.531,69.836a1.5,1.5,0,0,0-.764-.7A485.065,485.065,0,0,0,404.081,32.03a1.816,1.816,0,0,0-1.923.91,337.461,337.461,0,0,0-14.9,30.6,447.848,447.848,0,0,0-134.426,0,309.541,309.541,0,0,0-15.135-30.6,1.89,1.89,0,0,0-1.924-.91A483.689,483.689,0,0,0,116.085,69.137a1.712,1.712,0,0,0-.788.676C39.068,183.651,18.186,294.69,28.43,404.354a2.016,2.016,0,0,0,.765,1.375A487.666,487.666,0,0,0,176.02,479.918a1.9,1.9,0,0,0,2.063-.676A348.2,348.2,0,0,0,208.12,430.4a1.86,1.86,0,0,0-1.019-2.588,321.173,321.173,0,0,1-45.868-21.853,1.885,1.885,0,0,1-.185-3.126c3.082-2.309,6.166-4.711,9.109-7.137a1.819,1.819,0,0,1,1.9-.256c96.229,43.917,200.41,43.917,295.5,0a1.812,1.812,0,0,1,1.924.233c2.944,2.426,6.027,4.851,9.132,7.16a1.884,1.884,0,0,1-.162,3.126,301.407,301.407,0,0,1-45.89,21.83,1.875,1.875,0,0,0-1,2.611,391.055,391.055,0,0,0,30.014,48.815,1.864,1.864,0,0,0,2.063.7A486.048,486.048,0,0,0,610.7,405.729a1.882,1.882,0,0,0,.765-1.352C623.729,277.594,590.933,167.465,524.531,69.836ZM222.491,337.58c-28.972,0-52.844-26.587-52.844-59.239S193.056,219.1,222.491,219.1c29.665,0,53.306,26.82,52.843,59.239C275.334,310.993,251.924,337.58,222.491,337.58Zm195.38,0c-28.971,0-52.843-26.587-52.843-59.239S388.437,219.1,417.871,219.1c29.667,0,53.307,26.82,52.844,59.239C470.715,310.993,447.538,337.58,417.871,337.58Z" />
+                    </svg>
+                </div>
+                <div id="credits"></div>
+            </section>
+            <section class="w-full rounded-md py-4 lg:w-[250px] lg:bg-zinc-800 lg:bg-opacity-40">
+                <h3 class="text-base text-amber-100 md:text-lg sr-only">Favorite charities:</h3>
+                <ul class="w-full flex flex-row justify-around lg:flex-col lg:items-center lg:gap-2">
+                    <li>
+                        <p class="inline-block charity-link">
+                            <a href="#" class="text-xs md:text-sm lg:text-base">NameOfCharity</a>
+                        </p>
+                    </li>
+                    <li>
+                        <p class="inline-block charity-link">
+                            <a href="#" class="text-xs md:text-sm lg:text-base">NameOfCharity</a>
+                        </p>
+                    </li>
+                    <li>
+                        <p class="inline-block charity-link">
+                            <a href="#" class="text-xs md:text-sm lg:text-base">NameOfCharity</a>
+                        </p>
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </article>
+    <!-- EditAvatarForm -->
+    <dialog id="avatarEditModal" aria-modal="true" class="bg-zinc-800 bg-opacity-50 w-full h-full">
+        <div class="relative py-4 overflow-x-hidden overflow-y-auto">
+            <section
+                class="container mx-auto max-w-[460px] overflow-x-hidden overflow-y-auto flex flex-col justify-center items-center space-y-2 py-6 rounded-lg drop-shadow-lg bg-zinc-800 text-amber-50">
+                <button type="button" id="exitAvatarEdit" aria-controls="avatarEditModal" aria-label="Exit"
+                    class="exit-modal absolute z-50 top-0 right-0 text-zinc-50 hover:text-cyan-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                        class="w-8 h-8 m-2 sm:m-4">
+                        <path fill-rule="evenodd"
+                            d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-1.72 6.97a.75.75 0 10-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 101.06 1.06L12 13.06l1.72 1.72a.75.75 0 101.06-1.06L13.06 12l1.72-1.72a.75.75 0 10-1.06-1.06L12 10.94l-1.72-1.72z"
+                            clip-rule="evenodd" />
                     </svg>
                     <span class="sr-only">Exit</span>
                 </button>
-                <h2 class="text-2xl pl-2 pb-1 font-semibold font-inria-serif w-full italic text-fuchsia-600">Edit your Avatar here;</h2>
-                    <form id="avatarEditForm" class="flex flex-col justify-center items-center space-y-6">
-                        <fieldset class="flex flex-col justify-center space-y-6">
-                            <legend class="sr-only w-full text-amber-200 font-regular text-base pb-3">Add one image url:</legend>
-                        <div role="group" aria-label="Enter image URL" class="relative flex flex-col w-[300px] px-2 text-center">
-                            <input id="avatarEdit" name="avatarEdit" class="peer drop-shadow-sm rounded-sm border-0 border-b-2 border-amber-200 placeholder-transparent bg-transparent focus:outline-none focus:ring-0 focus:border-fuchsia-600 invalid:border-amber-800" placeholder="1 image URL (Required)" type="text" autofocus>
-                            <label for="avatarEdit" class="absolute left-3 -top-3.5 text-zinc-300 transition-all peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-zinc-300 peer-focus:text-sm">Only "https://"<span class="text-xs">(Required)</span></label>
-                            <span role="alert" id="errorAvatarEdit" class="hidden py-2 text-sm text-red-500" aria-errormessage="avatarEdit" aria-live="polite">Only "https://"</span>
+                <h2 class="text-2xl pl-2 pb-1 font-semibold font-inria-serif w-full italic text-cyan-200">Edit your
+                    Avatar here;</h2>
+                <form id="avatarEditForm" class="flex flex-col justify-center items-center space-y-6">
+                    <fieldset class="flex flex-col justify-center space-y-6">
+                        <legend class="sr-only w-full text-amber-200 font-regular text-base pb-3">Add one image url:
+                        </legend>
+                        <div role="group" aria-label="Enter image URL"
+                            class="relative flex flex-col w-[300px] px-2 text-center">
+                            <input id="avatarEdit" name="avatarEdit"
+                                class="peer drop-shadow-sm rounded-sm border-0 border-b-2 border-amber-200 placeholder-transparent bg-transparent focus:outline-none focus:ring-0 focus:border-fuchsia-600 invalid:border-amber-800"
+                                placeholder="1 image URL (Required)" type="text" autofocus>
+                            <label for="avatarEdit"
+                                class="absolute left-3 -top-3.5 text-zinc-300 transition-all peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-zinc-300 peer-focus:text-sm">Only
+                                "https://"<span class="text-xs">(Required)</span></label>
+                            <span role="alert" id="errorAvatarEdit" class="hidden py-2 text-sm text-red-500"
+                                aria-errormessage="avatarEdit" aria-live="polite">Only "https://"</span>
                         </div>
-                        </fieldset>
-                        <div aria-label="Buttons" role="group" class="w-full flex flex-row justify-evenly space-x-4 pt-2">
-                            <button value="cancel" class="btn btn-warning">Cancel</button>
-                            <button id="confirmEdit" type="submit" value="submit" class="btn btn-blue">Confirm</button>
-                        </div>
-                        <div id="errorMessageAvatarEdit"></div>
-                    </form>
-                        <a href="./index.html" aria-label="HomeLink">
-                            <img
-                              src="logo-thrift-share.png"
-                              alt="Thrift & Share logo"
-                              width="273"
-                              height="96"
-                              class="my-8 object-cover w-[148px] h-[56px]"
-                            />
-                        </a>
-                    </section>
-                </div>
-        </dialog>
-        <!-- AddThriftForm -->
-        <dialog id="addThriftModal" aria-modal="true" class="bg-zinc-800 bg-opacity-50 w-full h-full p-0 mx-auto sm:px-4 md:px-8 lg-px-12">
-            <div role="none" class="relative">
-                <section class="mx-auto overflow-y-auto flex flex-col items-center m-6 rounded-lg drop-shadow-lg bg-zinc-800 text-zinc-300">
-                    <button
-                      type="button"
-                      id="exitThriftAdd"
-                      aria-controls="addThriftModal"
-                      aria-label="Exit"
-                      class="exit-modal absolute z-50 top-0 right-0 text-zinc-50 hover:text-cyan-300"
-                    >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                          class="w-8 h-8 m-2 sm:m-4"
-                        >
-                            <path
-                              fill-rule="evenodd"
-                              d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-1.72 6.97a.75.75 0 10-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 101.06 1.06L12 13.06l1.72 1.72a.75.75 0 101.06-1.06L13.06 12l1.72-1.72a.75.75 0 10-1.06-1.06L12 10.94l-1.72-1.72z"
-                              clip-rule="evenodd"
-                            />
-                        </svg>
-                        <span class="sr-only">Exit</span>
-                    </button>
-                    <h2 class="text-2xl pt-4 font-semibold font-inria-serif text-center italic text-fuchsia-600">Add New Thrift;</h2>
-                    <form id="addThriftForm" method="post" class="flex flex-wrap flex-row justify-evenly space-y-4">
-                        <fieldset class="flex flex-col space-y-8">
-                            <legend class="sr-only w-full text-amber-200 font-regular text-base">Thrift Details:</legend>
-                            <div role="group" aria-label="Title" class="relative flex flex-col w-[288px] sm:w-[300] px-2">
-                                <input id="thriftTitle" name="thriftTitle" class="peer drop-shadow-sm rounded-sm border-0 border-b-2 border-amber-200 placeholder-transparent bg-transparent focus:outline-none focus:ring-0 focus:border-fuchsia-600" placeholder="Give it a good title (Required)" type="text" autofocus>
-                                <label for="thriftTitle" class="absolute left-3 -top-3.5 text-sm text-zinc-300 transition-all peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-2 peer-placeholder-shown:text-sm peer-focus:-top-3.5 peer-focus:text-zinc-400 peer-focus:text-sm">Give it a good title <span class="text-xs">(Required)</span></label>
-                                <span role="alert" id="errorThriftTitle" class="hidden py-2 text-sm text-red-500" aria-errormessage="thriftTitle" aria-live="polite">Title must be longer</span>
-                            </div>
-                            <div role="group" aria-label="Description" class="relative flex flex-col w-[288px] sm:w-[300] px-2 pt-2">
-                            <textarea
-                              id="thriftDescription"
-                              name="thriftDescription"
-                              rows="3"
-                              cols="5"
-                              class="peer drop-shadow-sm text-sm rounded-md h-18 border border-amber-200 placeholder-transparent bg-transparent focus:outline-none focus:ring-0 focus:border-fuchsia-600"
-                            >
-                            </textarea>
-                                <label for="thriftDescription" class="absolute left-3 -top-3 text-zinc-400 text-sm transition-all peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-3 peer-focus:-top-3 peer-focus:text-zinc-400 peer-focus:text-sm">Description of the Thrift <span class="text-xs">(Required)</span></label>
-                                <span role="alert" id="errorThriftDescription" class="hidden py-2 text-sm text-red-500" aria-errormessage="thriftDescription" aria-live="polite">Please, tell me more</span>
-                            </div>
-                        </fieldset>
-                        <fieldset class="flex flex-col items-center space-y-5">
-                            <legend class="sr-only">Add images, category and auction end time</legend>
-                            <div role="group" class="flex flex-col space-y-6">
-                                <div role="group" aria-label="imageURL1" class="relative flex flex-col w-[288px] sm:w-[300] px-2">
-                                    <input id="thriftImageUrl1" name="thriftImageUrl1" class="peer drop-shadow-sm rounded-sm border-0 border-b-2 border-amber-200 placeholder-transparent bg-transparent focus:outline-none focus:ring-0 focus:border-fuchsia-600" placeholder="image URL (Optional)" type="text">
-                                    <label for="thriftImageUrl1" class="absolute left-3 -top-3.5 text-sm text-zinc-300 transition-all peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-zinc-400 peer-focus:text-sm">Image 1 (URL: "https://") <span class="text-xs">(Optional)</span></label>
-                                    <span role="alert" id="errorThriftImageUrl" class="hidden py-2 text-sm text-red-500" aria-errormessage="thriftImageUrl1" aria-live="polite">Did you add a URL link?</span>
-                                </div>
-                                <div role="group" aria-label="imageURL2" class="relative flex flex-col w-[288px] sm:w-[300] px-2">
-                                    <input id="thriftImageUrl2" name="thriftImageUrl2" class="peer drop-shadow-sm rounded-sm border-0 border-b-2 border-amber-200 placeholder-transparent bg-transparent focus:outline-none focus:ring-0 focus:border-fuchsia-600" placeholder="image URL (Optional)" type="text">
-                                    <label for="thriftImageUrl2" class="absolute left-3 -top-3.5 text-sm text-zinc-300 transition-all peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-zinc-400 peer-focus:text-sm">Image 2 (URL: "https://") <span class="text-xs">(Optional)</span></label>
-                                </div>
-                                <div role="group" aria-label="imageURL3" class="relative flex flex-col w-[288px] sm:w-[300] px-2">
-                                    <input id="thriftImageUrl3" name="thriftImageUrl3" class="peer drop-shadow-sm rounded-sm border-0 border-b-2 border-amber-200 placeholder-transparent bg-transparent focus:outline-none focus:ring-0 focus:border-fuchsia-600" placeholder="image URL (Optional)" type="text">
-                                    <label for="thriftImageUrl3" class="absolute left-3 -top-3.5 text-sm text-zinc-300 transition-all peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-zinc-400 peer-focus:text-sm">Image 3 (URL: "https://") <span class="text-xs">(Optional)</span></label>
-                                </div>
-                            </div>
-                            <div role="group" class="flex flex-row">
-                            <div role="group" aria-label="Tag1" class="relative flex flex-col w-[98px] sm:w-[106] px-2 mt-0">
-                                <input id="thriftTag1" name="thriftTags1" class="peer drop-shadow-sm rounded-sm border-0 border-b-2 border-amber-200 placeholder-transparent bg-transparent focus:outline-none focus:ring-0 focus:border-fuchsia-600" placeholder="tag1 (Optional)" type="text">
-                                <label for="thriftTag1" class="absolute left-3 -top-3.5 text-sm text-zinc-300 transition-all peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-2 peer-focus:-top-4 peer-focus:text-zinc-400 peer-focus:text-sm">Tag1 <span class="text-xs">(Optional)</span></label>
-                            </div>
-                            <div role="group" aria-label="Tag2" class="relative flex flex-col w-[98px] sm:w-[106] px-2 mt-0">
-                                <input id="thriftTag2" name="thriftTag2" class="peer drop-shadow-sm rounded-sm border-0 border-b-2 border-amber-200 placeholder-transparent bg-transparent focus:outline-none focus:ring-0 focus:border-fuchsia-600" placeholder="Tag2(Optional)" type="text">
-                                <label for="thriftTag2" class="absolute left-3 -top-3.5 text-sm text-zinc-300 transition-all peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-2 peer-focus:-top-4 peer-focus:text-zinc-400 peer-focus:text-sm">Tag2 <span class="text-xs">(Optional)</span></label>
-                            </div>
-                            <div role="group" aria-label="Tag3" class="relative flex flex-col w-[98px] sm:w-[106] px-2 mt-0">
-                                <input id="thriftTag3" name="thriftTag3" class="peer drop-shadow-sm rounded-sm border-0 border-b-2 border-amber-200 placeholder-transparent bg-transparent focus:outline-none focus:ring-0 focus:border-fuchsia-600" placeholder="Tag3 (Optional)" type="text">
-                                <label for="thriftTag3" class="absolute left-3 -top-3.5 text-sm text-zinc-300 transition-all peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-2 peer-focus:-top-4 peer-focus:text-zinc-400 peer-focus:text-sm">Tag3 <span class="text-xs">(Optional)</span></label>
-                            </div>
-                            </div>
-                            <div role="group" aria-label="End-time" class="relative flex flex-col w-[204px] px-2">
-                                <input id="endTime" name="deadline" class="peer drop-shadow-sm rounded-sm border-0 border-b-2 border-amber-200 placeholder-transparent bg-transparent focus:outline-none focus:ring-0 focus:border-fuchsia-600" placeholder="End-time for Thrift (Required)" type="datetime-local">
-                                <label for="endTime" class="absolute left-3 -top-3 text-sm text-zinc-400 transition-all peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-2 peer-focus:-top-3 peer-focus:text-zinc-400 peer-focus:text-sm">End-time for Thrift <span class="text-xs">(Required)</span></label>
-                                <span role="alert" id="errorEndTime" class="hidden py-2 text-sm text-red-500" aria-errormessage="endTime" aria-live="polite">Did you forget to set the end-time?</span>
-                            </div>
-                        </fieldset>
-                        <div aria-label="Buttons" role="group" class="w-full flex flex-row justify-evenly space-x-4 py-8 ">
-                            <button value="cancel" class="btn btn-warning">Cancel</button>
-                            <button id="confirmAdd" type="submit" value="submit" class="btn btn-blue">Upload Thrift</button>
-                        </div>
-                        <div id="errorMessageAddThrift"></div>
-                    </form>
-                    <a href="./index.html" aria-label="HomeLink">
-                        <img
-                          src="./logo-thrift-share.png"
-                          alt="Thrift & Share logo"
-                          width="273"
-                          height="96"
-                          class="my-4 object-cover w-[164px] h-[56px]"
-                        />
-                    </a>
-                </section>
-            </div>
-        </dialog>
-
-        <!-- MyThrifts -->
-        <main class="container py-8 prose-h3:font-bold">
-            <h2 class="text-center font-bold text-2xl text-zinc-600">My Thrifts</h2>
-            <section class="py-8 flex flex-col justify-evenly items-center gap-6 ">
-                <form>
-                    <div aria-label="Search" role="group" class="relative flex flex-row">
-                        <input
-                          id="search"
-                          name="search"
-                          placeholder="Search"
-                          type="search"
-                          class="peer placeholder-transparent bg-transparent focus:outline-none focus:ring-0 focus:border-fuchsia-600 text-base rounded-full border-solid border-2 border-cyan-600 shadow-lg"
-                        />
-                        <label for="search" class="absolute left-3 -top-3.5 text-zinc-700 transition-all peer-placeholder-shown:text-zinc-800 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-zinc-700 peer-focus:text-sm">Search</label>
-                        <button
-                          type="submit"
-                          class="z-10 -ml-10 block py-2.5 px-5 rounded-full text-amber-50 bg-gradient-to-r from-cyan-600 via-cyan-700 to-cyan-800 hover:bg-gradient-to-br shadow-sm focus:ring-2 focus:outline-none focus:ring-cyan-300"
-                        >
-                            <span class="sr-only">search</span>
-                            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
-                                <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z" clip-rule="evenodd" />
-                            </svg>
-                        </button>
+                    </fieldset>
+                    <div aria-label="Buttons" role="group" class="w-full flex flex-row justify-evenly space-x-4 pt-2">
+                        <button value="cancel" class="btn btn-warning">Cancel</button>
+                        <button id="confirmEdit" type="submit" value="submit" class="btn btn-blue">Confirm</button>
                     </div>
+                    <div id="errorMessageAvatarEdit"></div>
                 </form>
-                <div aria-label="Filter" role="group" class="relative flex flex-row">
-                    <button
-                      id="newest"
-                      type="button"
-                      aria-label="Newest"
-                      class="filter-btn inline-block shadow-sm rounded-full p-[2px_2px] text-cyan-300 group bg-gradient-to-r from-cyan-400 via-cyan-600 to-cyan-700 hover:bg-gradient-to-br hover:text-amber-50 focus:text-amber-50"
-                    >
+                <a href="./index.html" aria-label="HomeLink">
+                    <img src="logo-thrift-share.png" alt="Thrift & Share logo" width="273" height="96"
+                        class="my-8 object-cover w-[148px] h-[56px]" />
+                </a>
+            </section>
+        </div>
+    </dialog>
+    <!-- AddThriftForm -->
+    <dialog id="addThriftModal" aria-modal="true"
+        class="bg-zinc-800 bg-opacity-50 w-full h-full p-0 mx-auto sm:px-4 md:px-8 lg-px-12">
+        <div role="none" class="relative">
+            <section
+                class="mx-auto overflow-y-auto flex flex-col items-center m-6 rounded-lg drop-shadow-lg bg-zinc-800 text-zinc-300">
+                <button type="button" id="exitThriftAdd" aria-controls="addThriftModal" aria-label="Exit"
+                    class="exit-modal absolute z-50 top-0 right-0 text-zinc-50 hover:text-cyan-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                        class="w-8 h-8 m-2 sm:m-4">
+                        <path fill-rule="evenodd"
+                            d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-1.72 6.97a.75.75 0 10-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 101.06 1.06L12 13.06l1.72 1.72a.75.75 0 101.06-1.06L13.06 12l1.72-1.72a.75.75 0 10-1.06-1.06L12 10.94l-1.72-1.72z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    <span class="sr-only">Exit</span>
+                </button>
+                <h2 class="text-2xl pt-4 font-semibold font-inria-serif text-center italic text-cyan-200">Add New
+                    Thrift;</h2>
+                <form id="addThriftForm" method="post" class="flex flex-wrap flex-row justify-evenly space-y-4">
+                    <fieldset class="flex flex-col space-y-8">
+                        <legend class="sr-only w-full text-amber-200 font-regular text-base">Thrift Details:</legend>
+                        <div role="group" aria-label="Title" class="relative flex flex-col w-[288px] sm:w-[300] px-2">
+                            <input id="thriftTitle" name="thriftTitle"
+                                class="peer drop-shadow-sm rounded-sm border-0 border-b-2 border-amber-200 placeholder-transparent bg-transparent focus:outline-none focus:ring-0 focus:border-cyan-300"
+                                placeholder="Give it a good title (Required)" type="text" autofocus>
+                            <label for="thriftTitle"
+                                class="absolute left-3 -top-3.5 text-sm text-zinc-300 transition-all peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-2 peer-placeholder-shown:text-sm peer-focus:-top-3.5 peer-focus:text-zinc-400 peer-focus:text-sm">Give
+                                it a good title <span class="text-xs">(Required)</span></label>
+                            <span role="alert" id="errorThriftTitle" class="hidden py-1 text-sm text-red-400"
+                                aria-errormessage="thriftTitle" aria-live="polite">Title must be longer</span>
+                        </div>
+                        <div role="group" aria-label="Description"
+                            class="relative flex flex-col w-[288px] sm:w-[300] px-2 pt-2">
+                            <textarea id="thriftDescription" name="thriftDescription" rows="3" cols="5"
+                                class="peer drop-shadow-sm text-sm rounded-md h-18 border border-amber-200 placeholder-transparent bg-transparent focus:outline-none focus:ring-0 focus:border-cyan-300">
+                            </textarea>
+                            <label for="thriftDescription"
+                                class="absolute left-3 -top-3 text-zinc-400 text-sm transition-all peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-3 peer-focus:-top-3 peer-focus:text-zinc-400 peer-focus:text-sm">Description
+                                of the Thrift <span class="text-xs">(Required)</span></label>
+                            <span role="alert" id="errorThriftDescription" class="hidden py-1 text-sm text-red-400"
+                                aria-errormessage="thriftDescription" aria-live="polite">Please, tell me more</span>
+                        </div>
+                    </fieldset>
+                    <fieldset class="flex flex-col items-center space-y-5">
+                        <legend class="sr-only">Add images, category and auction end time</legend>
+                        <div role="group" class="flex flex-col space-y-6">
+                            <div role="group" aria-label="imageURL1"
+                                class="relative flex flex-col w-[288px] sm:w-[300] px-2">
+                                <input id="thriftImageUrl1" name="thriftImageUrl1"
+                                    class="peer drop-shadow-sm rounded-sm border-0 border-b-2 border-amber-200 placeholder-transparent bg-transparent focus:outline-none focus:ring-0 focus:border-fuchsia-600"
+                                    placeholder="image URL (Optional)" type="text">
+                                <label for="thriftImageUrl1"
+                                    class="absolute left-3 -top-3.5 text-sm text-zinc-300 transition-all peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-zinc-400 peer-focus:text-sm">Image
+                                    1 (URL: "https://") <span class="text-xs">(Optional)</span></label>
+                                <span role="alert" id="errorThriftImageUrl" class="hidden py-1 text-sm text-red-400"
+                                    aria-errormessage="thriftImageUrl1" aria-live="polite">Did you add a URL
+                                    link?</span>
+                            </div>
+                            <div role="group" aria-label="imageURL2"
+                                class="relative flex flex-col w-[288px] sm:w-[300] px-2">
+                                <input id="thriftImageUrl2" name="thriftImageUrl2"
+                                    class="peer drop-shadow-sm rounded-sm border-0 border-b-2 border-amber-200 placeholder-transparent bg-transparent focus:outline-none focus:ring-0 focus:border-cyan-300"
+                                    placeholder="image URL (Optional)" type="text">
+                                <label for="thriftImageUrl2"
+                                    class="absolute left-3 -top-3.5 text-sm text-zinc-300 transition-all peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-zinc-400 peer-focus:text-sm">Image
+                                    2 (URL: "https://") <span class="text-xs">(Optional)</span></label>
+                            </div>
+                            <div role="group" aria-label="imageURL3"
+                                class="relative flex flex-col w-[288px] sm:w-[300] px-2">
+                                <input id="thriftImageUrl3" name="thriftImageUrl3"
+                                    class="peer drop-shadow-sm rounded-sm border-0 border-b-2 border-amber-200 placeholder-transparent bg-transparent focus:outline-none focus:ring-0 focus:border-cyan-300"
+                                    placeholder="image URL (Optional)" type="text">
+                                <label for="thriftImageUrl3"
+                                    class="absolute left-3 -top-3.5 text-sm text-zinc-300 transition-all peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-zinc-400 peer-focus:text-sm">Image
+                                    3 (URL: "https://") <span class="text-xs">(Optional)</span></label>
+                            </div>
+                        </div>
+                        <div role="group" class="flex flex-row">
+                            <div role="group" aria-label="Tag1"
+                                class="relative flex flex-col w-[98px] sm:w-[106] px-2 mt-0">
+                                <input id="thriftTag1" name="thriftTags1"
+                                    class="peer drop-shadow-sm rounded-sm border-0 border-b-2 border-amber-200 placeholder-transparent bg-transparent focus:outline-none focus:ring-0 focus:border-cyan-300"
+                                    placeholder="tag1 (Optional)" type="text">
+                                <label for="thriftTag1"
+                                    class="absolute left-3 -top-3.5 text-sm text-zinc-300 transition-all peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-2 peer-focus:-top-4 peer-focus:text-zinc-400 peer-focus:text-sm">Tag1
+                                    <span class="text-xs">(Optional)</span></label>
+                            </div>
+                            <div role="group" aria-label="Tag2"
+                                class="relative flex flex-col w-[98px] sm:w-[106] px-2 mt-0">
+                                <input id="thriftTag2" name="thriftTag2"
+                                    class="peer drop-shadow-sm rounded-sm border-0 border-b-2 border-amber-200 placeholder-transparent bg-transparent focus:outline-none focus:ring-0 focus:border-cyan-300"
+                                    placeholder="Tag2(Optional)" type="text">
+                                <label for="thriftTag2"
+                                    class="absolute left-3 -top-3.5 text-sm text-zinc-300 transition-all peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-2 peer-focus:-top-4 peer-focus:text-zinc-400 peer-focus:text-sm">Tag2
+                                    <span class="text-xs">(Optional)</span></label>
+                            </div>
+                            <div role="group" aria-label="Tag3"
+                                class="relative flex flex-col w-[98px] sm:w-[106] px-2 mt-0">
+                                <input id="thriftTag3" name="thriftTag3"
+                                    class="peer drop-shadow-sm rounded-sm border-0 border-b-2 border-amber-200 placeholder-transparent bg-transparent focus:outline-none focus:ring-0 focus:border-cyan-300"
+                                    placeholder="Tag3 (Optional)" type="text">
+                                <label for="thriftTag3"
+                                    class="absolute left-3 -top-3.5 text-sm text-zinc-300 transition-all peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-2 peer-focus:-top-4 peer-focus:text-zinc-400 peer-focus:text-sm">Tag3
+                                    <span class="text-xs">(Optional)</span></label>
+                            </div>
+                        </div>
+                        <div role="group" aria-label="End-time" class="relative flex flex-col w-[204px] px-2">
+                            <input id="endTime" name="deadline"
+                                class="peer drop-shadow-sm rounded-sm border-0 border-b-2 border-amber-200 placeholder-transparent bg-transparent focus:outline-none focus:ring-0 focus:border-cyan-300"
+                                placeholder="End-time for Thrift (Required)" type="datetime-local">
+                            <label for="endTime"
+                                class="absolute left-3 -top-3 text-sm text-zinc-400 transition-all peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-2 peer-focus:-top-3 peer-focus:text-zinc-400 peer-focus:text-sm">End-time
+                                for Thrift <span class="text-xs">(Required)</span></label>
+                            <span role="alert" id="errorEndTime" class="hidden py-1 text-sm text-red-400"
+                                aria-errormessage="endTime" aria-live="polite">Did you forget to set the
+                                end-time?</span>
+                        </div>
+                    </fieldset>
+                    <div aria-label="Buttons" role="group" class="w-full flex flex-row justify-evenly space-x-4 py-8 ">
+                        <button value="cancel" class="btn btn-warning">Cancel</button>
+                        <button id="confirmAdd" type="submit" value="submit" class="btn btn-blue">Upload Thrift</button>
+                    </div>
+                    <div id="errorMessageAddThrift"></div>
+                </form>
+                <a href="./index.html" aria-label="HomeLink">
+                    <img src="./logo-thrift-share.png" alt="Thrift & Share logo" width="273" height="96"
+                        class="my-4 object-cover w-[164px] h-[56px]" />
+                </a>
+            </section>
+        </div>
+    </dialog>
+
+    <!-- MyThrifts -->
+    <main class="container py-8 prose-h3:font-bold">
+        <h2 class="text-center font-bold text-2xl text-zinc-600">My Thrifts</h2>
+        <section class="py-8 flex flex-col justify-evenly items-center gap-6 ">
+            <form>
+                <div aria-label="Search" role="group" class="relative flex flex-row">
+                    <input id="search" name="search" placeholder="Search" type="search"
+                        class="peer placeholder-transparent bg-transparent focus:outline-none focus:ring-0 focus:border-fuchsia-600 text-base rounded-full border-solid border-2 border-cyan-600 shadow-lg" />
+                    <label for="search"
+                        class="absolute left-3 -top-3.5 text-zinc-700 transition-all peer-placeholder-shown:text-zinc-800 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-zinc-700 peer-focus:text-sm">Search</label>
+                    <button type="submit"
+                        class="z-10 -ml-10 block py-2.5 px-5 rounded-full text-amber-50 bg-gradient-to-r from-cyan-600 via-cyan-700 to-cyan-800 hover:bg-gradient-to-br shadow-sm focus:ring-2 focus:outline-none focus:ring-cyan-300">
+                        <span class="sr-only">search</span>
+                        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                            fill="currentColor" class="w-5 h-5">
+                            <path fill-rule="evenodd"
+                                d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                </div>
+            </form>
+            <div aria-label="Filter" role="group" class="relative flex flex-row">
+                <button id="newest" type="button" aria-label="Newest"
+                    class="filter-btn inline-block shadow-sm rounded-full p-[2px_2px] text-cyan-300 group bg-gradient-to-r from-cyan-400 via-cyan-600 to-cyan-700 hover:bg-gradient-to-br hover:text-amber-50 focus:text-amber-50">
                     <span role="presentation"
-                          class="inline-flex justify-center items-center gap-1 overflow-hidden p-[2px_18px] transition-all ease-in duration-75 bg-zinc-800 rounded-full group-hover:bg-opacity-0 group-focus:bg-gradient-to-r"
-                    >
+                        class="inline-flex justify-center items-center gap-1 overflow-hidden p-[2px_18px] transition-all ease-in duration-75 bg-zinc-800 rounded-full group-hover:bg-opacity-0 group-focus:bg-gradient-to-r">
                         <span role="presentation" class="text-base font-semibold pb-1">Newest</span>
                     </span>
-                    </button>
-                    <button
-                      id="oldest"
-                      type="button"
-                      aria-label="Oldest"
-                      class="filter-btn inline-block shadow-sm rounded-full p-[2px_2px] text-cyan-300 group bg-gradient-to-r from-cyan-400 via-cyan-600 to-cyan-700 hover:bg-gradient-to-br hover:text-amber-50 focus:text-amber-50"
-                    >
+                </button>
+                <button id="oldest" type="button" aria-label="Oldest"
+                    class="filter-btn inline-block shadow-sm rounded-full p-[2px_2px] text-cyan-300 group bg-gradient-to-r from-cyan-400 via-cyan-600 to-cyan-700 hover:bg-gradient-to-br hover:text-amber-50 focus:text-amber-50">
                     <span role="presentation"
-                          class="inline-flex justify-center items-center gap-1 overflow-hidden p-[2px_18px] transition-all ease-in duration-75 bg-zinc-800 rounded-full group-hover:bg-opacity-0 group-focus:bg-gradient-to-r"
-                    >
+                        class="inline-flex justify-center items-center gap-1 overflow-hidden p-[2px_18px] transition-all ease-in duration-75 bg-zinc-800 rounded-full group-hover:bg-opacity-0 group-focus:bg-gradient-to-r">
                         <span role="presentation" class="text-base font-semibold pb-1">Oldest</span>
                     </span>
-                    </button>
-                </div>
-                <button id="addThriftBtn" aria-controls="addThriftModal" class="w-64 btn btn-pink">
-                    Add New Thrift
                 </button>
+            </div>
+            <button id="addThriftBtn" aria-controls="addThriftModal" class="w-64 btn btn-pink">
+                Add New Thrift
+            </button>
+        </section>
+        <ul id="myThrifts" class="grid grid-cols-1 gap-4 py-8 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3 lg:gap-12"></ul>
+        <div id="errorMessage"></div>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-zinc-900 text-zinc-50">
+        <div role="none" aria-labelledby="container" class="container footer_layout">
+            <section class="footer_layout-logo">
+                <a href="/" class="min-w-[196px] max-w-[340px]">
+                    <img src="logo-thrift-share.png" alt="Thrift & Share logo" width="273" height="96"
+                        class="object-cover" />
+                    <span class="sr-only">Thrift and Share</span>
+                </a>
             </section>
-            <ul
-                id="myThrifts"
-                class="grid grid-cols-1 gap-4 py-8 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3 lg:gap-12"
-            ></ul>
-            <div id="errorMessage"></div>
-        </main>
-        <!-- Footer -->
-        <footer class="bg-zinc-900 text-zinc-50">
-            <div
-              role="none"
-              aria-labelledby="container"
-              class="container footer_layout"
-            >
-                <section class="footer_layout-logo">
-                    <a href="/" class="min-w-[196px] max-w-[340px]">
-                        <img
-                          src="logo-thrift-share.png"
-                          alt="Thrift & Share logo"
-                          width="273"
-                          height="96"
-                          class="object-cover"
-                        />
-                        <span class="sr-only">Thrift and Share</span>
-                    </a>
-                </section>
-                <section
-                  aria-label="Top three Charities"
-                  class="footer_layout-news"
-                >
-                    <h2 class="text-2xl font-bold text-amber-100">Top Charities</h2>
-                    <ul class="inline-flex gap-4">
+            <section aria-label="Top three Charities" class="footer_layout-news">
+                <h2 class="text-2xl font-bold text-amber-100">Top Charities</h2>
+                <ul class="inline-flex gap-4">
+                    <li>
+                        <a href="#" class="charity-link">NameOfCharity</a>
+                    </li>
+                    <li>
+                        <a href="#" class="charity-link">NameOfCharity</a>
+                    </li>
+                    <li>
+                        <a href="#" class="charity-link">NameOfCharity</a>
+                    </li>
+                </ul>
+                <form aria-label="newsLetter" action="#" class="inline-flex py-6">
+                    <div role="group" class="">
+                        <input id="emailNews" type="text" placeholder="Your email address"
+                            class="py-1.5 rounded-full border-solid border-2 border-cyan-600 placeholder-zinc-300 bg-transparent" />
+                        <label for="emailNews" class="sr-only">Your email address</label>
+                        <span id="emailNewsError" role="alert"></span>
+                    </div>
+                    <button type="submit" class="z-10 -ml-12 btn btn-blue">
+                        Get News
+                    </button>
+                </form>
+            </section>
+            <section aria-label="Footer navigation" class="footer_layout-nav">
+                <nav id="navFooter" aria-label="Secondary Navigation"
+                    class="flex flex-row justify-center items-center space-x-12">
+                    <ul role="list" class="flex flex-col gap-2 justify-between items-center">
+                        <li><a href="index.html" class="hover:text-cyan-300">Thrifts</a></li>
+                        <li><a href="#" class="hover:text-cyan-300">Sellers</a></li>
+                        <li><a href="#" class="hover:text-cyan-300">Shares</a></li>
+                        <li><a href="#" class="hover:text-cyan-300">About Us</a></li>
+                    </ul>
+                    <ul role="list" class="flex flex-col gap-2 items-center">
+                        <li><a href="#" class="hover:text-cyan-300">FAQ</a></li>
+                        <li><a href="#" class="hover:text-cyan-300">About Project</a></li>
+                    </ul>
+                </nav>
+                <nav aria-label="Terms, conditions and privacy">
+                    <ul role="list" class="pt-4 inline-flex gap-3 text-sm font-light">
                         <li>
-                            <a
-                              href="#"
-                              class="charity-link"
-                            >NameOfCharity</a
-                            >
+                            <a href="#" class="hover:underline">Terms</a>
                         </li>
                         <li>
-                            <a
-                              href="#"
-                              class="charity-link"
-                            >NameOfCharity</a
-                            >
+                            <a href="#" class="hover:underline">Privacy</a>
                         </li>
                         <li>
-                            <a
-                              href="#"
-                              class="charity-link"
-                            >NameOfCharity</a
-                            >
+                            <a href="#" class="hover:underline">Cookies</a>
                         </li>
                     </ul>
-                    <form aria-label="newsLetter" action="#" class="inline-flex py-6">
-                        <div role="group" class="">
-                            <input
-                              id="emailNews"
-                              type="text"
-                              placeholder="Your email address"
-                              class="py-1.5 rounded-full border-solid border-2 border-cyan-600 placeholder-zinc-300 bg-transparent"
-                            />
-                            <label for="emailNews" class="sr-only">Your email address</label>
-                            <span id="emailNewsError" role="alert"></span>
-                        </div>
-                        <button
-                          type="submit"
-                          class="z-10 -ml-12 btn btn-blue"
-                        >
-                            Get News
-                        </button>
-                    </form>
-                </section>
-                <section aria-label="Footer navigation" class="footer_layout-nav">
-                    <nav id="navFooter" aria-label="Secondary Navigation" class="flex flex-row justify-center items-center space-x-12">
-                        <ul
-                          role="list"
-                          class="flex flex-col gap-2 justify-between items-center"
-                        >
-                            <li><a href="index.html" class="hover:text-cyan-300">Thrifts</a></li>
-                            <li><a href="#" class="hover:text-cyan-300">Sellers</a></li>
-                            <li><a href="#" class="hover:text-cyan-300">Shares</a></li>
-                            <li><a href="#" class="hover:text-cyan-300">About Us</a></li>
-                        </ul>
-                        <ul
-                          role="list"
-                          class="flex flex-col gap-2 items-center"
-                        >
-                            <li><a href="#" class="hover:text-cyan-300">FAQ</a></li>
-                            <li><a href="#" class="hover:text-cyan-300">About Project</a></li>
-                        </ul>
-                    </nav>
-                    <nav aria-label="Terms, conditions and privacy">
-                        <ul
-                          role="list"
-                          class="pt-4 inline-flex gap-3 text-sm font-light"
-                        >
-                            <li>
-                                <a href="#" class="hover:underline">Terms</a>
-                            </li>
-                            <li>
-                                <a href="#" class="hover:underline">Privacy</a>
-                            </li>
-                            <li>
-                                <a href="#" class="hover:underline">Cookies</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </section>
-                <section aria-label="Copyrights" class="footer_layout-copyright">
-                    <small class="font-light">©frk.Sandkake’s Thrift&Share 2022</small>
-                </section>
-            </div>
-        </footer>
-    </body>
+                </nav>
+            </section>
+            <section aria-label="Copyrights" class="footer_layout-copyright">
+                <small class="font-light">©frk.Sandkake’s Thrift&Share 2022</small>
+            </section>
+        </div>
+    </footer>
+</body>
+
 </html>

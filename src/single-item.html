@@ -24,8 +24,7 @@
         >
             <div
               id="desktopHeader"
-              role="presentation"
-              aria-labelledby="container"
+              title="desktop header"
               class="container px-2 sm:px-4 max-w-6xl relative h-auto flex flex-col justify-around sm:flex-row sm:justify-between md:items-center"
             >
                 <nav id="navBar" class="hidden md:w-full md:flex md:justify-between">
@@ -66,7 +65,7 @@
             </div>
             <nav
               id="navMobile"
-              class="absolute z-30 hidden top-0 w-screen h-screen overflow-hidden transition-all flex flex-col justify-between items-center bg-zinc-800 bg-opacity-60 md:hidden"
+              class="absolute z-30 lg:hidden top-0 w-screen h-screen overflow-hidden transition-all flex flex-col justify-between items-center bg-zinc-800 bg-opacity-60 md:hidden"
             >
             </nav>
         </header>
@@ -291,7 +290,7 @@
             <div id="errorMessage"></div>
         </main>
         <!-- SignUpForm -->
-        <div id="signupModal" role="alertdialog" class="modal hidden fixed top-0 left-0 right-0 z-50 overflow-x-hidden overflow-y-auto transition-all">
+        <div id="signupModal" role="alert dialog" class="modal hidden fixed top-0 left-0 right-0 z-50 overflow-x-hidden overflow-y-auto transition-all">
             <div  class="relative w-full h-full bg-amber-50 bg-opacity-95 flex justify-center items-center">
                 <section class="container mx-auto py-6 w-10/12 rounded-lg drop-shadow-lg bg-zinc-800 text-amber-50 text-center sm:w-sm max-w-xl">
                     <button
@@ -384,7 +383,7 @@
             </div>
         </div>
         <!-- LogInForm -->
-        <div id="loginModal" role="alertdialog" class="modal hidden fixed top-0 left-0 right-0 z-50 w-screen h-screen overflow-x-hidden overflow-y-auto transition-all">
+        <div id="loginModal" role="alert dialog" class="modal hidden fixed top-0 left-0 right-0 z-50 w-screen h-screen overflow-x-hidden overflow-y-auto transition-all">
             <div  class="relative w-screen h-screen bg-amber-50 bg-opacity-95 flex justify-center items-center">
                 <section class="relative container mx-auto py-6 w-10/12 rounded-lg drop-shadow-lg bg-zinc-800 text-amber-50 text-center sm:w-sm max-w-xl">
                     <button

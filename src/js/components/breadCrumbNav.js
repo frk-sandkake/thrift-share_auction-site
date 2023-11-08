@@ -24,7 +24,7 @@ function getCrumbs(thriftData) {
                 </a>
             </li>
             `;
-        breadCrumbs.innerHTML = `<ol class="flex flex-row justify-start items-center gap-1">${crumbLinks}</ol>`;
+        breadCrumbs.innerHTML = `<ol class="flex flex-row justify-start items-center gap-1 p-2">${crumbLinks}</ol>`;
     }
 }
 

@@ -39,8 +39,7 @@
                 </svg>
             </button>
         </div>
-        <nav id="navMobile"
-            class="absolute z-30 top-0 lg:hidden w-screen h-screen overflow-hidden transition-all flex flex-col justify-between items-center bg-zinc-800 bg-opacity-60 md:hidden">
+        <nav id="navMobile" class="hidden md:hidden">
         </nav>
     </header>
     <nav id="breadCrumb" class="container px-2 sm:px-4 md:px-8 max-w-6xl" aria-label="Breadcrumb"></nav>
@@ -115,6 +114,51 @@
             </section>
         </div>
     </article>
+    <!-- MyThrifts -->
+    <main class="container py-8 prose-h3:font-bold">
+        <h2 class="text-center font-bold text-2xl text-zinc-600">My Thrifts</h2>
+        <section class="py-8 flex flex-col justify-evenly items-center gap-6 ">
+            <form>
+                <div aria-label="Search" role="group" class="relative flex flex-row">
+                    <input id="search" name="search" placeholder="Search" type="search"
+                        class="peer placeholder-transparent bg-transparent focus:outline-none focus:ring-0 focus:border-fuchsia-600 text-base rounded-full border-solid border-2 border-cyan-600 shadow-lg" />
+                    <label for="search"
+                        class="absolute left-3 -top-3.5 text-zinc-700 transition-all peer-placeholder-shown:text-zinc-800 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-zinc-700 peer-focus:text-sm">Search</label>
+                    <button type="submit"
+                        class="z-10 -ml-10 block py-2.5 px-5 rounded-full text-amber-50 bg-gradient-to-r from-cyan-600 via-cyan-700 to-cyan-800 hover:bg-gradient-to-br shadow-sm focus:ring-2 focus:outline-none focus:ring-cyan-300">
+                        <span class="sr-only">search</span>
+                        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                            fill="currentColor" class="w-5 h-5">
+                            <path fill-rule="evenodd"
+                                d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                </div>
+            </form>
+            <div aria-label="Filter" role="group" class="relative flex flex-row">
+                <button id="newest" type="button" aria-label="Newest"
+                    class="filter-btn inline-block shadow-sm rounded-full p-[2px_2px] text-cyan-300 group bg-gradient-to-r from-cyan-400 via-cyan-600 to-cyan-700 hover:bg-gradient-to-br hover:text-amber-50 focus:text-amber-50">
+                    <span role="presentation"
+                        class="inline-flex justify-center items-center gap-1 overflow-hidden p-[2px_18px] transition-all ease-in duration-75 bg-zinc-800 rounded-full group-hover:bg-opacity-0 group-focus:bg-gradient-to-r">
+                        <span role="presentation" class="text-base font-semibold pb-1">Newest</span>
+                    </span>
+                </button>
+                <button id="oldest" type="button" aria-label="Oldest"
+                    class="filter-btn inline-block shadow-sm rounded-full p-[2px_2px] text-cyan-300 group bg-gradient-to-r from-cyan-400 via-cyan-600 to-cyan-700 hover:bg-gradient-to-br hover:text-amber-50 focus:text-amber-50">
+                    <span role="presentation"
+                        class="inline-flex justify-center items-center gap-1 overflow-hidden p-[2px_18px] transition-all ease-in duration-75 bg-zinc-800 rounded-full group-hover:bg-opacity-0 group-focus:bg-gradient-to-r">
+                        <span role="presentation" class="text-base font-semibold pb-1">Oldest</span>
+                    </span>
+                </button>
+            </div>
+            <button id="addThriftBtn" aria-controls="addThriftModal" class="w-64 btn btn-pink">
+                Add New Thrift
+            </button>
+        </section>
+        <ul id="userThrifts" class="grid grid-cols-1 gap-4 py-8 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3 lg:gap-12"></ul>
+        <div id="errorMessage"></div>
+    </main>
     <!-- EditAvatarForm -->
     <dialog id="avatarEditModal" aria-modal="true" class="bg-zinc-800 bg-opacity-50 w-full h-full">
         <div class="relative py-4 overflow-x-hidden overflow-y-auto">
@@ -196,7 +240,7 @@
                             class="relative flex flex-col w-[288px] sm:w-[300] px-2 pt-2">
                             <textarea id="thriftDescription" name="thriftDescription" rows="3" cols="5"
                                 class="peer drop-shadow-sm text-sm rounded-md h-18 border border-amber-200 placeholder-transparent bg-transparent focus:outline-none focus:ring-0 focus:border-cyan-300">
-                            </textarea>
+                                    </textarea>
                             <label for="thriftDescription"
                                 class="absolute left-3 -top-3 text-zinc-400 text-sm transition-all peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-3 peer-focus:-top-3 peer-focus:text-zinc-400 peer-focus:text-sm">Description
                                 of the Thrift <span class="text-xs">(Required)</span></label>
@@ -292,52 +336,6 @@
             </section>
         </div>
     </dialog>
-
-    <!-- MyThrifts -->
-    <main class="container py-8 prose-h3:font-bold">
-        <h2 class="text-center font-bold text-2xl text-zinc-600">My Thrifts</h2>
-        <section class="py-8 flex flex-col justify-evenly items-center gap-6 ">
-            <form>
-                <div aria-label="Search" role="group" class="relative flex flex-row">
-                    <input id="search" name="search" placeholder="Search" type="search"
-                        class="peer placeholder-transparent bg-transparent focus:outline-none focus:ring-0 focus:border-fuchsia-600 text-base rounded-full border-solid border-2 border-cyan-600 shadow-lg" />
-                    <label for="search"
-                        class="absolute left-3 -top-3.5 text-zinc-700 transition-all peer-placeholder-shown:text-zinc-800 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-zinc-700 peer-focus:text-sm">Search</label>
-                    <button type="submit"
-                        class="z-10 -ml-10 block py-2.5 px-5 rounded-full text-amber-50 bg-gradient-to-r from-cyan-600 via-cyan-700 to-cyan-800 hover:bg-gradient-to-br shadow-sm focus:ring-2 focus:outline-none focus:ring-cyan-300">
-                        <span class="sr-only">search</span>
-                        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
-                            fill="currentColor" class="w-5 h-5">
-                            <path fill-rule="evenodd"
-                                d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z"
-                                clip-rule="evenodd" />
-                        </svg>
-                    </button>
-                </div>
-            </form>
-            <div aria-label="Filter" role="group" class="relative flex flex-row">
-                <button id="newest" type="button" aria-label="Newest"
-                    class="filter-btn inline-block shadow-sm rounded-full p-[2px_2px] text-cyan-300 group bg-gradient-to-r from-cyan-400 via-cyan-600 to-cyan-700 hover:bg-gradient-to-br hover:text-amber-50 focus:text-amber-50">
-                    <span role="presentation"
-                        class="inline-flex justify-center items-center gap-1 overflow-hidden p-[2px_18px] transition-all ease-in duration-75 bg-zinc-800 rounded-full group-hover:bg-opacity-0 group-focus:bg-gradient-to-r">
-                        <span role="presentation" class="text-base font-semibold pb-1">Newest</span>
-                    </span>
-                </button>
-                <button id="oldest" type="button" aria-label="Oldest"
-                    class="filter-btn inline-block shadow-sm rounded-full p-[2px_2px] text-cyan-300 group bg-gradient-to-r from-cyan-400 via-cyan-600 to-cyan-700 hover:bg-gradient-to-br hover:text-amber-50 focus:text-amber-50">
-                    <span role="presentation"
-                        class="inline-flex justify-center items-center gap-1 overflow-hidden p-[2px_18px] transition-all ease-in duration-75 bg-zinc-800 rounded-full group-hover:bg-opacity-0 group-focus:bg-gradient-to-r">
-                        <span role="presentation" class="text-base font-semibold pb-1">Oldest</span>
-                    </span>
-                </button>
-            </div>
-            <button id="addThriftBtn" aria-controls="addThriftModal" class="w-64 btn btn-pink">
-                Add New Thrift
-            </button>
-        </section>
-        <ul id="myThrifts" class="grid grid-cols-1 gap-4 py-8 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3 lg:gap-12"></ul>
-        <div id="errorMessage"></div>
-    </main>
     <!-- Footer -->
     <footer class="bg-zinc-900 text-zinc-50">
         <div role="none" aria-labelledby="container" class="container footer_layout">

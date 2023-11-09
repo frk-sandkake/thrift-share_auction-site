@@ -56,7 +56,7 @@ addThriftForm.addEventListener('submit', (e) => {
             title: thriftTitle.value,
             description: thriftDescription.value,
             tags,
-            media: thriftGallery.length > 0 ? thriftGallery : null,
+            media: thriftGallery.length < 0 ? thriftGallery : null,
             endsAt: endTime.value,
         };
 
@@ -76,7 +76,7 @@ addThriftForm.addEventListener('submit', (e) => {
                 errorMessageAddThrift.innerHTML = 'Your thrift is listed!';
             } else {
                 const errMessage = await response.json();
-                errorMessageAddThrift.innerHTML = `${errMessage[0]}`;
+                errorMessageAddThrift.innerHTML = `${errMessage[0].message}`;
             }
         }
         postThrift().then();

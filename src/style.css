@@ -6,10 +6,10 @@
 
 @layer components {
 .btn {
-    @apply pt-1 px-2 pb-2 rounded-full drop-shadow-sm text-base font-semibold
+    @apply pt-1.5 pb-2 px-2 rounded-lg drop-shadow-sm text-sm md:text-base lg:text-base font-semibold
 }
 .btn-pink {
-    @apply transition-all ease-in duration-75 text-pink-50 bg-gradient-to-b from-pink-400 via-pink-600 to-pink-800 hover:bg-gradient-to-br focus:ring-2 focus:outline-none focus:ring-pink-300
+    @apply transition-all ease-in duration-75 text-pink-100 bg-gradient-to-b from-pink-400 via-pink-600 to-pink-900 hover:bg-gradient-to-br focus:ring-2 focus:outline-none focus:ring-pink-300
 }
 .btn-blue {
     @apply transition-all ease-in duration-75 text-amber-50 bg-gradient-to-b from-cyan-400 via-cyan-600 to-cyan-800 hover:bg-gradient-to-br focus:ring-2 focus:outline-none focus:ring-cyan-300
@@ -20,7 +20,7 @@
 }
 
 .charity-link {
-    @apply font-inria-serif text-base font-light bg-gradient-to-r from-cyan-400 to-amber-300 text-transparent bg-clip-text hover:bg-gradient-to-t
+    @apply font-inria-serif font-light bg-gradient-to-r from-cyan-400 to-amber-300 text-transparent bg-clip-text hover:bg-gradient-to-t
 }
 
 .footer_layout {

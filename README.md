@@ -1,5 +1,7 @@
 # The Thrift & Share auction site
 
+![image](https://res.cloudinary.com/dmurhab0f/image/upload/v1702821501/Noroff-Projects/sem-proj-2-955x638_avxavl.png)
+
 _Semester Project for 2. year students in Front-End Development,
 at Noroff VOC Oslo, Norway. Student: Linda Sandaker, aka frk.Sandkake_
 
